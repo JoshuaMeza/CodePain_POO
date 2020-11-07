@@ -1,6 +1,6 @@
 # Proyect - Rude API
 
-Object Oriented programming 2020 :computer:
+Object Oriented Programming 2020 :computer:
 
 UADY - CodePain Team :man_technologist:
 

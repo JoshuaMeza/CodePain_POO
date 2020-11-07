@@ -6,7 +6,6 @@ Programa que pide dos numeros racionales, y devuelve su suma y multiplicacion.
 */
 #include <stdio.h>
 #include <iostream>
-#include <conio.h>
 #include <cmath>
 using namespace std;
 
