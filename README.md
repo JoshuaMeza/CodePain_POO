@@ -15,7 +15,7 @@ Dr. Edgar Antonio Cambranes Martínez :space_invader:
 
 ## Proyect
 
-:file_folder: [Documentation](https://github.com/JoshuaMeza/CodePain_POO/tree/master/Documentacion): You can find all the documentation here.
+:file_folder: [Documentation](https://github.com/JoshuaMeza/CodePain_POO/tree/master/Documentation): You can find all the documentation here.
 
 :file_folder: [Final process](#): In process.
 
