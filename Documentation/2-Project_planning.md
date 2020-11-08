@@ -11,7 +11,7 @@
 
 | Activities | Date | Risponsible(s) | Artefacts |
 | ----------- | ----- | -------------- | ---------------------- |
-| Development of the repository | Nov 7 | All the team |
+| Development of the repository | Nov 7 | All the team | The repository |
 
 ## Repository
 

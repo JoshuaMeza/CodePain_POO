@@ -63,8 +63,8 @@ The API has the property of being modified **only** by the *requests system*, wh
 
 ## Use cases diagram
 
-![Use cases diagram](https://github.com/JoshuaMeza/CodePain_POO/tree/master/Resources/tempBox.png)
+<img src="https://github.com/JoshuaMeza/CodePain_POO/blob/master/Resources/tempBox.png" alt="Use cases diagram" width="100px" height="100px">
 
 ## UML diagram
 
-![UML diagram](https://github.com/JoshuaMeza/CodePain_POO/tree/master/Resources/tempBox.png)
+<img src="https://github.com/JoshuaMeza/CodePain_POO/blob/master/Resources/tempBox.png" alt="UML diagram" width="100px" height="100px">

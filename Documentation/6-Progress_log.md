@@ -14,10 +14,10 @@
 
 ### API
 
-![API](https://github.com/JoshuaMeza/CodePain_POO/tree/master/Resources/tempBox.png)
+<img src="https://github.com/JoshuaMeza/CodePain_POO/blob/master/Resources/tempBox.png" alt="API" width="100px" height="100px">
 
 ### Wireframes 
 
 #### Low Fidelity
 
-![Wireframe low-fidelity](https://github.com/JoshuaMeza/CodePain_POO/tree/master/Resources/tempBox.png)
+<img src="https://github.com/JoshuaMeza/CodePain_POO/blob/master/Resources/tempBox.png" alt="Wireframe low fidelity" width="100px" height="100px">
