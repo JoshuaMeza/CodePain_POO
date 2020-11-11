@@ -13,11 +13,11 @@
 ## Documentation template
 
 - **Language:** English.
-- **Initial block:** ...
-- **Classes:** ...
-- **Functions:** ...
-- **Procedure comments:** ...
-- **Test comments:** ...
+- **Initial block:** Authors name, version, date and use.
+- **Classes:** Summary.
+- **Functions:** Next of the declaration.
+- **Procedure comments:** Top of the section
+- **Test comments:** At the end of the code
 
 ### Identation
 - **Use 4 spaces per indentation level.**

@@ -2,64 +2,93 @@
 
 ## System actors
 
-- The User
-- The API
-- The Discord bot
-- The Rude Management page
+- User
+- Rude API
+- Discord bot
+- Discord API
+- Management page
 
 ## User requirements
 
-The user can add the bot to a Discord chat to filter it and prevent the use of the saved *negative words*, and also can add a personal list of banned words. If anyone want, they can ask to the bot for the web page *Rude Management* where they can make requests to add words, delete words and vote the actual requests.   
+The user can add the bot to a Discord chat to filter it and prevent the use of the saved *offensive words*, and also can add a personal list of banned words. If anyone want, they can ask to the bot for the *Management* web page where they can make requests to add words, delete words and follow up the actual requests.   
 
 ## System requirements
 
-The API has the property of being modified **only** by the *requests system*, which is connected to the web page and is administrated by the community via requests and votes. The bot is always conected to the API and always give the source of the page if the user want it.
+The API has the property of being modified **only** by the *requests system*, which is connected to the web page and is administrated by the community via requests and follows. The bot is always conected to the API and always give the source of the page if the user want it.
 
 ## Functional requirements
 
-- The bot can be added and kicked of any discord chat.
-- The bot can be temporally disabled.
-- The user can add and delete new personal prohibited words.
-- The user can make the bot to ignore words of the *negative words* list.
-- The user can change the name of the bot.
-- The user can give special permissions to the bot.
-- The bot can give the link to the Rude Management page and the documentation.
-- The bot can give warnings, and the user decide how much are necessary to ban a user.
-- The user can clean the warnings history of another user or all users.
-- Anyone can retrieve the *negative words* list of the API.
-- The users can make requests to add an delete words in the API.
-- The users can vote the actual requests to help them to being implemented or discarded.
-- The users can send an email to the developers.
+- **API** capable to:
+    - Have an accessible database of oficial offensive words.
+    - Record date of addition (just for added ones).
+    - Have a method to search, add and delete words.
+    - Record the actual top ten addition words and top five deletion words of the month and the amount of follow ups.
+    - Record all requests made by users (cleaned after a month) and the amount of follow ups.
+- **Discord bot** capable to:
+    - Get Discord messages in real time.
+    - Ban automatically.
+    - Get all information of our database or API.
+    - Send error or bug messages found by the community.
+    - The bot has a space for memory.
+    - Being customized:
+        - Change of permissions.
+        - *Active* or *Disabled* mode.
+        - *Delete message* or *Censor message* mode.
+        - *Penalize* or *No penalize* mode. 
+        - Change the maximum amount of *Warnings*.
+        - Add and delete self-selected offensive words to censor them.
+        - Ignore self-selected words.
+    - Send default Discord messages for:
+        - Joining server.
+        - “In-server” configuration which:
+            - Can send user history as:
+                - Individual user story.
+                - List of all warned/banned people.
+            -   Help command which:
+                - Print commands
+                - Can give you the documentation page.
+                - Can give you the management page.
+            - Follow management command:
+                - Send the actual top ten and the amount of follow ups.
+        - Warning messages.
+        - Ban messages.
+        - Weekly resume for admins.
+        - Warning alerts for admins.
+        - Ban alerts for admins.
+    - Can clean user history of:
+        - Individual user.
+        - All users.
+    - Can unban people by:
+        - Individual user.
+        - All banned users (just that ones that got banned by the bot).
+- **Website** capable to:
+    - Consume API & get saved information from a user.
+    - Make modifications to the bot from the page.
+    - Show the same information as: discord bot in-server configuration.
+    - Have a submission box to suggest bad words.
+    - Have a graphic that shows top 10 additions suggested of bad words.
+    - Have a graphic that shows top 5 deletions suggested of bad words.
+    - Log in / Register users (at least with discord).
+    - Have a bot joining method.
+    - Give the opportunity to the community to keep in touch with the developers (email address).
+    - Show the last added and deleted words.
+    - Shows all the words that are actually in the API.
+    - Show requests for deletion.
 
 ## Non functional requirements
 
-- The maximum number of words added in the API per two weeks is four.
-- The maximum number of words deleted in the API per two weeks is one.
-- The bot has to check every message in less than a second.
-- The default amount of necessary warnings until banning a user is five.
-
-## User stories
-
-- Discord bot
-    - As a user, I can add the bot in any Discord chat.
-    - As a user, I can kick the bot of any Discord chat.
-    - As a user, I can temporally disable the bot in any Discord chat.
-    - As a user, I can add personal prohibited words.
-    - As a user, I can delete personal prohibited words.
-    - As a user, I can make the bot to ignore words of the API.
-    - As a user, I can change the name of the bot.
-    - As a user, I can give special permissions to the bot.
-    - As a user, I can ask to the bot the Rude Management page.
-    - As a user, I can ask to the bot the documentation (Github repository).
-    - As a user, I can decide how many warnings a user can have after being banned.
-    - As a user, I can clean the entire warnings history or a personal one.
-- API
-    - As a user, I can retrieve all the *negative words* list.
-- Rude Management page
-    - As a user, I can make a request to add a *negative word*.
-    - As a user, I can make a request to delete a *negative word*.
-    - As a user, I can vote another request to make it succed or fail.
-    - As a user, I can send a mail to the developers.
+- The maximum amount of warnings until someone can get banned is default to five.
+- The maximum number of requests per user every month is eight (suggestion points).
+- The requests can not be the same words.
+- The first time the user repeats a word, they will get a message and he will not lose any suggestion points, then, if he does the same thing, he will start losing their suggestion points.
+- The request period is one month.
+- The review period is three days, during this time anyone can suggest. Once is finished everyone refreshes their suggestion points.
+- The top three is the only group of words that could be added.
+- At the start of every request period, the past unselected top ten words will remain in the graphic with the twenty percent of the past votes.
+- Anyone can follow up or suggest any word at the start of every period. Even if he selected the same word the past season.
+- If an existent word is suggested, the page gives a warning to the user without any penalization.
+- The bot updates their memory every month, downloading the changes.
+- The bot can only unban and clean history if an administrator asks it.
 
 ## Use cases diagram
 
