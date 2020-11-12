@@ -15,7 +15,7 @@ Dr. Edgar Antonio Cambranes Martínez
 
 ## Proyect
 
-:file_folder: Index
+:file_folder: **Index**
 
 1. [Project definition](https://github.com/JoshuaMeza/CodePain_POO/blob/master/Documentation/1-Project_definition.md)
 2. [Project planning](https://github.com/JoshuaMeza/CodePain_POO/blob/master/Documentation/2-Project_planning.md)
@@ -25,4 +25,5 @@ Dr. Edgar Antonio Cambranes Martínez
 6. [Progress log](https://github.com/JoshuaMeza/CodePain_POO/blob/master/Documentation/6-Progress_log.md)
 7. [Coding standard](https://github.com/JoshuaMeza/CodePain_POO/blob/master/Documentation/7-Coding_standard.md)
 
-:file_folder: [College homework](https://github.com/JoshuaMeza/CodePain_POO/tree/master/Homework)
+:file_folder: **College homework**
+1. [Homework](https://github.com/JoshuaMeza/CodePain_POO/tree/master/Homework/0-Homework_Index.md)

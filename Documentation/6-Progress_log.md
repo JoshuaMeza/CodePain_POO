@@ -8,7 +8,7 @@
 
 | Task | Start date | End date | Time spent | Comments |
 | ----- | --------------- | --------------------- | --------------- | ----------- |
-| Development of the repository | 7 Nov | 11 Nov | 4 days | It could have changes in future |
+| Development of the repository | 7 Nov | 12 Nov | 5 days | It could have changes in future |
 
 ## Deployments
 

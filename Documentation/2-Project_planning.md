@@ -4,17 +4,18 @@
 
 - API development
 - Discord bots development
-- Discord API
+- Discord API documentation
 - Data base development
-- Web responsive development
+- Responsive web development
 
 ## Activities calendar
 
-| Activities | Date | Risponsible(s) | Artefacts |
+| Activities | Date | Risponsible(s) | Artifacts |
 | ----------- | ----- | -------------- | ---------------------- |
 | Development of the repository | Nov 7 | All the team | The repository |
 | Description and objectives | Nov 9 | All the team | Project definition |
-| First requirements definition | Nov 9 | All the team | Requirements | 
+| First requirements definition | Nov 9 | All the team | Requirements |
+| Work process and logs definition | Nov 9 | All the team | Work process and progress Log |
 
 ## Repository
 

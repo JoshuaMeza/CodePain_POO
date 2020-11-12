@@ -35,13 +35,13 @@ In the same way, weekly group calls are made to discuss the next goals to be ach
 
 With the help of Trello, the team will organize the tasks to be carried out, the board will have the following sections (subject to change or modification):
 
-- To Do: Basically it will be the list of pending tasks to be done, it will have information that specifies things such as who will be in charge of doing it, the estimated time it will take to complete it and the requirement that it seeks to cover. (in case that is the goal of the task).
+- **To Do:** Basically it will be the list of pending tasks to be done, it will have information that specifies things such as who will be in charge of doing it, the estimated time it will take to complete it and the requirement that it seeks to cover. (in case that is the goal of the task).
 
-- Doing: The tasks that are in the development process, must include the start and end date, during this phase it is common that doubts arise that the team must address to finalize them.
+- **Doing:** The tasks that are in the development process, must include the start and end date, during this phase it is common that doubts arise that the team must address to finalize them.
 
-- Needs review: Those tasks that have been completed but may not be well implemented, may be poorly optimized, may have particular flaws, or simply need feedback.
+- **Needs review:** Those tasks that have been completed but may not be well implemented, may be poorly optimized, may have particular flaws, or simply need feedback.
 
-- Done: List of tasks completed, tested and considered completed by the team.
+- **Done:** List of tasks completed, tested and considered completed by the team.
 
 ## Monitoring
 
@@ -57,7 +57,7 @@ The metric is based on *Planning pocker* in where all the team agreed with the a
 
 ### Individual contribution document
 
-[Click here to check.](https://alumnosuady-my.sharepoint.com/:x:/g/personal/a16001575_alumnos_uady_mx/EbO0Fdmjb1RNoLy71pG6ELEBSlKO6_AM9NcZIZn81-4hYQ?e=8GvjyV)
+[Click here to check](https://alumnosuady-my.sharepoint.com/:x:/g/personal/a16001575_alumnos_uady_mx/EbO0Fdmjb1RNoLy71pG6ELEBSlKO6_AM9NcZIZn81-4hYQ?e=8GvjyV).
 
 ### Backlog points table
 
@@ -118,7 +118,7 @@ The metric is based on *Planning pocker* in where all the team agreed with the a
 
 - **Leon Ortega Luis Gerardo:**
 
-*First deployment* ...
+*First deployment:* ...
 
 *Second deployment:* ... 
 
@@ -126,7 +126,7 @@ The metric is based on *Planning pocker* in where all the team agreed with the a
 
 - **Luna Castillo Fabrizio:**
 
-*First deployment* ...
+*First deployment:* ...
 
 *Second deployment:* ... 
 
@@ -134,7 +134,7 @@ The metric is based on *Planning pocker* in where all the team agreed with the a
 
 - **Meza Magaña Joshua Immanuel:**
 
-*First deployment* ...
+*First deployment:* It was a little hard to organize the tasks at the start, but we found a way to work more coordinated and then I started feeling happy with our progress. I saw everyone giving their best in this stage.
 
 *Second deployment:* ... 
 
