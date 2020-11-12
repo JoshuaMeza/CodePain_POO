@@ -64,7 +64,6 @@ The metric is based on *Planning pocker* in where all the team agreed with the a
 | Rep - Work process definition| 2 |
 | Rep - Coding standard definition | 1 |
 | Rep - UML diagram | 1 |
-| Test |  |
 | Bot - Enter and exit a chat system | 1 |
 | Bot - Message Joining | 1 |
 | Bot - Reading words| 2 |
