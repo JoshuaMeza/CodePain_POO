@@ -126,7 +126,7 @@ The metric is based on *Planning pocker* in where all the team agreed with the a
 
 - **Luna Castillo Fabrizio:**
 
-*First deployment:* ...
+*First deployment:* The first weeks I started a research about discord, close to this week I realize that the project need a new point of view, so I started to make changes and add new ideas about requirements and how we are going to manage the project documentation. I feel like we're making good progress, although sometimes I feel like I'm too demanding and my team can get mad at me for it.
 
 *Second deployment:* ... 
 
