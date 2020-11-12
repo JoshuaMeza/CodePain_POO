@@ -1,10 +1,10 @@
-# Proyect - Rude API
+# Project - Rude API
 
 Object Oriented Programming 2020 :computer:
 
 UADY - Facultad de Matemáticas
 
-Dr. Edgar Antonio Cambranes Martínez
+Dr. Edgar Antonio Cambranes Martínez :space_invader:
 
 ## Members - Code Pain 
 
