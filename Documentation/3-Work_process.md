@@ -110,7 +110,7 @@ The metric is based on *Planning pocker* in where all the team agreed with the a
 
 - **Gómez Benítez Jonathan Gregorio:**
 
-*First deployment:* ... 
+*First deployment:* I am very satisfied with how the team is working, the truth is that when we started there were many problems with the organization but in the end we learned to understand each other thanks to the calls, sometimes I feel that I am not on the same page but with patience and questions I get to the same ideas.
 
 *Second deployment:* ... 
 
