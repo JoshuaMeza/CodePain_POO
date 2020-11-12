@@ -60,12 +60,43 @@ The metric is based on *Planning pocker* in where all the team agreed with the a
 | Rep - Project definition | 1 |
 | Rep - Requirements definition | 5 |
 | Rep - Use cases diagram | 1 |
+| Rep - Project planning | 1 |
 | Rep - Work process definition| 2 |
-| Rep - Project planning | 0 |
-| Bot - Enter and exit a chat system | 0 |
-| Bot - Message Joining | 0 |
-| Bot - Reading words| 0 |
-
+| Rep - Coding standard definition | 1 |
+| Rep - UML diagram | 1 |
+| Test |  |
+| Bot - Enter and exit a chat system | 1 |
+| Bot - Message Joining | 1 |
+| Bot - Reading words| 2 |
+| Bot - Deleting messages | 2 |
+| Bot - Giving Warnings | 2 |
+| Bot - Ban system | 2 |
+| Bot - Censoring specific words | 1 |
+| Bot - Using API | 2 |
+| Bot - On/Off mode | 1 |
+| API - Offensive words research | 2 |
+| API - Words | 2 |
+| Bot - History| 2 |
+| API - Requests recorded | 1 |
+| API - Top 10 Add | 1 |
+| API - Search system | 2 |
+| API - Addition and deletion | 1 |
+| API - Automatic clean system | 1 |
+| Bot - Personal offensive list | 1 |
+| Bot - Ignore words | 1 |
+| Bot - Commands | 3 |
+| Web - API link sections | 1 |
+| Web - Sending request to API | 2 |
+| Bot - Automatic alerts to admins | 1 |
+| Bot - Penalize or not mode | 1 |
+| Web - Wireframe Management page | 5 |
+| Bot - Weekely resume | 1 |
+| Bot - Cleaning history and unbanning | 1 |
+| Web - Account | 2 |
+| Web - Data base | 1 |
+| Web - Modify bot settings | 3 |
+| Web - Page development | 5 |
+| Web - Page Hosting | 3 |
 
 ## Individual reports
 
