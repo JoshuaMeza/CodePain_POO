@@ -95,8 +95,8 @@ The metric is based on *Planning pocker* in where all the team agreed with the a
 | Web - Account | 2 |
 | Web - Data base | 1 |
 | Web - Modify bot settings | 3 |
-| Web - Page development | 5 |
-| Web - Page Hosting | 3 |
+| Web - Page development | 8 |
+| Web - Page Hosting | 1 
 
 ## Individual reports
 
