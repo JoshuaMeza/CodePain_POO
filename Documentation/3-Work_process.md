@@ -56,7 +56,7 @@ It is essential that the entire team analyze the progress of the others in searc
 The metric is based on *Planning pocker* in where all the team agreed with the amount of participation points that every task will give, based on history points and fibonacci numbers:
 
 | Backlog | Activity points |
-| Bot - Enter and exit a chat system | --------------- |
+| ------- | --------------- |
 | ... | ... |
 
 ## Individual reports
