@@ -53,10 +53,16 @@ It is essential that the entire team analyze the progress of the others in searc
 
 ## Metric
 
-The metric is based on *Planning pocker* in where all the team agreed with the amount of participation points that every task will give, based on history points and fibonacci numbers:
+The metric is based on *Planning pocker* in where all the team agreed with the amount of *participation points* that every task will give, based on history points and fibonacci numbers. The backlog is in order of development priority, and are the same activities that you can found in our [Trello](https://trello.com/b/OymW6aPy).
+
+### Individual contribution document
+
+[Click here to check.](https://alumnosuady-my.sharepoint.com/:x:/g/personal/a16001575_alumnos_uady_mx/EbO0Fdmjb1RNoLy71pG6ELEBSlKO6_AM9NcZIZn81-4hYQ?e=8GvjyV)
+
+### Backlog points table
 
 | Backlog | Activity points |
-| ------- | --------------- |
+| ------- | :-------------: |
 | Rep - Project definition | 1 |
 | Rep - Requirements definition | 5 |
 | Rep - Use cases diagram | 1 |
@@ -95,7 +101,10 @@ The metric is based on *Planning pocker* in where all the team agreed with the a
 | Web - Data base | 1 |
 | Web - Modify bot settings | 3 |
 | Web - Page development | 8 |
-| Web - Page Hosting | 1 
+| Web - Page Hosting | 1 |
+| Rep - Install bot doc | 1 |
+| Rep - Going to page doc | 1 |
+| Rep - Accessing to API doc | 1 |
 
 ## Individual reports
 
