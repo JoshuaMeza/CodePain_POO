@@ -23,7 +23,7 @@ Here is located all the homework that we done during the online course.
 
 1. [ejercicio25Sep.cpp](https://github.com/JoshuaMeza/CodePain_POO/blob/master/Homework/MezaMagaña/ejercicio25Sep.cpp)
 2. [ejercicio26Sep.cpp](https://github.com/JoshuaMeza/CodePain_POO/blob/master/Homework/MezaMagaña/ejercicio26Sep.cpp)
-3. [EjercicioGaussJordan.cpp](https://github.com/JoshuaMeza/CodePain_POO/blob/master/Homework/MezaMagaña/EjercicioGaussJordan.cpp)
+3. [EjercicioGaussJordan.cpp](https://github.com/JoshuaMeza/CodePain_POO/blob/master/Homework/MezaMagaña/ejercicioGaussJordan.cpp)
 4. [SistemaUML.jpeg](https://github.com/JoshuaMeza/CodePain_POO/blob/master/Homework/MezaMagaña/SistemaUML.jpeg)
 
 [<- Return to index](https://github.com/JoshuaMeza/CodePain_POO)
