@@ -118,7 +118,8 @@ The metric is based on *Planning pocker* in where all the team agreed with the a
 
 - **Leon Ortega Luis Gerardo:**
 
-*First deployment:* ...
+*First deployment:* 
+This first week I could not contribute in many aspects because I felt bad health, but I was researching things like authentications and the tools that are required to listen and broadcast in discord. we do not have much, but we have advanced a lot, more in aspects of project definition.
 
 *Second deployment:* ... 
 
