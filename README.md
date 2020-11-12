@@ -13,7 +13,7 @@ Dr. Edgar Antonio Cambranes Martínez
 - Luna Castillo Fabrizio [@fabriziomoon](https://github.com/fabriziomoon) 
 - Meza Magaña Joshua Immanuel [@JoshuaMeza](https://github.com/JoshuaMeza)
 
-## Proyect
+## Project
 
 :file_folder: **Index**
 
