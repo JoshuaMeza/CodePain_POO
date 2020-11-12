@@ -19,4 +19,16 @@ Help people and industries with a **free** tool to make confident filters in the
 
 ## Users
 
-Everyone who needs to make a filter in a chat.
+There are some people that would love this project, in example **discord comunities**, **streamers**, **software engineers**, **enterprises**, **videogame developers** (in case they need to control chats), **school discord chats**, etc. To make more understandable this section, there will be two general groups of users: discord users and developers. 
+
+### Discord users
+
+The most complete experience that we can bring to our users is the usage of the Discord bot. This bot has the objective of help you protecting a discord chanel of *offensive words* without a lot of work. It is customizable and has a variety of modes that you can try by executing simple commands, in example you can change how much warnings a user needs to be banned of thr channel or just select to only censor the *offensive words* and don't make any penalization to your community or group of friends!
+
+This kind of administration is perfect for non strict discord communities, streamers, school discord groups, group of friends, groups of work, etc.
+
+### Developers
+
+If you are one of that group of people that has knowledge about API's and you want to create a system that needs an extensive database of *offensive words* that is continuily growing and getting updated to create a magical system, it is your lucky day! Our API is completely open for you, you can access any time to it by following the documentation.
+
+[<- Return to index](https://github.com/JoshuaMeza/CodePain_POO)

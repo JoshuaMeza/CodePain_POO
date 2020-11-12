@@ -20,8 +20,8 @@
         - [ ] *Delete message* or *Censor message* mode.
         - [ ] *Penalize* or *No penalize* mode. 
         - [ ] Change the maximum amount of *Warnings*.
-        - [ ] Add and delete self- [ ]selected offensive words to censor them.
-        - [ ] Ignore self- [ ]selected words.
+        - [ ] Add and delete self-selected offensive words to censor them.
+        - [ ] Ignore self-selected words.
     - Send default Discord messages for:
         - [ ] Joining server.
         - “In-server” configuration which:
@@ -76,12 +76,11 @@
 
 ## Advancements summary
 
-...
+In the first deploy phase the team worked on preparing all the documentation needed to start working in the project.
 
 ## Mapping
 
-...
+There's any requirement done yet.
 
-## Screenshots
 
-...
+[<- Return to index](https://github.com/JoshuaMeza/CodePain_POO)

@@ -2,9 +2,9 @@
 
 Object Oriented Programming 2020 :computer:
 
-UADY - CodePain Team :man_technologist:
+UADY - Facultad de Matemáticas
 
-Dr. Edgar Antonio Cambranes Martínez :space_invader:
+Dr. Edgar Antonio Cambranes Martínez
 
 ## Members - Code Pain 
 
@@ -15,8 +15,14 @@ Dr. Edgar Antonio Cambranes Martínez :space_invader:
 
 ## Proyect
 
-:file_folder: [Documentation](https://github.com/JoshuaMeza/CodePain_POO/tree/master/Documentation): You can find all the documentation here.
+:file_folder: Index
 
-:file_folder: [Final process](#): In process.
+1. [Project definition](https://github.com/JoshuaMeza/CodePain_POO/blob/master/Documentation/1-Project_definition.md)
+2. [Project planning](https://github.com/JoshuaMeza/CodePain_POO/blob/master/Documentation/2-Project_planning.md)
+3. [Work process](https://github.com/JoshuaMeza/CodePain_POO/blob/master/Documentation/3-Work_process.md)
+4. [Requirements definition](https://github.com/JoshuaMeza/CodePain_POO/blob/master/Documentation/4-Requirements_definition.md)
+5. [Requirements mapping](https://github.com/JoshuaMeza/CodePain_POO/blob/master/Documentation/5-Requirements_mapping.md)
+6. [Progress log](https://github.com/JoshuaMeza/CodePain_POO/blob/master/Documentation/6-Progress_log.md)
+7. [Coding standard](https://github.com/JoshuaMeza/CodePain_POO/blob/master/Documentation/7-Coding_standard.md)
 
-:file_folder: [Homework](https://github.com/JoshuaMeza/CodePain_POO/tree/master/Homework): Homework made in the online lessons.
+:file_folder: [College homework](https://github.com/JoshuaMeza/CodePain_POO/tree/master/Homework)

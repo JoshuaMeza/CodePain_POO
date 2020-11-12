@@ -53,7 +53,11 @@ It is essential that the entire team analyze the progress of the others in searc
 
 ## Metric
 
-...
+The metric is based on *Planning pocker* in where all the team agreed with the amount of participation points that every task will give, based on history points and fibonacci numbers:
+
+| Backlog | Activity points |
+| ------- | --------------- |
+| ... | ... |
 
 ## Individual reports
 
@@ -88,3 +92,5 @@ It is essential that the entire team analyze the progress of the others in searc
 *Second deployment:* ... 
 
 *Third deployment:* ... 
+
+[<- Return to index](https://github.com/JoshuaMeza/CodePain_POO)

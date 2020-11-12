@@ -92,8 +92,10 @@ The API has the property of being modified **only** by the *requests system*, wh
 
 ## Use cases diagram
 
-<img src="https://github.com/JoshuaMeza/CodePain_POO/blob/master/Resources/useCases.PNG" alt="Use cases diagram" width="100%" height="450px">
+<img src="https://github.com/JoshuaMeza/CodePain_POO/blob/master/Resources/useCasesDiagram.jpg" alt="Use cases diagram" width="100%" height="450px">
 
 ## UML diagram
 
 <img src="https://github.com/JoshuaMeza/CodePain_POO/blob/master/Resources/tempBox.png" alt="UML diagram" width="100px" height="100px">
+
+[<- Return to index](https://github.com/JoshuaMeza/CodePain_POO)
