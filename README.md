@@ -1,19 +1,23 @@
 # Project - Rude API
 
+<img src="https://github.com/JoshuaMeza/CodePain_POO/blob/master/Resources/RudeApiLogo.png" alt="Logo" width="100%" height="80%">
+
+## College information
+
+UADY - Facultad de Matemáticas - Bachelor's Degree in Software Engineering
+
 Object Oriented Programming 2020 :computer:
 
-UADY - Facultad de Matemáticas
+Dr. Edgar Antonio Cambranes Martínez [@cambranes](https://github.com/cambranes) :space_invader:
 
-Dr. Edgar Antonio Cambranes Martínez :space_invader:
-
-## Members - Code Pain 
+## Code Pain Team
 
 - Gómez Benítez Jonathan Gregorio [@JonathanGGB](https://github.com/JonathanGGB)
-- Leon Ortega Luis Gerardo [@luislortega](https://github.com/luislortega)
+- León Ortega Luis Gerardo [@luislortega](https://github.com/luislortega)
 - Luna Castillo Fabrizio [@fabriziomoon](https://github.com/fabriziomoon) 
 - Meza Magaña Joshua Immanuel [@JoshuaMeza](https://github.com/JoshuaMeza)
 
-## Project
+## Documentation
 
 :file_folder: **Index**
 
@@ -24,6 +28,8 @@ Dr. Edgar Antonio Cambranes Martínez :space_invader:
 5. [Requirements mapping](https://github.com/JoshuaMeza/CodePain_POO/blob/master/Documentation/5-Requirements_mapping.md)
 6. [Progress log](https://github.com/JoshuaMeza/CodePain_POO/blob/master/Documentation/6-Progress_log.md)
 7. [Coding standard](https://github.com/JoshuaMeza/CodePain_POO/blob/master/Documentation/7-Coding_standard.md)
+
+## Extra files
 
 :file_folder: **College homework**
 1. [Homework](https://github.com/JoshuaMeza/CodePain_POO/tree/master/Homework/0-Homework_Index.md)
