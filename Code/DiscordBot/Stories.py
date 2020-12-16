@@ -28,11 +28,8 @@ class Stories:
 			aux = self.memberStory[member]
 			aux["Faults"] -= 1
 			self.memberStory[member] = aux
-		elif command == "penalty":
-			aux = self.memberStory[member]
-			aux["Faults"] += 1
-			self.memberStory[member] = aux
-
+		else:
+			pass
 
 if __name__ == '__main__':
 	h = Stories()

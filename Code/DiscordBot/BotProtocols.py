@@ -19,19 +19,57 @@ class BotProtocols:
 	def setPenaltyFlag(self, flag):
 		self.penaltyFlag = flag
 
+	def currentPenaltyFlag(self):
+		return self.penaltyFlag
+
 	def setAdmin(self, member):
 		self.admin.append(member)
 
 	def removeAdmin(self, admin):
-		self.admin.remove(admin)
+		result = False
+		if admin in self.admin:
+			self.admin.remove(admin)
+			result = True
+		return result
 
-	def manageChannels(self, command, target):
+	def showAdmins(self):
+		return self.admin
+
+	def manageChannels(self, command, channelType, target = None):
 		if command == "add":
-			self.channels.append(target)
+			if channelType == "command_channels":
+				self.commandChannels.append(target)
+			else:
+				self.channels.append(target)
 		elif command == "remove":
-			self.channels.remove(target)
+			if channelType == "command_channels":
+				self.commandChannels.remove(target)
+			else:
+				self.channels.remove(target)
 		else:
-			return self.channels
+			if channelType == "command_channels":
+				requested = self.commandChannels
+			else:
+				requested = self.channels
+			return requested
+
+	def manageLists(self, command, listType, target = None):
+		if command == "add":
+			if listType == "banlist":
+				self.banlist.append(target)
+			else:
+				self.whitelist.append(target)
+		elif command == "remove":
+			if listType == "banlist":
+				self.banlist.remove(target)
+			else:
+				self.whitelist.remove(target)
+		else:
+			if listType == "banlist":
+				requested = self.banlist
+			else:
+				requested = self.whitelist
+			return requested
 
 	def checkmessage(self, message):
 		currentWord = ""
@@ -46,3 +84,16 @@ class BotProtocols:
 				else:
 					currentWord = ""
 		return saction
+
+	def validateCmChannel(self, ctx):
+		isIn = False
+		commands_channels = self.commandChannels
+		if str(ctx.channel) in commands_channels or len(commands_channels) == 0:
+			isIn = True
+		return isIn
+
+	def validateAdmin(self, author):
+		isIn = False
+		if author in self.admin or len(self.admin) ==0:
+			isIn = True
+		return isIn
