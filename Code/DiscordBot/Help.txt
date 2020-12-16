@@ -1,1 +1,3 @@
 Add notes here!
+coded in python 3.X
+anaconda discord.py lib
