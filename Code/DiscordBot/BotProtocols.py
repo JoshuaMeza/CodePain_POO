@@ -33,9 +33,10 @@ class BotProtocols:
 		return result
 
 	def showAdmins(self):
-		return self.admin
+		return self.tool_Iteration(self.admin, "List of current admins")
 
 	def manageChannels(self, command, channelType, target = None):
+		requested = True
 		if command == "add":
 			if channelType == "command_channels":
 				self.commandChannels.append(target)
@@ -43,15 +44,22 @@ class BotProtocols:
 				self.channels.append(target)
 		elif command == "remove":
 			if channelType == "command_channels":
-				self.commandChannels.remove(target)
+				if target in self.commandChannels:
+					self.commandChannels.remove(target)
+				else:
+					requested = target + " is not in the channel list"
 			else:
-				self.channels.remove(target)
+				if target in self.channels:
+					self.channels.remove(target)
+				else:
+					requested = target + " is not in the channel list"
 		else:
 			if channelType == "command_channels":
-				requested = self.commandChannels
+				iteration = [self.commandChannels, "List of current command channels"]
 			else:
-				requested = self.channels
-			return requested
+				iteration = [self.channels, "List of current moderation channels"]
+			requested = self.tool_Iteration(iteration[0], iteration[1])
+		return requested
 
 	def manageLists(self, command, listType, target = None):
 		if command == "add":
@@ -59,17 +67,22 @@ class BotProtocols:
 				self.banlist.append(target)
 			else:
 				self.whitelist.append(target)
+			requested = "{0} succesfully added to {1}".format(target, listType)
 		elif command == "remove":
 			if listType == "banlist":
-				self.banlist.remove(target)
+				where = self.banlist
 			else:
-				self.whitelist.remove(target)
+				where = self.whitelist
+			requested = self.tool_CheckIfIn(target, where, [
+				"{0} succesfully delethed from {1}!".format(target, listType),
+				"{0} is not in {1}".format(target, listType)])
 		else:
 			if listType == "banlist":
-				requested = self.banlist
+				where = self.banlist
 			else:
-				requested = self.whitelist
-			return requested
+				where = self.whitelist
+			requested = self.tool_Iteration(where, listType)
+		return requested
 
 	def checkmessage(self, message):
 		currentWord = ""
@@ -97,3 +110,23 @@ class BotProtocols:
 		if author in self.admin or len(self.admin) ==0:
 			isIn = True
 		return isIn
+
+	@staticmethod
+	def tool_Iteration(iteration, msg):
+		counter = 0
+		string = "{}.\n".format(msg)
+		for i in iteration:
+			counter += 1
+			string += "{0}.- {1}\n".format(str(counter), i)
+		return string
+
+	@staticmethod
+	def tool_CheckIfIn(what, where, msg):
+		isIn = False
+		if what in where:
+			isIn = True
+		if isIn:
+			results = msg[0]
+		else:
+			results = msg[1]
+		return results

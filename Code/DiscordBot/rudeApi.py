@@ -16,44 +16,44 @@ bot = commands.Bot(command_prefix="!")
 #--------------------------------Help Command ----------------------------------------------------
 @bot.command(name = "help")
 async def command_help(ctx, arg = None):
-	#ToDo Format msgs
+	#Tier 3 | ToDo: Give a cute format.
 	if protocol.validateCmChannel(ctx) and protocol.validateAdmin(ctx.author):
 		if arg is not None:
 			if arg == "admins":
-				helpMsg = "Type: !setAdmin to add another admin who can manage bot permissions. " \
-				          "Type: !delAdmin to delete an admin." \
-				          "Type: !admins to see a full list of admins."
+				helpMsg = "Type: !setAdmin to add another admin who can manage bot permissions.\n" \
+				          "Type: !delAdmin to delete an admin.\n"\
+				          "Type: !admins to see a full list of admins.\n"
 			elif arg == "channels":
-				helpMsg = "Type: !setCmChannels to add a channel to send bot commands" \
-				          "Type: !delCmChannels to delete a channel that recieve bot commands" \
-				          "Type: !cmChannels to see a full list of command channels" \
-				          "Type: !setChannel to add a channel to constantly check messages" \
-				          "Type: !delChanel to stop checking messages from a channel" \
-				          "Type: !channels to se a full list of avtive channels"
+				helpMsg = "Type: !setCmChannels to add a channel to send bot commands.\n" \
+				          "Type: !delCmChannels to delete a channel that recieve bot commands.\n" \
+				          "Type: !cmChannels to see a full list of command channels.\n" \
+				          "Type: !setChannel to add a channel to constantly check messages.\n" \
+				          "Type: !delChanel to stop checking messages from a channel.\n" \
+				          "Type: !channels to se a full list of avtive channels.\n"
 			elif arg == "penalty":
-				helpMsg = "Type: !setPenalty to change the faul instances previous to ban a member" \
-				          "Type: !curPenalty to see the actual faul instances previous to ban a member" \
-				          "Type: !penalty to add a faul to a member"
+				helpMsg = "Type: !setPenalty to change the faul instances previous to ban a member.\n" \
+				          "Type: !curPenalty to see the actual faul instances previous to ban a member.\n" \
+				          "Type: !penalty to add a faul to a member.\n"
 
 			elif arg == "stories":
-				helpMsg = "Type: !showStories to see all faul stories from all registered users." \
-				          "Type: !userStory to see if a user has an story." \
-				          "Type: !clearStory to fully delete an user Story" \
-				          "Type: !undoStory to remove a faul instance from a member"
+				helpMsg = "Type: !showStories to see all faul stories from all registered users.\n" \
+				          "Type: !userStory to see if a user has an story.\n" \
+				          "Type: !clearStory to fully delete an user Story.\n" \
+				          "Type: !undoStory to remove a faul instance from a member.\n"
 			else:
-				helpMsg = "Type: !whiteList to see the server whitelist" \
-				          "Type: !banlist to see the servers own banned words" \
-				          "Type: !wlAdd to add a member to the whitelist" \
-				          "Type: !wlDel to delete a member from the whitelist" \
-				          "Type: !blAdd to add a new word to the banlist" \
-				          "Type: !blDel to delete a word from the banlist"
+				helpMsg = "Type: !whiteList to see the server whitelist.\n" \
+				          "Type: !banlist to see the servers own banned words.\n" \
+				          "Type: !wlAdd to add a member to the whitelist\n" \
+				          "Type: !wlDel to delete a member from the whitelist.\n" \
+				          "Type: !blAdd to add a new word to the banlist.\n" \
+				          "Type: !blDel to delete a word from the banlist.\n"
 		else:
-			helpMsg = "This is the help menu" \
-			          "Type: '!help admins' to see admin related commands." \
-			          "Type: '!help channels' to see channels related commands." \
-			          "Type: '!help penalty' to see penalties related commands." \
-			          "Type: '!help stories' to see stories related commands." \
-			          "Type: '!help lists' to see banlist & whitelist related commands."
+			helpMsg = "This is the help menu.\n" \
+			          "Type: '!help admins' to see admin related commands.\n" \
+			          "Type: '!help channels' to see channels related commands.\n" \
+			          "Type: '!help penalty' to see penalties related commands.\n" \
+			          "Type: '!help stories' to see stories related commands.\n" \
+			          "Type: '!help lists' to see banlist & whitelist related commands.\n"
 		await ctx.send(helpMsg)
 
 
@@ -70,6 +70,7 @@ async def command_delAdmin(ctx, arg):
 			ctx.send(arg + " succesfully removed from admin list!")
 		else:
 			ctx.send(arg + " is not in admin list!")
+			#tier 2 | ToDo: Simplify.
 
 @bot.command(name = "admins")
 async def command_admins(ctx):
@@ -77,39 +78,46 @@ async def command_admins(ctx):
 		ctx.send(protocol.showAdmins())
 
 #----------------------------------- Common Channel commands---------------------------------------
-#ToDo Define Channels Commands.
 @bot.command(name = "setChannel")
 async def command_setChannel(ctx, arg):
 	if protocol.validateCmChannel(ctx) and protocol.validateAdmin(ctx.author):
 		protocol.manageChannels("add", "default", arg)
+		ctx.send(arg + " succesfully added as a command channel.")
 
 @bot.command(name = "delChannel")
 async def command_delChannel(ctx, arg):
 	if protocol.validateCmChannel(ctx) and protocol.validateAdmin(ctx.author) and protocol.validateAdmin(ctx.author):
-		protocol.manageChannels("remove", "default", arg)
+		msg = protocol.manageChannels("remove", "default", arg)
+		if msg:
+			msg = arg +" removed from command channels."
+		ctx.send(msg)
+		#Tier 2 | ToDo: Simplify
 
 @bot.command(name = "channels")
 async def command_channels(ctx):
 	if protocol.validateCmChannel(ctx) and protocol.validateAdmin(ctx.author):
-		protocol.manageChannels("show", "default")
+		ctx.send(protocol.manageChannels("show", "default")) #Tier 3 | ToDo: Give a cute format.
 
 #----------------------------------- Commands Channels commands -----------------------------------
-
-#ToDo: Define Command Channels Commands.
 @bot.command(name = "setCmChannel")
 async def command_setCmChannel(ctx, arg):
 	if protocol.validateCmChannel(ctx) and protocol.validateAdmin(ctx.author):
 		protocol.manageChannels("add", "command_channels", arg)
+		ctx.send(arg + " succesfully added as a moderation channel.")
 
 @bot.command(name = "delCmChannel")
 async def command_delCmChannel(ctx, arg):
 	if protocol.validateCmChannel(ctx) and protocol.validateAdmin(ctx.author):
-		protocol.manageChannels("remove", "command_channels", arg)
+		msg = protocol.manageChannels("remove", "command_channels", arg)
+		if msg:
+			msg = arg + " removed from command channels."
+		ctx.send(msg)
+		#Tier 2 | ToDo: Simplify
 
 @bot.command(name = "cmChannels")
 async def command_showCmChannels(ctx):
 	if protocol.validateCmChannel(ctx) and protocol.validateAdmin(ctx.author):
-		protocol.manageChannels("remove", "command_channels")
+		ctx.send(protocol.manageChannels("show", "command_channels")) #Tier 3 | ToDo: Give a cute Format
 
 
 #----------------------------------- Penalty commands ---------------------------------------------
@@ -130,58 +138,57 @@ async def command_penalty(ctx, arg):
 		data.newStory(arg)
 
 #----------------------------------- Stories commands ---------------------------------------------
-#ToDo: Define Stories Commands.
 @bot.command(name = "showStories")
 async def command_showStories(ctx):
 	if protocol.validateCmChannel(ctx) and protocol.validateAdmin(ctx.author):
-		data.getStories()
+		ctx.send(data.getStories()) #Tier 2 | ToDo give a cute format
 
 @bot.command(name = "userStory")
 async def command_userStory(ctx, arg):
 	if protocol.validateCmChannel(ctx) and protocol.validateAdmin(ctx.author):
-		data.getStories(arg)
+		ctx.send(data.getStories(arg))
 
 @bot.command(name = "clearStory")
 async def command_clearStory(ctx, arg):
 	if protocol.validateCmChannel(ctx) and protocol.validateAdmin(ctx.author):
-		data.manageStories(arg, "delete")
+		ctx.send(data.manageStories(arg, "delete"))
 
 @bot.command(name = "undoStory")
 async def command_undoStory(ctx, arg):
 	if protocol.validateCmChannel(ctx) and protocol.validateAdmin(ctx.author):
-		data.manageStories(arg, "undo")
+		ctx.send(data.manageStories(arg, "undo"))
 
 #----------------------------------- List commands ------------------------------------------------
-#ToDo: Define Lists Commands.
+#ToDo: Check.
 @bot.command(name = "whitelist")
 async def command_whitelist(ctx):
 	if protocol.validateCmChannel(ctx) and protocol.validateAdmin(ctx.author):
-		protocol.manageLists("show", "whitelist")
+		ctx.send(protocol.manageLists("show", "whitelist"))
 
 @bot.command(name = "wlAdd")
 async def command_wlAdd(ctx, arg):
 	if protocol.validateCmChannel(ctx) and protocol.validateAdmin(ctx.author):
-		protocol.manageLists("add", "whitelist", arg)
+		ctx.send(protocol.manageLists("add", "whitelist", arg))
 
 @bot.command(name = "wlDel")
 async def command_wlDel(ctx, arg):
 	if protocol.validateCmChannel(ctx) and protocol.validateAdmin(ctx.author):
-		protocol.manageLists("remove", "whitelist", arg)
+		ctx.send(protocol.manageLists("remove", "whitelist", arg))
 
 @bot.command(name = "banlist")
 async def command_banlist(ctx):
 	if protocol.validateCmChannel(ctx) and protocol.validateAdmin(ctx.author):
-		protocol.manageLists("show", "banlist")
+		ctx.send(protocol.manageLists("show", "banlist"))
 
 @bot.command(name = "blAdd")
 async def command_blAdd(ctx, arg):
 	if protocol.validateCmChannel(ctx) and protocol.validateAdmin(ctx.author):
-		protocol.manageLists("add", "banlist", arg)
+		ctx.send(protocol.manageLists("add", "banlist", arg))
 
 @bot.command(name = "blDel")
 async def command_blDel(ctx, arg):
 	if protocol.validateCmChannel(ctx) and protocol.validateAdmin(ctx.author):
-		protocol.manageLists("remove", "banlist", arg)
+		ctx.send(protocol.manageLists("remove", "banlist", arg))
 
 
 #-------------------------------------- bot events --------------------------------------------
