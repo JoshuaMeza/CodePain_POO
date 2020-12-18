@@ -4,7 +4,8 @@ import discord, Stories, BotProtocols
 
 
 #------------------------------- Declarations -----------------------------------------------------
-token = "Nzg0MTUzMzYxMDU4MTAzMzA2.X8lJug.NXXW3J-Fo0iH_wXuJEDNyZddWQE"
+with open('.env','r') as f:
+    token = f.readline()
 client = discord.Client()
 data = Stories.Stories()
 protocol = BotProtocols.BotProtocols()
