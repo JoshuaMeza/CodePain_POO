@@ -16,7 +16,7 @@ class BlAdd(commands.Cog):
 		print('BlAdd module loaded succesfully!')
 
 	# Commands
-	@commands.command(aliases=['blAdd'])
+	@commands.command(name=['blAdd'])
 	async def command_blAdd(self, ctx, arg):
 		ctx.send(self.tools.ModifyDatabase("banlist", arg, "add"))
 
