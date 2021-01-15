@@ -1,4 +1,4 @@
-from RudeApiV2.modules.Tools import Tools
+from modules.Tools import *
 
 class Stories:
 	def __init__(self):
