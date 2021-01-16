@@ -26,9 +26,8 @@ $ python3 main.py
 ```
 # UML
 
-```
-To-do
-```
+![](`https://raw.githubusercontent.com/JoshuaMeza/CodePain_POO/SecondDeployment/Code/DiscordBot/RudeApiV2/img/uml.jpg`)
+
 
 # Documentation
 
