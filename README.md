@@ -29,7 +29,7 @@ Dr. Edgar Antonio Cambranes Martínez [@cambranes](https://github.com/cambranes)
 6. [Progress log](https://github.com/JoshuaMeza/CodePain_POO/blob/master/Documentation/6-Progress_log.md)
 7. [Coding standard](https://github.com/JoshuaMeza/CodePain_POO/blob/master/Documentation/7-Coding_standard.md)
 8. [Adding the bot](https://github.com/JoshuaMeza/CodePain_POO/blob/master/Documentation/8-Adding_the_bot.md)
-9. [Accessing to the API](https://github.com/JoshuaMeza/CodePain_POO/blob/master/Documentation/9-Accesing_API_documentation)
+9. [Accessing to the API](https://github.com/JoshuaMeza/CodePain_POO/blob/master/Documentation/9-Accesing_API_documentation.md)
 
 ## Not related
 

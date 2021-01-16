@@ -98,10 +98,10 @@ The Bot System works using the Discord API and following their own code. It repr
 
 ### For custom settings
 
-<img src="https://github.com/JoshuaMeza/CodePain_POO/blob/master/Resources/tempBox.jpg" alt="UML diagram" width="100%">
+<img src="https://github.com/JoshuaMeza/CodePain_POO/blob/master/Resources/tempBox.png" width="100%">
 
 ## Discord bot classes diagram
 
-<img src="https://github.com/JoshuaMeza/CodePain_POO/blob/master/Resources/tempBox.jpg" alt="UML diagram" width="100%">
+<img src="https://github.com/JoshuaMeza/CodePain_POO/blob/master/Resources/tempBox.png" width="100%">
 
 [<- Return to index](https://github.com/JoshuaMeza/CodePain_POO)
