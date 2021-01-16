@@ -26,7 +26,7 @@ $ python3 main.py
 ```
 # UML
 
-<img src="https://raw.githubusercontent.com/JoshuaMeza/CodePain_POO/SecondDeployment/Resources/uml.jpg" alt="uml" width="100%" height="80%">
+<img src="https://raw.githubusercontent.com/JoshuaMeza/CodePain_POO/master/Resources/uml.jpg" alt="uml" width="100%" height="80%">
 
 # Documentation
 
