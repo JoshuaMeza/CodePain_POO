@@ -102,7 +102,7 @@ The metric is based on _Planning pocker_ in where all the team agreed with the a
 
 _First deployment:_ I am very satisfied with how the team is working, the truth is that when we started there were many problems with the organization but in the end we learned to understand each other thanks to the calls, sometimes I feel that I am not on the same page but with patience and questions I get to the same ideas.
 
-_Second deployment:_ The truth is that sometimes I felt that I could not do or understand what they asked of me, however it is good to know that my team supports me when I need it, I feel that when we concentrate we can advance in a good and efficient way and dominate things more beyond what is expected
+_Second deployment:_ The truth is that sometimes I felt that I could not do or understand what they asked of me, however it is good to know that my team supports me when I need it, I feel that when we concentrate we can advance in a good and efficient way and dominate things more beyond what is expected.
 
 _Third deployment:_ ...
 
@@ -119,7 +119,8 @@ _Third deployment:_ ...
 
 _First deployment:_ The first weeks I started a research about discord, close to this week I realize that the project need a new point of view, so I started to make changes and add new ideas about requirements and how we are going to manage the project documentation. I feel like we're making good progress, although sometimes I feel like I'm too demanding and my team can get mad at me for it.
 
-_Second deployment:_ ...
+_Second deployment:_ I mainly worked for the bot stuff, focusing in create the bot, and develop it as planned in the UML, but, in the last 2 weeks things changed last second,
+all the bot structure changed, I managed to make the first steps on it, creating the initial commit for the rude API V2, but, was kinda hard, Joshua and Leon were very helpful on it.
 
 _Third deployment:_ ...
 
