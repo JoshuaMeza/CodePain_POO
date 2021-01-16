@@ -26,8 +26,7 @@ $ python3 main.py
 ```
 # UML
 
-![](`https://raw.githubusercontent.com/JoshuaMeza/CodePain_POO/SecondDeployment/Code/DiscordBot/RudeApiV2/img/uml.jpg`)
-
+<img src="https://raw.githubusercontent.com/JoshuaMeza/CodePain_POO/SecondDeployment/Code/DiscordBot/RudeApiV2/img/uml.jpg" alt="Logo" width="100%" height="80%">
 
 # Documentation
 
