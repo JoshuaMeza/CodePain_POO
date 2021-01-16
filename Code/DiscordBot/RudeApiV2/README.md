@@ -2,8 +2,14 @@
 RudeApi is a profanity filtering service currently available for Discord but easily exportable to other platforms.
 
 **@Author** CodePain Team
+
+
 **@Date** 01/01/2021
+
+
 **@Version** 1.2.0
+
+
 # Getting started
 **Step 1:**
 ```
