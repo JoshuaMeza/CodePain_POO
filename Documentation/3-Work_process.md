@@ -129,7 +129,8 @@ This first week I could not contribute in many aspects because I felt bad health
 
 *First deployment:* The first weeks I started a research about discord, close to this week I realize that the project need a new point of view, so I started to make changes and add new ideas about requirements and how we are going to manage the project documentation. I feel like we're making good progress, although sometimes I feel like I'm too demanding and my team can get mad at me for it.
 
-*Second deployment:* ... 
+*Second deployment:* I mainly worked for the bot stuff, focusing in create the bot, and develop it as planned in the uml, but, in the last 2 weeks things changed last second,
+all the bot structure change, I managed to make the first steps on it, creating the initial commit for the rude api V2, but, was kinda hard, Joshua and Leon were very helpful on it.
 
 *Third deployment:* ... 
 
