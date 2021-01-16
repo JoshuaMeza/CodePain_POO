@@ -21,7 +21,6 @@ The Sprint Review and Sprint Retrospective take place on Saturdays or Sundays on
 - Trello
 - WhatsApp
 - Discord
-- Apiary
 
 ## Communication
 
