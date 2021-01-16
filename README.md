@@ -14,7 +14,7 @@ Dr. Edgar Antonio Cambranes Martínez [@cambranes](https://github.com/cambranes)
 
 - Gómez Benítez Jonathan Gregorio [@JonathanGGB](https://github.com/JonathanGGB)
 - León Ortega Luis Gerardo [@luislortega](https://github.com/luislortega)
-- Luna Castillo Fabrizio [@fabriziomoon](https://github.com/fabriziomoon) 
+- Luna Castillo Fabrizio [@fabriziomoon](https://github.com/fabriziomoon)
 - Meza Magaña Joshua Immanuel [@JoshuaMeza](https://github.com/JoshuaMeza)
 
 ## Documentation
@@ -28,8 +28,11 @@ Dr. Edgar Antonio Cambranes Martínez [@cambranes](https://github.com/cambranes)
 5. [Requirements mapping](https://github.com/JoshuaMeza/CodePain_POO/blob/master/Documentation/5-Requirements_mapping.md)
 6. [Progress log](https://github.com/JoshuaMeza/CodePain_POO/blob/master/Documentation/6-Progress_log.md)
 7. [Coding standard](https://github.com/JoshuaMeza/CodePain_POO/blob/master/Documentation/7-Coding_standard.md)
+8. [Adding the bot](https://github.com/JoshuaMeza/CodePain_POO/blob/master/Documentation/8-Adding_the_bot.md)
+9. [Accessing to the API](https://github.com/JoshuaMeza/CodePain_POO/blob/master/Documentation/9-Accesing_API_documentation)
 
-## Extra files
+## Not related
 
 :file_folder: **College homework**
+
 1. [Homework](https://github.com/JoshuaMeza/CodePain_POO/tree/master/Homework/0-Homework_Index.md)
