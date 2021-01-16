@@ -6,7 +6,6 @@
 - Rude API
 - Discord bot
 - Discord API
-- Management page
 
 ## User requirements
 
@@ -60,17 +59,6 @@ The API has the property of being modified **only** by the _requests system_, wh
   - Can unban people by:
     - Individual user.
     - All banned users (just that ones that got banned by the bot).
-- **Website** capable to:
-  - Consume API & get saved information from a user.
-  - Make modifications to the bot from the page.
-  - Show the same information as: discord bot in-server configuration.
-  - Have a submission box to suggest _offensive words_.
-  - Have a graphic that shows top 10 additions suggested of _offensive words_.
-  - Log in / Register users (at least with discord).
-  - Have a bot joining method.
-  - Give the opportunity to the community to keep in touch with the developers (email address).
-  - Show the last added words.
-  - Shows all the words that are actually in the API.
 
 ## Non functional requirements
 

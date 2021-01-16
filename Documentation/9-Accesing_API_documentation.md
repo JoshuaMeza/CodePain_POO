@@ -19,7 +19,8 @@ You will need to consume the following link : http://zivotmagazine.net/Pruebas/g
 You will need to consume the following link : http://zivotmagazine.net/Pruebas/getMayan.php
 
 ## Python to get all words in all languages
-You need to retrieve the content of the link with the help of the requests library, then with the help of the json library and its .loads () method, it will load the content of the link into a variable transforming it from json to a Python Object, which will represent an array where each word represents an index, if you want to give it a better visual format you can do it with the help of the json.dumps () method that receives as a parameter the array and the indentation to be applied. 
+
+You need to retrieve the content of the link with the help of the requests library, then with the help of the json library and its .loads () method, it will load the content of the link into a variable transforming it from json to a Python Object, which will represent an array where each word represents an index, if you want to give it a better visual format you can do it with the help of the json.dumps () method that receives as a parameter the array and the indentation to be applied.
 
 YOU CAN CHOOSE A LANGUAGE IN THE ARRAY BY SPECIFYING THIS ONE
 
@@ -51,7 +52,7 @@ if __name__ == '__main__':
 
 You need to retrieve the content of the link with the help of the requests library, then with the help of the json library and its .loads () method, it will load the content of the link into a variable transforming it from json to a Python Object, which will represent an array where each word represents an index, if you want to give it a better visual format you can do it with the help of the json.dumps () method that receives as a parameter the array and the indentation to be applied
 
-```
+```python
 import requests
 import json
 
@@ -61,13 +62,14 @@ if __name__ == '__main__':
     words = json.loads(response.content)
     print(words)
     print(json.dumps(words, indent=2))
-    
+
 ```
+
 ## Python to get a specific word (change the url)
 
 Using the above code, you just need to specify the index of the word within the array
 
-```
+```python
 import requests
 import json
 
@@ -76,6 +78,7 @@ if __name__ == '__main__':
     response= requests.get(url)
     words = json.loads(response.content)
     print(words[3])
-    
+
 ```
+
 [<- Return to index](https://github.com/JoshuaMeza/CodePain_POO)

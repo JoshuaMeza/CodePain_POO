@@ -6,20 +6,8 @@
 
 ## Log
 
-| Task | Start date | End date | Time spent | Comments |
-| ----- | --------------- | --------------------- | --------------- | ----------- |
-| Development of the repository | 7 Nov | 12 Nov | 5 days | It could have changes in future |
-
-## Deployments
-
-### API
-
-<img src="https://github.com/JoshuaMeza/CodePain_POO/blob/master/Resources/tempBox.png" alt="API" width="100px" height="100px">
-
-### Wireframes 
-
-#### Low Fidelity
-
-<img src="https://github.com/JoshuaMeza/CodePain_POO/blob/master/Resources/tempBox.png" alt="Wireframe low fidelity" width="100px" height="100px">
+| Task                | Start date | End date | Time spent | Comments                            |
+| ------------------- | ---------- | -------- | ---------- | ----------------------------------- |
+| Repository creation | 7 Nov      | 12 Nov   | 5 days     | It could have changes in the future |
 
 [<- Return to index](https://github.com/JoshuaMeza/CodePain_POO)
