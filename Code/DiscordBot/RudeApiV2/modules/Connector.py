@@ -7,7 +7,6 @@ Connector tool
 import requests
 import json
 
-
 class Connector:
     def __init__(self):
         self.url = 'http://zivotmagazine.net/Pruebas/getAll.php'
@@ -18,7 +17,6 @@ class Connector:
         try:
             response = requests.get(self.url)
             temp = json.loads(response.content)
-
             for category in temp:
                 for word in temp[category]:
                     self.words.append(word)
