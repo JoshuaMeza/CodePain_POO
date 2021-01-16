@@ -6,97 +6,102 @@
 - Rude API
 - Discord bot
 - Discord API
-- Management page
 
 ## User requirements
 
-The user can add the bot to a Discord chat to filter it and prevent the use of the saved _offensive words_, and also can add a personal list of banned words. If anyone want, they can ask to the bot for the _Management_ web page where they can make requests to add words, delete words and follow up the actual requests.
+The user can add the bot to a Discord server to filter it and prevent the use of the saved _offensive words_, and also can add a personal list of banned words. If anyone want, can make requests to add new words by using a simple command with the bot.
 
 ## System requirements
 
-The API has the property of being modified **only** by the _requests system_, which is connected to the web page and is administrated by the community via requests and follows. The bot is always conected to the API and always give the source of the page if the user want it.
+The API has the property of being modified **only** by the _requests system_, which is connected to the bot and administrated by the community via requests and follows. The API and the bot will update their information every month.
 
 ## Functional requirements
 
-- **API** capable to:
-  - Have an accessible database of oficial offensive words.
-  - Have a method to search, add and delete words.
-  - Record the actual top ten addition words and the amount of follow ups.
-  - Record all requests made by users (cleaned after a month) and the amount of follow ups.
-- **Discord bot** capable to:
-  - Get Discord messages in real time.
+- **API** capable of:
+  - Always is active.
+  - Have an accessible database of official offensive words.
+  - Have a method to retrieve information from the database.
+- **Discord bot** capable of:
+  - Always is active.
+  - Get Discord messages.
   - Ban automatically.
-  - Get all information of our database or API.
+  - Get information from the API.
   - Send error or bug messages found by the community.
-  - The bot has a space for memory.
+  - The bot has space for memory.
   - Being customized:
-    - Change of permissions.
-    - _Active_ or _Disabled_ mode.
-    - _Delete message_ or _Censor message_ mode.
+    - Grant usage permissions.
     - _Penalize_ or _No penalize_ mode.
-    - Change the maximum amount of _Warnings_.
     - Add and delete self-selected offensive words to censor them.
     - Ignore self-selected words.
   - Send default Discord messages for:
-    - Joining server.
     - “In-server” configuration which:
       - Can send user history as:
         - Individual user story.
-        - List of all warned/banned people.
+        - List of all warned/banned people in the guild.
       - Help command which:
-        - Print commands
+        - Show commands.
         - Can give you the documentation page.
-        - Can give you the management page.
-      - Follow management command:
-        - Send the actual top ten and the amount of follow ups.
     - Warning messages.
     - Ban messages.
-    - Weekly resume for admins.
-    - Warning alerts for admins.
-    - Ban alerts for admins.
+    - Weekly resume for RudeBot Managers.
+    - Warning alerts for RudeBot Managers.
+    - Ban alerts for RudeBot Managers.
   - Can clean user history of:
     - Individual user.
     - All users.
   - Can unban people by:
     - Individual user.
-    - All banned users (just that ones that got banned by the bot).
-- **Website** capable to:
-  - Consume API & get saved information from a user.
-  - Make modifications to the bot from the page.
-  - Show the same information as: discord bot in-server configuration.
-  - Have a submission box to suggest _offensive words_.
-  - Have a graphic that shows top 10 additions suggested of _offensive words_.
-  - Log in / Register users (at least with discord).
-  - Have a bot joining method.
-  - Give the opportunity to the community to keep in touch with the developers (email address).
-  - Show the last added words.
-  - Shows all the words that are actually in the API.
+- **Database** capable of:
+  - Always is active.
+  - Store requests.
+  - Store custom server settings.
 
 ## Non functional requirements
 
-- The maximum amount of warnings until someone can get banned is default to five.
-- The maximum number of requests per user every month is eight (suggestion points).
-- The requests can not be the same words.
-- The first time the user repeats a word, they will get a message and he will not lose any suggestion points, then, if he does the same thing, he will start losing their suggestion points.
+- The maximum amount of warnings until someone can get banned is five.
+- The maximum number of requests per user every month is five.
 - The request period is one month.
-- The review period is three days, during this time anyone can suggest. Once is finished everyone refreshes their suggestion points.
-- The top three is the only group of words that could be added.
-- At the start of every request period, the past unselected top ten words will remain in the graphic with the twenty percent of the past votes.
-- Anyone can follow up or suggest any word at the start of every period. Even if he selected the same word the past season.
-- If an existent word is suggested, the page gives a warning to the user without any penalization.
-- The bot can only unban and clean history if an administrator asks it.
-- The database of the web page has to encrypt the data inside (for accounts).
+- The review period is three days. Once is finished everyone can request again.
+- Existing words cannot be suggested.
+- The bot can only unban and clean history if a RudeBot Manager asks for it.
+
+## Changes
+
+- Management page canceled.
+- Poorly defined requirements were removed, as "API search system".
+- Impossible requirements were removed, as "Censoring specific words" (no one can edit someone else's messages).
+- Unnecessary requirements were removed, as "Message when someone joins the server" (the bot objective is protect a chat, not maintain it), "On/Off mode" (its more logical kick the bot), and "Saving top 10 words" (it can be calculated easily and its not work of the bot).
+- Database requirements were added.
+- "Always is active" requirement was added.
+- "API search system" was modified to "Have a method to retrieve information from the database" requirement.
+- The request maximum amount was changed to 5.
 
 ## Use cases diagram
 
-<img src="https://github.com/JoshuaMeza/CodePain_POO/blob/master/Resources/UseCases.jpg" alt="Use cases diagram" width="100%" height="450px">
+<img src="https://github.com/JoshuaMeza/CodePain_POO/blob/master/Resources/UseCasesDiagram.png" alt="Use cases diagram" width="100%">
 
-## Data base UML diagram
+> Icons designed by [Flat Icons](https://www.flaticon.es/autores/flat-icons) from [Flaticon](https://www.flaticon.es/), and background picture by [Gerrit Tisdale](https://www.pexels.com/es-es/foto/luces-de-neon-rosadas-y-amarillas-en-una-habitacion-oscura-3864610/) from [Pexels](https://www.pexels.com/es-es/).
 
-<img src="https://github.com/JoshuaMeza/CodePain_POO/blob/master/Resources/db.jpg" alt="UML diagram" width="100%" height="450px">
+The Discord users will only use the bot generally for protecting their servers.
 
-## Discord bot UML diagram
+Developers may use the bot for protecting their servers, and will use the Rude API for developing their own projects.
 
-<img src="https://github.com/JoshuaMeza/CodePain_POO/blob/master/Resources/tempBox.jpg" alt="UML diagram" width="100%" height="450px">
+The API System is a representation of the link between the Database and Rude API, it only gets predefined information from the database and returns it.
+
+The Bot System works using the Discord API and following their own code. It represents the link between the Discord Bot, the Database (for sending information), and the Rude API (getting words).
+
+## Database UML diagram
+
+### For API
+
+<img src="https://github.com/JoshuaMeza/CodePain_POO/blob/master/Resources/UMLDatabase.png" alt="Database UML diagram">
+
+### For custom settings
+
+<img src="https://github.com/JoshuaMeza/CodePain_POO/blob/master/Resources/tempBox.jpg" alt="UML diagram" width="100%">
+
+## Discord bot classes diagram
+
+<img src="https://github.com/JoshuaMeza/CodePain_POO/blob/master/Resources/tempBox.jpg" alt="UML diagram" width="100%">
 
 [<- Return to index](https://github.com/JoshuaMeza/CodePain_POO)

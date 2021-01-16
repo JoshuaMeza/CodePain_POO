@@ -2,7 +2,7 @@
 
 ## Methodology
 
-The methodology used by the development team is SCRUM. The Daily SCRUM is done everyday, except sunday, in a session of fifteen minutes between 5:00 p.m. and 10:00 p.m. (depending on the disponibility of the team). The Sprints last two weeks, and all tasks are divided equally among the entire team.
+The methodology used by the development team is SCRUM. The Daily SCRUM is done everyday, except Sunday, in a session of fifteen minutes between 5:00 p.m. and 10:00 p.m. (depending on the disponibility of the team). The Sprints last two weeks, and all tasks are divided equally among the entire team.
 
 You can check the team's progress at any time by consulting the [Trello](https://trello.com/b/OymW6aPy).
 
@@ -53,7 +53,7 @@ It is essential that the entire team analyze the progress of the others in searc
 
 ## Metric
 
-The metric is based on *Planning pocker* in where all the team agreed with the amount of *participation points* that every task will give, based on history points and fibonacci numbers. The backlog is in order of development priority, and are the same activities that you can found in our [Trello](https://trello.com/b/OymW6aPy).
+The metric is based on _Planning pocker_ in where all the team agreed with the amount of _participation points_ that every task will give, based on history points and fibonacci numbers. The backlog is in order of development priority, and are the same activities that you can found in our [Trello](https://trello.com/b/OymW6aPy).
 
 ### Individual contribution document
 
@@ -61,84 +61,74 @@ The metric is based on *Planning pocker* in where all the team agreed with the a
 
 ### Backlog points table
 
-| Backlog | Activity points |
-| ------- | :-------------: |
-| Rep - Project definition | 1 |
-| Rep - Requirements definition | 5 |
-| Rep - Use cases diagram | 1 |
-| Rep - Project planning | 1 |
-| Rep - Work process definition| 2 |
-| Rep - Coding standard definition | 1 |
-| Rep - UML diagram | 1 |
-| Bot - Enter and exit a chat system | 1 |
-| Bot - Message Joining | 1 |
-| Bot - Reading words| 2 |
-| Bot - Deleting messages | 2 |
-| Bot - Giving Warnings | 2 |
-| Bot - Ban system | 2 |
-| Bot - Censoring specific words | 1 |
-| Bot - Using API | 2 |
-| Bot - On/Off mode | 1 |
-| API - Offensive words research | 2 |
-| API - Words | 2 |
-| Bot - History| 2 |
-| API - Requests recorded | 1 |
-| API - Top 10 Add | 1 |
-| API - Search system | 2 |
-| API - Addition and deletion | 1 |
-| API - Automatic clean system | 1 |
-| Bot - Personal offensive list | 1 |
-| Bot - Ignore words | 1 |
-| Bot - Commands | 3 |
-| Web - API link sections | 1 |
-| Web - Sending request to API | 2 |
-| Bot - Automatic alerts to admins | 1 |
-| Bot - Penalize or not mode | 1 |
-| Web - Wireframe Management page | 5 |
-| Bot - Weekely resume | 1 |
-| Bot - Cleaning history and unbanning | 1 |
-| Web - Account | 2 |
-| Web - Data base | 1 |
-| Web - Modify bot settings | 3 |
-| Web - Page development | 8 |
-| Web - Page Hosting | 1 |
-| Rep - Install bot doc | 1 |
-| Rep - Going to page doc | 1 |
-| Rep - Accessing to API doc | 1 |
+| Backlog                               | Activity points |
+| ------------------------------------- | :-------------: |
+| Rep - Project definition              |        1        |
+| Rep - Requirements definition         |        5        |
+| Rep - Use cases diagram               |        1        |
+| Rep - Project planning                |        1        |
+| Rep - Work process definition         |        2        |
+| Rep - Coding standard definition      |        1        |
+| Rep - UML diagram                     |        1        |
+| Bot - Reading words                   |        2        |
+| Bot - Deleting messages               |        2        |
+| Bot - Giving Warnings                 |        2        |
+| Bot - Ban system                      |        2        |
+| DB - Database develop                 |        1        |
+| DB - Database Filling                 |        1        |
+| API - Sending information             |        1        |
+| Bot - Using API                       |        2        |
+| API - Offensive words research        |        2        |
+| Bot - History                         |        2        |
+| Bot - Make requests                   |        1        |
+| DB - Requests recorded                |        1        |
+| API - Clean system                    |        1        |
+| Bot - Personal offensive list         |        1        |
+| Bot - Ignore words                    |        1        |
+| Bot - Commands                        |        4        |
+| Bot - Channel Joining                 |        1        |
+| Bot - Automatic alerts to admins      |        1        |
+| Bot - Penalize or not mode            |        1        |
+| Bot - Weekely resume                  |        1        |
+| Bot - Cleanning history and unbanning |        1        |
+| Bot - Whitelist                       |        1        |
+| Rep - Bot documentation               |        1        |
+| Rep - Install bot doc                 |        1        |
+| Rep - Accessing to API doc            |        1        |
 
 ## Individual reports
 
 - **Gómez Benítez Jonathan Gregorio:**
 
-*First deployment:* I am very satisfied with how the team is working, the truth is that when we started there were many problems with the organization but in the end we learned to understand each other thanks to the calls, sometimes I feel that I am not on the same page but with patience and questions I get to the same ideas.
+_First deployment:_ I am very satisfied with how the team is working, the truth is that when we started there were many problems with the organization but in the end we learned to understand each other thanks to the calls, sometimes I feel that I am not on the same page but with patience and questions I get to the same ideas.
 
-*Second deployment:* ... 
+_Second deployment:_ The truth is that sometimes I felt that I could not do or understand what they asked of me, however it is good to know that my team supports me when I need it, I feel that when we concentrate we can advance in a good and efficient way and dominate things more beyond what is expected
 
-*Third deployment:* ... 
+_Third deployment:_ ...
 
 - **Leon Ortega Luis Gerardo:**
 
-*First deployment:* 
+_First deployment:_
 This first week I could not contribute in many aspects because I felt bad health, but I was researching things like authentications and the tools that are required to listen and broadcast in discord. we do not have much, but we have advanced a lot, more in aspects of project definition.
 
-*Second deployment:* ... 
+_Second deployment:_ ...
 
-*Third deployment:* ... 
+_Third deployment:_ ...
 
 - **Luna Castillo Fabrizio:**
 
-*First deployment:* The first weeks I started a research about discord, close to this week I realize that the project need a new point of view, so I started to make changes and add new ideas about requirements and how we are going to manage the project documentation. I feel like we're making good progress, although sometimes I feel like I'm too demanding and my team can get mad at me for it.
+_First deployment:_ The first weeks I started a research about discord, close to this week I realize that the project need a new point of view, so I started to make changes and add new ideas about requirements and how we are going to manage the project documentation. I feel like we're making good progress, although sometimes I feel like I'm too demanding and my team can get mad at me for it.
 
-*Second deployment:* ... 
+_Second deployment:_ ...
 
-*Third deployment:* ... 
+_Third deployment:_ ...
 
 - **Meza Magaña Joshua Immanuel:**
 
-*First deployment:* It was a little hard to organize the tasks at the start, but we found a way to work more coordinated and then I started feeling happy with our progress. I saw everyone giving their best in this stage.
+_First deployment:_ It was a little hard to organize the tasks at the start, but we found a way to work more coordinated and then I started feeling happy with our progress. I saw everyone giving their best in this stage.
 
-*Second deployment:* ... 
+_Second deployment:_ I feel like we were making a big progress, but sometimes its hard to guide everyone to make the scheduled tasks or joining at time in meetings. At least, my teammates are always trying to give the best result in every task that they start.
 
-*Third deployment:* ... 
+_Third deployment:_ ...
 
 [<- Return to index](https://github.com/JoshuaMeza/CodePain_POO)
