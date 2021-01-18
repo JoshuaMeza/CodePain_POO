@@ -6,15 +6,15 @@ If you want to know how the API works, you can check its documented code in the 
 
 You will need to consume the following link : http://zivotmagazine.net/Pruebas/getAll.php
 
-## If you want to recover the insults in spanish
+## If you want to recover the insults in Spanish
 
 You will need to consume the following link : http://zivotmagazine.net/Pruebas/getSpanish.php
 
-## If you want to recover the insults in english
+## If you want to recover the insults in English
 
 You will need to consume the following link : http://zivotmagazine.net/Pruebas/getEnglish.php
 
-## If you want to recover the insults in mayan
+## If you want to recover the insults in Mayan
 
 You will need to consume the following link : http://zivotmagazine.net/Pruebas/getMayan.php
 
@@ -24,7 +24,7 @@ You need to retrieve the content of the link with the help of the requests libra
 
 YOU CAN CHOOSE A LANGUAGE IN THE ARRAY BY SPECIFYING THIS ONE
 
-```
+```python
 import requests
 import json
 if __name__ == '__main__':
@@ -37,7 +37,7 @@ if __name__ == '__main__':
 
 YOU CAN CHOOSE A LANGUAGE IN THE ARRAY BY SPECIFYING BEFORE THE INDEX AND IN ADDITION THE INDEX OF THAT WORD FOR THIS LANGUAGE
 
-```
+```python
 import requests
 import json
 if __name__ == '__main__':

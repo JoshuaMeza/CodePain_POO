@@ -3,7 +3,7 @@ import discord
 from RudeApiV1 import BotProtocols, Stories
 
 #------------------------------- Declarations -----------------------------------------------------
-token = "Nzg0MTUzMzYxMDU4MTAzMzA2.X8lJug.Ep-6DoOagOFxg-OhnenDWRw-6t8"
+token = ""
 client = discord.Client()
 data = Stories.Stories()
 protocol = BotProtocols.BotProtocols()

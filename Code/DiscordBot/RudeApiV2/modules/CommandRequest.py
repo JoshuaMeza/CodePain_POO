@@ -11,6 +11,9 @@ from Main import memory
 
 class Request(commands.Cog):
     def __init__(self, client, memory):
+        """
+        This is a constructor
+        """
         self.client = client
         self.memory = memory
 
@@ -29,9 +32,12 @@ class Request(commands.Cog):
         """
         When a user send a request, verifies if he can still doing it and then send it to the database
         Args:
-
+            self (object): The object itself
+            ctx (object): Context
+            embed (object): A Discord message type
+            msg (str): Word to request
         Returns:
-
+            Nothing
         """
         if msg != '':
             if self.memory.addRequest(ctx.author.id):
@@ -53,4 +59,7 @@ class Request(commands.Cog):
 
 
 def setup(client):
+    """
+    Function needed to load the extension
+    """
     client.add_cog(Request(client, memory))

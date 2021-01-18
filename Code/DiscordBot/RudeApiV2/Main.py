@@ -13,7 +13,7 @@ import sys
 from discord.ext import commands
 from discord.utils import get
 from dotenv import load_dotenv
-# from keepAlive import *
+from KeepAlive import *
 
 # ------------------------------- Memory objects ---------------------------------------------------
 memory = Saver()
@@ -113,6 +113,6 @@ async def on_command_error(ctx, error):
 
 
 # -------------------------------------- Initialization --------------------------------------------
-# keep_alive()
+keep_alive()
 load_dotenv()
 client.run(os.getenv('TOKEN'))

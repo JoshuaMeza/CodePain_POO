@@ -18,4 +18,8 @@ Another thing to keep in mind, is that if you has any channel that you want to p
 
 Here is the unique place where the Rudebot Manager's can use the commands of the bot! But, all bot's accesible channels are protected by them.
 
+## Documentation
+
+[Click to read the bot documentation.](https://github.com/JoshuaMeza/CodePain_POO/tree/master/Code/DiscordBot/RudeApiV2)
+
 [<- Return to index](https://github.com/JoshuaMeza/CodePain_POO)

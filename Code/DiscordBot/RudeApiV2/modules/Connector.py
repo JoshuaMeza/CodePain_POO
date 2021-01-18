@@ -9,11 +9,21 @@ import json
 
 class Connector:
     def __init__(self):
+        """
+        This is a constructor
+        """
         self.url = 'http://zivotmagazine.net/Pruebas/getAll.php'
         self.words = []
         self.getWords()
 
     def getWords(self):
+        """
+        This method gets all the words from the api and save them into the list called words
+        Args:
+            self (object): The object itself
+        Returns:
+            Nothing
+        """
         try:
             response = requests.get(self.url)
             temp = json.loads(response.content)
@@ -24,4 +34,11 @@ class Connector:
             self.words = None
 
     def returnWords(self):
+        """
+        This method returns the words list
+        Args:
+            self (object): The object itself
+        Returns:
+            The words list
+        """
         return self.words

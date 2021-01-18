@@ -10,6 +10,9 @@ from discord.ext import commands
 
 class Help(commands.Cog):
     def __init__(self, client):
+        """
+        This is a constructor
+        """
         self.client = client
 
     # Events
@@ -120,4 +123,7 @@ class Help(commands.Cog):
 
 
 def setup(client):
+    """
+    Function needed to load the extension
+    """
     client.add_cog(Help(client))

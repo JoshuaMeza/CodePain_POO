@@ -6,9 +6,23 @@ Searcher tool
 """
 class Searcher:
     def __init__(self, connector):
+        """
+        This is a constructor
+        """
         self.words = connector.returnWords()
 
     def searchWord(self, text):
+        """
+        This method verifies if a word in the text is already in the list
+        Args:
+            self (object): The object itself
+            text (str): A text
+            splittedText (list): Words from the text separated by spaces
+            words (list): Banned words
+            flag (bool): Verifies if the word was found
+        Returns:
+            True if that word exist in the list, False if not
+        """
         splittedText = text.split(' ')
         flag = False
         for word in splittedText:
