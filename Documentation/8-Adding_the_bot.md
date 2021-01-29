@@ -1,8 +1,10 @@
 # Guide for installing the bot
 
+<img src="./Resources/RudeApiLogo.png" alt="Logo" width="100%" height="80%">
+
 ## Adding it into your server
 
-Its really simple, just [click here](https://discord.com/api/oauth2/authorize?client_id=784153361058103306&permissions=2081418487&scope=bot).
+Its really simple, just [click here](https://discord.com/api/oauth2/authorize?client_id=784153361058103306&permissions=2081418487&scope=bot) and select a server.
 
 ## Actions once joined
 

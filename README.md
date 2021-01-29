@@ -6,7 +6,7 @@
 
 UADY - Facultad de Matemáticas - Bachelor's Degree in Software Engineering
 
-Object Oriented Programming 2020 :computer:
+Object Oriented Programming 2020 - 2021 :computer:
 
 Dr. Edgar Antonio Cambranes Martínez [@cambranes](https://github.com/cambranes) :space_invader:
 

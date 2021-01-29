@@ -78,7 +78,7 @@ The API has the property of being modified **only** by the _requests system_, wh
 
 ## Use cases diagram
 
-<img src="../Resources/UseCasesDiagram.png" alt="Use cases diagram" width="100%">
+<img src="../Resources/UseCasesDiagram.png" alt="Use cases diagram">
 
 > Icons designed by [Flat Icons](https://www.flaticon.es/autores/flat-icons) from [Flaticon](https://www.flaticon.es/), and background picture by [Gerrit Tisdale](https://www.pexels.com/es-es/foto/luces-de-neon-rosadas-y-amarillas-en-una-habitacion-oscura-3864610/) from [Pexels](https://www.pexels.com/es-es/).
 
@@ -92,11 +92,11 @@ The Bot System works using the Discord API and following their own code. It repr
 
 ## Database diagram
 
-<img src="../Resources/Database.png" alt="Database diagram" width="100%">
+<img src="../Resources/Database.png" alt="Database diagram">
 
 ## Discord bot classes diagram
 
-<img src="../Resources/Classes.png" alt="Classes diagram" width="100%">
+<img src="../Resources/Classes.jpg" alt="Classes diagram">
 
 [Click here to read the bot documentation.](../Code/DiscordBot/RudeApiV2/README.md)
 
