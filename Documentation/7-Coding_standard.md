@@ -64,4 +64,4 @@ Continuation lines should align wrapped elements either vertically using Python'
 
 Pydoc is used to make the documantation of the python files.
 
-[<- Return to index](https://github.com/JoshuaMeza/CodePain_POO)
+[<- Return to index](../README.md)

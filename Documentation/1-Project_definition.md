@@ -33,4 +33,4 @@ This kind of administration is perfect for strict or nonstrict discord communiti
 
 If you are one of that group of people that has knowledge about API's and you want to create a system that needs an extensive database of _offensive words_ that is continuously growing and getting updated to create a magical system, it is your lucky day! Our API is completely open for you, you can access at any time to it by following the documentation.
 
-[<- Return to index](https://github.com/JoshuaMeza/CodePain_POO)
+[<- Return to index](../README.md)

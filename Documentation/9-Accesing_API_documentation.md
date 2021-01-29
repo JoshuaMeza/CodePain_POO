@@ -1,6 +1,6 @@
 # How to access to the API?
 
-If you want to know how the API works, you can check its documented code in the [Code/API](https://github.com/JoshuaMeza/CodePain_POO/tree/master/Code/API) section
+If you want to know how the API works, you can check its documented code in the [Code/API](../Code/API) section
 
 ## If you want to recover all languages
 
@@ -81,4 +81,4 @@ if __name__ == '__main__':
 
 ```
 
-[<- Return to index](https://github.com/JoshuaMeza/CodePain_POO)
+[<- Return to index](../README.md)

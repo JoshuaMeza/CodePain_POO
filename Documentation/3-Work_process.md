@@ -131,4 +131,4 @@ _Second deployment:_ I feel like we were making a big progress, but sometimes it
 
 _Third deployment:_ ...
 
-[<- Return to index](https://github.com/JoshuaMeza/CodePain_POO)
+[<- Return to index](../README.md)

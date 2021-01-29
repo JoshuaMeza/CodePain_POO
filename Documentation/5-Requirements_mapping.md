@@ -69,4 +69,4 @@ The bot, when landing on a server, creates their work environment. It can read m
 
 The database is designed for working with the API, but it is still missing the part for server custom settings.
 
-[<- Return to index](https://github.com/JoshuaMeza/CodePain_POO)
+[<- Return to index](../README.md)

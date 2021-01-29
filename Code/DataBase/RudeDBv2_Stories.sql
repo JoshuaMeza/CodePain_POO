@@ -16,29 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `Languages`
+-- Table structure for table `Stories`
 --
 
-DROP TABLE IF EXISTS `Languages`;
+DROP TABLE IF EXISTS `Stories`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Languages` (
-  `languageId` int NOT NULL AUTO_INCREMENT,
-  `language` varchar(20) NOT NULL,
-  PRIMARY KEY (`languageId`),
-  UNIQUE KEY `idLanguage_UNIQUE` (`languageId`),
-  UNIQUE KEY `language_UNIQUE` (`language`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `Stories` (
+  `idStories` int NOT NULL AUTO_INCREMENT,
+  `userId` bigint NOT NULL,
+  `warnings` int NOT NULL,
+  `guildIdSty` bigint NOT NULL,
+  PRIMARY KEY (`idStories`),
+  UNIQUE KEY `idStories_UNIQUE` (`idStories`),
+  KEY `fk_Stories_1_idx` (`guildIdSty`),
+  CONSTRAINT `fk_Stories_1` FOREIGN KEY (`guildIdSty`) REFERENCES `Guilds` (`idGuilds`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Languages`
+-- Dumping data for table `Stories`
 --
 
-LOCK TABLES `Languages` WRITE;
-/*!40000 ALTER TABLE `Languages` DISABLE KEYS */;
-INSERT INTO `Languages` VALUES (1,'English'),(3,'Maya'),(2,'Spanish');
-/*!40000 ALTER TABLE `Languages` ENABLE KEYS */;
+LOCK TABLES `Stories` WRITE;
+/*!40000 ALTER TABLE `Stories` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Stories` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

@@ -16,29 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `Languages`
+-- Table structure for table `Whitelist`
 --
 
-DROP TABLE IF EXISTS `Languages`;
+DROP TABLE IF EXISTS `Whitelist`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Languages` (
-  `languageId` int NOT NULL AUTO_INCREMENT,
-  `language` varchar(20) NOT NULL,
-  PRIMARY KEY (`languageId`),
-  UNIQUE KEY `idLanguage_UNIQUE` (`languageId`),
-  UNIQUE KEY `language_UNIQUE` (`language`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `Whitelist` (
+  `idWhitelist` int NOT NULL AUTO_INCREMENT,
+  `idUser` bigint NOT NULL,
+  `idGuild` bigint NOT NULL,
+  PRIMARY KEY (`idWhitelist`),
+  UNIQUE KEY `idWhitelist_UNIQUE` (`idWhitelist`),
+  KEY `fk_Whitelist_1_idx` (`idGuild`),
+  CONSTRAINT `fk_Whitelist_1` FOREIGN KEY (`idGuild`) REFERENCES `Guilds` (`idGuilds`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Languages`
+-- Dumping data for table `Whitelist`
 --
 
-LOCK TABLES `Languages` WRITE;
-/*!40000 ALTER TABLE `Languages` DISABLE KEYS */;
-INSERT INTO `Languages` VALUES (1,'English'),(3,'Maya'),(2,'Spanish');
-/*!40000 ALTER TABLE `Languages` ENABLE KEYS */;
+LOCK TABLES `Whitelist` WRITE;
+/*!40000 ALTER TABLE `Whitelist` DISABLE KEYS */;
+INSERT INTO `Whitelist` VALUES (1,572589109412102228,794783492197187587);
+/*!40000 ALTER TABLE `Whitelist` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-01-21 11:38:02
+-- Dump completed on 2021-01-21 11:38:00

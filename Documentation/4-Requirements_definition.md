@@ -78,7 +78,7 @@ The API has the property of being modified **only** by the _requests system_, wh
 
 ## Use cases diagram
 
-<img src="https://github.com/JoshuaMeza/CodePain_POO/blob/master/Resources/UseCasesDiagram.png" alt="Use cases diagram" width="100%">
+<img src="../Resources/UseCasesDiagram.png" alt="Use cases diagram" width="100%">
 
 > Icons designed by [Flat Icons](https://www.flaticon.es/autores/flat-icons) from [Flaticon](https://www.flaticon.es/), and background picture by [Gerrit Tisdale](https://www.pexels.com/es-es/foto/luces-de-neon-rosadas-y-amarillas-en-una-habitacion-oscura-3864610/) from [Pexels](https://www.pexels.com/es-es/).
 
@@ -90,20 +90,14 @@ The API System is a representation of the link between the Database and Rude API
 
 The Bot System works using the Discord API and following their own code. It represents the link between the Discord Bot, the Database (for sending information), and the Rude API (getting words).
 
-## Database UML diagram
+## Database diagram
 
-### For API
-
-<img src="https://github.com/JoshuaMeza/CodePain_POO/blob/master/Resources/UMLDatabase.png" alt="Database UML diagram">
-
-### For custom settings
-
-<img src="https://github.com/JoshuaMeza/CodePain_POO/blob/master/Resources/tempBox.png" width="20px" height="20px">
+<img src="../Resources/Database.png" alt="Database diagram" width="100%">
 
 ## Discord bot classes diagram
 
-<img src="https://github.com/JoshuaMeza/CodePain_POO/blob/master/Resources/uml.jpg" width="100%">
+<img src="../Resources/Classes.png" alt="Classes diagram" width="100%">
 
-[Click to read the bot documentation.](https://github.com/JoshuaMeza/CodePain_POO/tree/master/Code/DiscordBot/RudeApiV2)
+[Click here to read the bot documentation.](../Code/DiscordBot/RudeApiV2/README.md)
 
-[<- Return to index](https://github.com/JoshuaMeza/CodePain_POO)
+[<- Return to index](../README.md)

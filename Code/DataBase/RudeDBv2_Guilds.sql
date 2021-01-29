@@ -16,29 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `Languages`
+-- Table structure for table `Guilds`
 --
 
-DROP TABLE IF EXISTS `Languages`;
+DROP TABLE IF EXISTS `Guilds`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Languages` (
-  `languageId` int NOT NULL AUTO_INCREMENT,
-  `language` varchar(20) NOT NULL,
-  PRIMARY KEY (`languageId`),
-  UNIQUE KEY `idLanguage_UNIQUE` (`languageId`),
-  UNIQUE KEY `language_UNIQUE` (`language`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `Guilds` (
+  `idGuilds` bigint NOT NULL,
+  `penalizeMode` tinyint NOT NULL,
+  PRIMARY KEY (`idGuilds`),
+  UNIQUE KEY `idGuilds_UNIQUE` (`idGuilds`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Languages`
+-- Dumping data for table `Guilds`
 --
 
-LOCK TABLES `Languages` WRITE;
-/*!40000 ALTER TABLE `Languages` DISABLE KEYS */;
-INSERT INTO `Languages` VALUES (1,'English'),(3,'Maya'),(2,'Spanish');
-/*!40000 ALTER TABLE `Languages` ENABLE KEYS */;
+LOCK TABLES `Guilds` WRITE;
+/*!40000 ALTER TABLE `Guilds` DISABLE KEYS */;
+INSERT INTO `Guilds` VALUES (794783492197187587,1);
+/*!40000 ALTER TABLE `Guilds` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-01-21 11:38:02
+-- Dump completed on 2021-01-21 11:38:00

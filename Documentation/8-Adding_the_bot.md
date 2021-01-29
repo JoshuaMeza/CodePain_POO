@@ -20,6 +20,6 @@ Here is the unique place where the Rudebot Manager's can use the commands of the
 
 ## Documentation
 
-[Click to read the bot documentation.](https://github.com/JoshuaMeza/CodePain_POO/tree/master/Code/DiscordBot/RudeApiV2)
+[Click here to read the bot documentation.](../Code/DiscordBot/RudeApiV2/README.md)
 
-[<- Return to index](https://github.com/JoshuaMeza/CodePain_POO)
+[<- Return to index](../README.md)
