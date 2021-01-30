@@ -1,6 +1,6 @@
 # Guide for installing the bot
 
-<img src="./Resources/RudeApiLogo.png" alt="Logo" width="100%" height="80%">
+<img src="../Resources/RudeApiLogo.png" alt="Logo" width="100%" height="80%">
 
 ## Adding it into your server
 
