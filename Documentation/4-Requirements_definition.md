@@ -64,6 +64,10 @@ The API has the property of being modified **only** by the _requests system_, wh
 - The review period is three days. Once is finished everyone can request again.
 - Existing words cannot be suggested.
 - The bot can only unban and clean history if a RudeBot Manager asks for it.
+- A guild can have up to 15 custom words.
+- A guild can have up to 15 ignored words.
+- A guild can have up to 10 users in their whitelist.
+- A user can send a bug report every 24 hours.
 
 ## Changes
 
@@ -98,6 +102,6 @@ The Bot System works using the Discord API and following their own code. It repr
 
 <img src="../Resources/Classes.jpg" alt="Classes diagram">
 
-[Click here to read the bot documentation.](../Code/DiscordBot/RudeApiV2/README.md)
+[Click here to read the bot documentation.](../Code/DiscordBot/RudeApiV3/README.md)
 
 [<- Return to index](../README.md)

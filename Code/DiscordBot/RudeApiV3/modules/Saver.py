@@ -51,7 +51,7 @@ class Saver:
         Args:
             self (object): The object itself
             userId (str): User id
-            requestLog (list): List of people that has made requests
+            requestLog (list): List of people which has made requests
         Returns:
             Nothing
         """

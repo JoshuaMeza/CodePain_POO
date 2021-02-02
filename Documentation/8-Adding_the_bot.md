@@ -22,6 +22,6 @@ Here is the unique place where the Rudebot Manager's can use the commands of the
 
 ## Documentation
 
-[Click here to read the bot documentation.](../Code/DiscordBot/RudeApiV2/README.md)
+[Click here to read the bot documentation.](../Code/DiscordBot/RudeApiV3/README.md)
 
 [<- Return to index](../README.md)

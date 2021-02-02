@@ -54,6 +54,10 @@
 - [x] The review period is three days. Once is finished everyone can request again.
 - [ ] Existing words cannot be suggested.
 - [ ] The bot can only unban and clean history if a RudeBot Manager asks for it.
+- [ ] A guild can have up to 15 custom words.
+- [ ] A guild can have up to 15 ignored words.
+- [ ] A guild can have up to 10 users in their whitelist.
+- [ ] A user can send a bug report every 24 hours.
 
 ## Advancements summary
 

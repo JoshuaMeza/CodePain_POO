@@ -6,7 +6,7 @@ RudeApi is a profanity filtering service currently available for Discord but eas
 
 **@Date** 01/01/2021
 
-**@Version** 1.2.0
+**@Version** 1.3.0
 
 # Getting started
 
@@ -35,6 +35,18 @@ $ python3 main.py
 
 # Documentation
 
+### .env
+
+> To get the bot working, it's necessary to create a `.env` file in the root directory with the following information
+
+```
+TOKEN=_your_token_here_
+HOST=_your_host_here_
+DBUSER=_your_user_here_
+PASSW=_your_password_here_
+DBNAME=_your_database_name_here_
+```
+
 ### main.py
 
 > When the bot gets activated, this function prints a message
@@ -59,7 +71,7 @@ async  def  on_ready():
 async  def  on_guild_join(guild):
 ```
 
-> This function gets activated when a user send a message
+> This function gets activated when a user sends a message
 > Args:
 > message (object): Represents the message
 > search (object): Searcher object
@@ -85,7 +97,7 @@ async  def  on_command_error(ctx, error):
 
 ### KeepAlive.py
 
-> Creathe the default route of flask
+> Create the default route of Flask
 > Args:
 > nothing
 > Return:
@@ -130,9 +142,9 @@ def  __init__(self, connector):
 
 > Start a thread to keep the connection with the sockets
 > Args:
-> the text that send the user
+> The text that sends the user
 > Return:
-> true or false if contain a profanity
+> true or false if it contains a profanity
 
 ```python
 def  searchWord(self, text):
@@ -164,7 +176,7 @@ def  addRequest(self, userId):
 > Args:
 > userId
 > Return:
-> 0 if isn't in the list or an array of all the request
+> 0 if it isn't in the list or an array of all the request
 
 ```python
 def  verify(self, userId):
@@ -180,7 +192,7 @@ def  verify(self, userId):
 def  addLog(self, userId):
 ```
 
-> increase the times that an user try a request
+> increase the amount of times an user sends a request
 > Args:
 > userId
 > Return:
@@ -202,7 +214,7 @@ def  increaseTimes(self, userId):
 def  __init__(self):
 ```
 
-> get the bad word from the server and apped all to an array.
+> get the bad word from the server and appends all to an array.
 > Args:
 > nothing
 > Return:
@@ -224,7 +236,7 @@ def  returnWords(self):
 
 ### CommandRequest.py
 
-> constructor of CommandRequest that create the client to run the bot and memory that containt the list of request
+> constructor of CommandRequest that create the client to run the bot and memory that contains the list of request
 > Args:
 > client and memory
 > Return:
@@ -236,7 +248,7 @@ def  __init__(self, client, memory):
 
 > When the bot gets activated, this function prints a message
 > Args:
-> nothig
+> nothing
 > Return:
 > nothing
 
@@ -245,7 +257,7 @@ def  __init__(self, client, memory):
 async def on_ready(self):
 ```
 
-> When a user send a request, verifies if he can still doing it and then send it to the database
+> When a user sends a request, it verifies if he can still doing it and then send it to the database
 > Args:
 > nothing
 > Return:
