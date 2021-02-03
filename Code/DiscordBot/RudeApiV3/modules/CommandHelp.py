@@ -21,7 +21,7 @@ class Help(commands.Cog):
         """
         When the bot gets activated, this function prints a message
         """
-        print('Help module loaded succesfully!')
+        print('Help module loaded successfully!')
 
     # Commands
     @commands.command(name='help', alisases=['HELP', 'info', 'INFO'])
@@ -67,7 +67,15 @@ class Help(commands.Cog):
                             '**!gwList**\tSee global banned words list.',
                             inline=False)
             embed.add_field(name='Request command',
-                            value='**!request [word]**\tUpload a word to be added into the global banned words list.',
+                            value='**!request [word],[language]**\tUpload a word to be added into the global banned words list.',
+                            inline=False)
+            embed.add_field(name='Language selection',
+                            value='**en**\tEnglish.\n'
+                            '**es**\tSpanish.\n'
+                            '**may**\tMayan.',
+                            inline=False)
+            embed.add_field(name='Bug command',
+                            value='**!bug [text]**\tSend a bug report.',
                             inline=False)
         elif arg == 'channels':
             embed.add_field(name='Channels commands',
@@ -97,7 +105,19 @@ class Help(commands.Cog):
                             inline=False)
         elif arg == 'requests':
             embed.add_field(name='Request command',
-                            value='**!request [word]**\tUpload a word to be added into the global banned words list.',
+                            value='**!request [word],[language]**\tUpload a word to be added into the global banned words list.',
+                            inline=False)
+            embed.add_field(name='Language selection',
+                            value='**en**\tEnglish.\n'
+                            '**es**\tSpanish.\n'
+                            '**may**\tMayan.',
+                            inline=False)
+        elif arg == 'bugs':
+            embed.add_field(name='Bug command',
+                            value='**!bug [text]**\tSend a bug report.',
+                            inline=False)
+            embed.add_field(name='Cooldown',
+                            value='It is only possible to send one request per day.\n',
                             inline=False)
         else:
             embed.add_field(name='Arguments',
@@ -108,7 +128,8 @@ class Help(commands.Cog):
                             '**!help penalties**\tDisplays penalties related commands.\n'
                             '**!help stories**\tDisplays stories related commands.\n'
                             '**!help lists**\tDisplays lists related commands.\n'
-                            '**!help requests**\tDisplays requesting command.',
+                            '**!help requests**\tDisplays requesting command.\n'
+                            '**!help bugs**\tDisplays bug reporting command.',
                             inline=False)
 
         embed.add_field(name='Documentation',

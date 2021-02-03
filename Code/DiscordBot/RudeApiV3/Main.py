@@ -102,6 +102,8 @@ async def on_command_error(ctx, error):
     Returns:
         Nothing
     """
+    embed = None
+
     if isinstance(error, commands.CommandNotFound):
         embed = discord.Embed(
             title='Error!',
@@ -109,10 +111,23 @@ async def on_command_error(ctx, error):
                 prefix),
             colour=discord.Colour.from_rgb(225, 73, 150)
         )
-        await ctx.send(embed=embed, delete_after=10.0)
+    elif isinstance(error, commands.CommandOnCooldown):
+        embed = discord.Embed(
+            title='Error!',
+            description='This command is on cooldown, try later.\nCheck the documentation for more information.',
+            colour=discord.Colour.from_rgb(225, 73, 150)
+        )
+    else:
+        embed = discord.Embed(
+            title='Error!',
+            description='Something unexpected happend...',
+            colour=discord.Colour.from_rgb(225, 73, 150)
+        )
+
+    await ctx.send(embed=embed, delete_after=10.0)
 
 
 # -------------------------------------- Initialization --------------------------------------------
-keep_alive()
+#keep_alive()
 load_dotenv()
 client.run(os.getenv('TOKEN'))
