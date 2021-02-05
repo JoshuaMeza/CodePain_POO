@@ -35,11 +35,11 @@
         - [x] Can give you the documentation page.
     - [x] Warning messages.
     - [x] Ban messages.
-    - [ ] Warning alerts for RudeBot Managers.
-    - [ ] Ban alerts for RudeBot Managers.
+    - [x] Warning alerts for RudeBot Managers.
+    - [x] Ban alerts for RudeBot Managers.
   - Can clean user history of:
-    - [ ] Individual user.
-    - [ ] All users.
+    - [x] Individual user.
+    - [x] All users.
   - Can unban people by:
     - [ ] Individual user.
 
@@ -55,8 +55,8 @@
 - [x] The maximum number of requests per user every month is five.
 - [x] The request period is one month.
 - [x] The review period is three days. Once it is finished, everyone can request again.
-- [ ] Existing words cannot be suggested.
-- [ ] The bot can only unban and clean history if a RudeBot Manager asks for it.
+- [x] Existing words cannot be suggested.
+- [x] The bot can only unban and clean history if a RudeBot Manager asks for it.
 - [ ] A guild can have up to 15 custom words.
 - [ ] A guild can have up to 15 ignored words.
 - [ ] A guild can have up to 10 users in their whitelist.

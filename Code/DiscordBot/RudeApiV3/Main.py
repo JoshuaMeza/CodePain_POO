@@ -67,9 +67,10 @@ async def on_guild_join(guild):
     if category is None:
         category = await guild.create_category_channel('Rudebot Management')
         overwrites = {
-            guild.default_role: discord.PermissionOverwrite(send_messages=False),
-            guild.me: discord.PermissionOverwrite(send_messages=True),
-            role: discord.PermissionOverwrite(send_messages=True)
+            guild.default_role: discord.PermissionOverwrite(send_messages=False, read_messages=False),
+            guild.me: discord.PermissionOverwrite(send_messages=True, read_messages=True, administrator=True),
+            role: discord.PermissionOverwrite(
+                send_messages=True, read_messages=True)
         }
         await guild.create_text_channel('rude-admin', overwrites=overwrites, category=category)
 
@@ -90,7 +91,7 @@ async def on_message(message):
     Returns:
         Nothing
     """
-    if message.author != client.user:
+    if message.author != client.user and not isinstance(message.channel, discord.channel.DMChannel):
         if message.content.startswith(prefix) and message.channel.name == 'rude-admin':
             await client.process_commands(message)
         else:
@@ -98,6 +99,8 @@ async def on_message(message):
                 await message.delete()
 
                 if (memory.getSettings(message.guild.id) == 1):
+                    banFlag: False
+
                     embed = discord.Embed(
                         title='Calm down my friend!',
                         description='You recently sent a message in **{}** that contains rudeness, and it is not allowed to use that type of vocabulary there.'.format(
@@ -114,12 +117,14 @@ async def on_message(message):
                         message.author.id, message.guild.id)
 
                     if warnings == 1:
+                        banFlag = False
                         embed.add_field(
                             name='This is your fist warning!',
                             value='You have to know that if you reach an amount of 5 warnings, you will be automatically banned from the server.',
                             inline=False
                         )
                     elif warnings < 5:
+                        banFlag = False
                         embed.add_field(
                             name='You have {} warnings by now'.format(
                                 warnings),
@@ -127,12 +132,12 @@ async def on_message(message):
                             inline=False
                         )
                     else:
+                        banFlag = True
                         embed.add_field(
                             name='You have reached the maximum number of warnings',
                             value='I\'m sorry, but you were banned from the server.',
                             inline=False
                         )
-                        await message.guild.ban(message.author, reason='You are too rude!', delete_message_days=7)
 
                     embed.add_field(
                         name='Did I do a mistake?',
@@ -141,6 +146,37 @@ async def on_message(message):
                     )
 
                     await message.author.send(embed=embed)
+
+                    if (not banFlag):
+                        embed = discord.Embed(
+                            title='{} has been warned in {}.'.format(
+                                message.author.name, message.guild.name),
+                            description='Message: {}'.format(message.content),
+                            colour=discord.Colour.from_rgb(225, 73, 150)
+                        )
+                    else:
+                        await message.guild.ban(message.author, reason='You are too rude!', delete_message_days=7)
+                        embed = discord.Embed(
+                            title='{} has been banned in {}.'.format(
+                                message.author.name, message.guild.name),
+                            description='Message content: "{}"'.format(
+                                message.content),
+                            colour=discord.Colour.from_rgb(225, 73, 150)
+                        )
+
+                    embed.add_field(name='Faults amount',
+                                    value='{} has {} faults in {}.'.format(
+                                        message.author.name, warnings, message.guild.name),
+                                    inline=False
+                                    )
+
+                    for role in message.guild.roles:
+                        if role.name == 'Rudebot Manager':
+                            for member in role.members:
+                                if member.id == client.user.id:
+                                    continue
+                                await member.send(embed=embed)
+                            break
 
 
 @client.event
@@ -168,10 +204,10 @@ async def on_command_error(ctx, error):
             description='This command is on cooldown, try again later.\nCheck the documentation for more information.',
             colour=discord.Colour.from_rgb(225, 73, 150)
         )
-    elif isinstance(error, discord.PrivilegedIntentsRequired):
+    elif isinstance(error, commands.MissingPermissions):
         embed = discord.Embed(
-            title='Privileges Error',
-            description='I don\'t have enough privileges to do that.',
+            title='Permissions Error',
+            description='You don\'t have enough permissions to execute that command.',
             colour=discord.Colour.from_rgb(225, 73, 150)
         )
     else:

@@ -324,7 +324,7 @@ class Connector:
 
             temp = mycursor.fetchone()
 
-            if temp is not None and str(temp[0]) == guildId:
+            if temp is not None:
                 output = True
 
             mydb.close()
