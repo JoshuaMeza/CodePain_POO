@@ -7,11 +7,12 @@ Searcher tool
 
 
 class Searcher:
-    def __init__(self, connector):
+    def __init__(self, connector, memory):
         """
         This is a constructor
         """
         self.words = connector.returnWordsList()
+        self.memory = memory
 
     def searchWord(self, text):
         """

@@ -16,7 +16,7 @@ class Connector:
         """
         This is a constructor
         """
-        self.url = 'http://zivotmagazine.net/Pruebas/getAll.php'
+        self.url = 'http://www.zivotmagazine.net/NO-BORRAR/getAll.php'
         self.words = []
         self.getWordsAPI()
 
@@ -171,7 +171,8 @@ class Connector:
                 database=os.getenv('DBNAME')
             )
 
-            sql = "SELECT word,guildIdCW FROM `{}`.`CustomWords`;".format(os.getenv('DBNAME'))
+            sql = "SELECT word,guildIdCW FROM `{}`.`CustomWords`;".format(
+                os.getenv('DBNAME'))
 
             mycursor = mydb.cursor()
             mycursor.execute(sql)
@@ -180,7 +181,7 @@ class Connector:
 
             if temp is not None:
                 for line in temp:
-                    output.append('{},{}'.format(line[0],line[1]))
+                    output.append('{},{}'.format(line[0], line[1]))
 
             mydb.close()
         except Exception as e:
@@ -209,7 +210,7 @@ class Connector:
             )
 
             sql = "SELECT word FROM `{}`.`CustomWords` WHERE guildIdCW={};".format(os.getenv('DBNAME'),
-                guildId)
+                                                                                   guildId)
 
             mycursor = mydb.cursor()
             mycursor.execute(sql)
@@ -358,10 +359,10 @@ class Connector:
             mycursor.execute(sql)
 
             temp = mycursor.fetchall()
-            
+
             if temp is not None:
                 for line in temp:
-                    output.append( str(line)[1:][:-1] )
+                    output.append(str(line)[1:][:-1])
 
             mydb.close()
         except Exception as e:
@@ -468,7 +469,7 @@ class Connector:
 
             if temp is not None:
                 for line in temp:
-                    output.append('{},{}'.format(line[0],line[1]))
+                    output.append('{},{}'.format(line[0], line[1]))
 
             mydb.close()
         except Exception as e:
@@ -584,7 +585,7 @@ class Connector:
 
         return output
 
-    def getUserStories(self):
+    def getUserStories(self, guildId):
         """
         This method returns every story in database
         Args:
@@ -603,8 +604,8 @@ class Connector:
                 database=os.getenv('DBNAME')
             )
 
-            sql = "SELECT * FROM `{}`.`Stories`;".format(
-                os.getenv('DBNAME'))
+            sql = "SELECT * FROM `{}`.`Stories` WHERE guildIdSty={};".format(
+                os.getenv('DBNAME'), guildId)
 
             mycursor = mydb.cursor()
             mycursor.execute(sql)
@@ -613,7 +614,7 @@ class Connector:
 
             if temp is not None:
                 for line in temp:
-                    output.append( str(line)[1:][:-1] )
+                    output.append(str(line)[1:][:-1])
 
             mydb.close()
         except Exception as e:
@@ -629,9 +630,9 @@ class Connector:
             userId (str): User's id
             guildId (str): Guild's id
         Returns:
-            A list of the story of a guild
+            A string with the story of a user
         """
-        output = []
+        output = None
 
         try:
             load_dotenv()
@@ -642,7 +643,7 @@ class Connector:
                 database=os.getenv('DBNAME')
             )
 
-            sql = "SELECT * FROM `{}`.`Stories` WHERE userId={} and guildIdSty={};".format(
+            sql = "SELECT warnings FROM `{}`.`Stories` WHERE userId={} and guildIdSty={};".format(
                 os.getenv('DBNAME'), userId, guildId)
 
             mycursor = mydb.cursor()
@@ -651,9 +652,7 @@ class Connector:
             temp = mycursor.fetchone()
 
             if temp is not None:
-                output.append( str(temp)[1:][:-1] )
-            else:
-                output.append('0')
+                output = str(temp[0])
 
             mydb.close()
         except Exception as e:
@@ -760,7 +759,7 @@ class Connector:
             temp = mycursor.fetchall()
 
             for line in temp:
-                output.append( str(line)[1:][:-1] )
+                output.append(str(line)[1:][:-1])
 
             mydb.close()
         except Exception as e:
@@ -768,7 +767,7 @@ class Connector:
 
         return output
 
-    def getWhiteListFromGuild(self,guildId):
+    def getWhiteListFromGuild(self, guildId):
         """
         This method returns the whitelist
         Args:
@@ -789,7 +788,7 @@ class Connector:
             )
 
             sql = "SELECT idUser FROM `{}`.`Whitelist` WHERE idGuild={};".format(
-                os.getenv('DBNAME'),guildId)
+                os.getenv('DBNAME'), guildId)
 
             mycursor = mydb.cursor()
             mycursor.execute(sql)
@@ -798,7 +797,7 @@ class Connector:
 
             if temp is not None:
                 for line in temp:
-                    output.append( line[0] )
+                    output.append(line[0])
 
             mydb.close()
         except Exception as e:
@@ -841,7 +840,7 @@ class Connector:
 
         return output
 
-    def countAmounts(self,guildId,selection):
+    def countAmounts(self, guildId, selection):
         """
         This returns the amount of selected elements a guild has
         Args:
@@ -865,17 +864,20 @@ class Connector:
             flag = False
             sql = ""
 
-            if ( selection == 'Ignore' ):
-                sql = "SELECT COUNT(*) FROM `{}`.`{}` WHERE guildIdIg={};".format(os.getenv('DBNAME'),selection,guildId)
+            if (selection == 'Ignore'):
+                sql = "SELECT COUNT(*) FROM `{}`.`{}` WHERE guildIdIg={};".format(
+                    os.getenv('DBNAME'), selection, guildId)
                 flag = True
-            elif ( selection == 'CustomWords' ):
-                sql = "SELECT COUNT(*) FROM `{}`.`{}` WHERE guildIdCW={};".format(os.getenv('DBNAME'),selection,guildId)
+            elif (selection == 'CustomWords'):
+                sql = "SELECT COUNT(*) FROM `{}`.`{}` WHERE guildIdCW={};".format(
+                    os.getenv('DBNAME'), selection, guildId)
                 flag = True
-            elif ( selection == 'Whitelist' ):
-                sql = "SELECT COUNT(*) FROM `{}`.`{}` WHERE idGuild={};".format(os.getenv('DBNAME'),selection,guildId)
+            elif (selection == 'Whitelist'):
+                sql = "SELECT COUNT(*) FROM `{}`.`{}` WHERE idGuild={};".format(
+                    os.getenv('DBNAME'), selection, guildId)
                 flag = True
 
-            if ( flag ):
+            if (flag):
                 mycursor = mydb.cursor()
                 mycursor.execute(sql)
 

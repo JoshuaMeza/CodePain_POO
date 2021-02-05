@@ -7,11 +7,14 @@ Saver tool
 
 
 class Saver:
-    def __init__(self):
+    def __init__(self, connector):
         """
         This is a constructor
         """
+        self.con = connector
         self.requestLog = []
+        self.serverSettings = {}
+        self.updateInfo()
 
     def verify(self, userId):
         """
@@ -81,3 +84,13 @@ class Saver:
         if flag:
             self.increaseTimes(userId)
         return flag
+
+    def updateInfo(self):
+        serverInfo = self.con.getGuildsInfo()
+
+        for server in serverInfo:
+            serverData = server.split(', ')
+            self.serverSettings[serverData[0]] = serverData[1]
+
+    def getSettings(self, guildId):
+        return int(self.serverSettings[str(guildId)])

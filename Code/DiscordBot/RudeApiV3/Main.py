@@ -4,19 +4,18 @@ Date 01/01/2021
 Version 1.2.0
 A channel and chat management bot
 """
-from modules.Saver import *
-from modules.Connector import *
-from modules.Searcher import *
+from model.Saver import *
+from model.Connector import *
+from controller.Searcher import *
+from controller.Punisher import *
+from controller.KeepAlive import *
 import discord
 import os
 import sys
 from discord.ext import commands
 from discord.utils import get
 from dotenv import load_dotenv
-from KeepAlive import *
 
-# ------------------------------- Memory objects ---------------------------------------------------
-memory = Saver()
 
 # ------------------------------- Declarations -----------------------------------------------------
 prefix = '!'
@@ -25,12 +24,14 @@ client.remove_command('help')
 
 # ------------------------------- Declarations -----------------------------------------------------
 connector = Connector()
-search = Searcher(connector)
+memory = Saver(connector)
+search = Searcher(connector, memory)
+punisher = Punisher(connector)
 
 # ------------------------------- Adding Extensions -------------------------------------------------
-for filename in os.listdir('modules/'):
+for filename in os.listdir('controller/'):
     if (filename.startswith('Command') and filename.endswith('.py')):
-        client.load_extension('modules.{}'.format(filename[:-3]))
+        client.load_extension('controller.{}'.format(filename[:-3]))
 
 
 # ------------------------------- Bot events ---------------------------------------------------------
@@ -70,6 +71,9 @@ async def on_guild_join(guild):
         }
         await guild.create_text_channel('rude-admin', overwrites=overwrites, category=category)
 
+    if (not connector.searchGuild(guild.id)):
+        connector.recordGuild(guild.id)
+
 
 @client.event
 async def on_message(message):
@@ -78,18 +82,63 @@ async def on_message(message):
     Args:
         message (object): Represents the message
         search (object): Searcher object
+        memory
+        embed
+        warnings
     Returns:
         Nothing
     """
-    if message.content == client.user:
-        return
-    elif message.content.startswith(prefix) and message.channel.name == 'rude-admin':
-        await client.process_commands(message)
-        return
-    else:
-        if search.searchWord(message.content):
-            await message.delete()
-            await message.author.send('You can\'t send swerings in {} server!'.format(message.guild.name))
+    if message.author != client.user:
+        if message.content.startswith(prefix) and message.channel.name == 'rude-admin':
+            await client.process_commands(message)
+        else:
+            if search.searchWord(message.content):
+                await message.delete()
+
+                if (memory.getSettings(message.guild.id) == 1):
+                    embed = discord.Embed(
+                        title='Calm down my friend!',
+                        description='You recently sent a message in **{}** that contains rudeness, and it is not allowed to use that type of vocabulary there.'.format(
+                            message.guild.name),
+                        colour=discord.Colour.from_rgb(225, 73, 150)
+                    )
+                    embed.add_field(
+                        name='Message content',
+                        value='"{}"'.format(message.content),
+                        inline=False
+                    )
+
+                    warnings = punisher.punish(
+                        message.author.id, message.guild.id)
+
+                    if warnings == 1:
+                        embed.add_field(
+                            name='This is your fist warning!',
+                            value='You have to know that if you reach an amount of 5 warnings, you will be automatically banned from the server.',
+                            inline=False
+                        )
+                    elif warnings < 5:
+                        embed.add_field(
+                            name='You have {} warnings by now'.format(
+                                warnings),
+                            value='You have to know that if you reach an amount of 5 warnings, you will be automatically banned from the server.',
+                            inline=False
+                        )
+                    else:
+                        embed.add_field(
+                            name='You have reached the maximum number of warnings',
+                            value='I\'m sorry, but you were banned from the server.',
+                            inline=False
+                        )
+                        # BAN
+
+                    embed.add_field(
+                        name='Did I do a mistake?',
+                        value='Try to contact someone with **Rudebot Manager** role to verify your situation.',
+                        inline=False
+                    )
+
+                    await message.author.send(embed=embed)
 
 
 @client.event
@@ -128,6 +177,6 @@ async def on_command_error(ctx, error):
 
 
 # -------------------------------------- Initialization --------------------------------------------
-#keep_alive()
+# keep_alive()
 load_dotenv()
 client.run(os.getenv('TOKEN'))
