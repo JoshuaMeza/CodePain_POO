@@ -17,35 +17,28 @@ class Connector:
         This is a constructor
         """
         self.url = 'http://www.zivotmagazine.net/NO-BORRAR/getAll.php'
-        self.words = []
-        self.getWordsAPI()
 
     def getWordsAPI(self):
         """
-        This method gets all the words from the api and save them into the list called words
+        This method gets all the words from the api
         Args:
             self (object): The object itself
+            words (list): The list of banned words
         Returns:
-            Nothing
+            The list of words
         """
+        words = []
+
         try:
             response = requests.get(self.url)
             temp = json.loads(response.content)
             for category in temp:
                 for word in temp[category]:
-                    self.words.append(word)
+                    words.append(word)
         except:
-            self.words = None
+            words = None
 
-    def returnWordsList(self):
-        """
-        This method returns the words list
-        Args:
-            self (object): The object itself
-        Returns:
-            The words list
-        """
-        return self.words
+        return words
 
     def sendRequest(self, word, languageId):
         """
@@ -181,7 +174,7 @@ class Connector:
 
             if temp is not None:
                 for line in temp:
-                    output.append('{},{}'.format(line[0], line[1]))
+                    output.append('{},{}'.format(line[1], line[0]))
 
             mydb.close()
         except Exception as e:

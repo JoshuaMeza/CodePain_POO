@@ -12,13 +12,38 @@ class Saver:
         This is a constructor
         """
         self.con = connector
+        self.words = self.con.getWordsAPI()
+        self.custom = {}
         self.requestLog = []
         self.serverSettings = {}
         self.retrieveGuildsInfo()
+        self.retrieveCustomWords()
+
+    def getWordsList(self):
+        """
+        This method returns teh list of banned words
+        Args:
+            self
+            words
+        Returns:
+            The list of banned words
+        """
+        return self.words
+
+    def getCustomDict(self):
+        """
+        This method returns teh list of custom words
+        Args:
+            self
+            words
+        Returns:
+            The list of custom words
+        """
+        return self.custom
 
     def verify(self, userId):
         """
-        This method verifies if the user exist in the list
+        This method verifies if the user exist in the requests list
         Args:
             self (object): The object itself
             userId (str): User id
@@ -37,7 +62,7 @@ class Saver:
 
     def addLog(self, userId):
         """
-        This method adds a user to the list
+        This method adds a user to the requests list
         Args:
             self (object): The object itself
             userId (str): User id
@@ -65,7 +90,7 @@ class Saver:
 
     def addRequest(self, userId):
         """
-        This method adds a user to the list
+        This method adds a user to the requests list
         Args:
             self (object): The object itself
             userId (str): User id
@@ -76,13 +101,16 @@ class Saver:
         """
         flag = False
         requestTimes = self.verify(userId)
+
         if requestTimes == 0:
             self.addLog(userId)
             flag = True
         elif requestTimes < 5:
             flag = True
+
         if flag:
             self.increaseTimes(userId)
+
         return flag
 
     def retrieveGuildsInfo(self):
@@ -135,3 +163,16 @@ class Saver:
             self.serverSettings[str(guildId)] = str(penMode)
 
         return flag
+
+    def retrieveCustomWords(self):
+        """
+        """
+        custom = self.con.getCustomWords()
+        guilds = self.con.getGuildsInfo()
+
+        for item in guilds:
+            self.custom[item.split(',')[0]] = []
+
+        for word in custom:
+            data = word.split(',')
+            self.custom[data[0]].append(data[1])

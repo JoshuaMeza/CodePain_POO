@@ -45,7 +45,7 @@ class Help(commands.Cog):
 
         if arg.upper() == 'ALL':
             embed.add_field(name='Setting command',
-                            value='**!modePenalty [on/off]**\tBy default the Penalty Mode is active.',
+                            value='**!modePenalty [on/off]**\tThis command changes the state of the Penalize Mode. By default it is active.',
                             inline=False
                             )
             embed.add_field(name='Penalties commands',
@@ -79,7 +79,7 @@ class Help(commands.Cog):
                             inline=False)
         elif arg.upper() == 'SETTINGS':
             embed.add_field(name='Setting command',
-                            value='**!modePenalty [on/off]**\tBy default the Penalty Mode is active.',
+                            value='**!modePenalty [on/off]**\tThis command changes the state of the Penalize Mode. By default it is active.',
                             inline=False
                             )
             embed.add_field(name='Mode description',
@@ -120,8 +120,10 @@ class Help(commands.Cog):
             embed.add_field(name='Custom Words commands',
                             value='**!addCustom**\tAdd a custom word.\n'
                             '**!rmvCustom**\tRemove a custom word.\n'
+                            '**!getCustom**\tSee your guild\'s custom words'
                             '**!addIgnore**\tAdd an ignored word.\n'
-                            '**!rmvIgnore**\tRemove an ignored word.',
+                            '**!rmvIgnore**\tRemove an ignored word.\n'
+                            '**!getIgnore**\tSee your guild\'s ignored words',
                             inline=False
                             )
             embed.add_field(name='Explanation',
@@ -162,7 +164,7 @@ class Help(commands.Cog):
                             '**!help penalties**\tDisplays penalties related commands.\n'
                             '**!help stories**\tDisplays stories related commands.\n'
                             '**!help lists**\tDisplays lists related commands.\n'
-                            '**!help customs**\tDisplays custom words related commands\n'
+                            '**!help customs**\tDisplays custom words related commands.\n'
                             '**!help requests**\tDisplays requesting command.\n'
                             '**!help bugs**\tDisplays bug reporting command.',
                             inline=False)

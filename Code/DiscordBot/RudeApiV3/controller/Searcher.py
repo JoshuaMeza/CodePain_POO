@@ -7,12 +7,12 @@ Searcher tool
 
 
 class Searcher:
-    def __init__(self, connector, memory):
+    def __init__(self, memory):
         """
         This is a constructor
         """
-        self.words = connector.returnWordsList()
-        self.memory = memory
+        self.words = memory.getWordsList()
+        self.custom = memory.getCustomDict()
 
     def searchWord(self, text):
         """
@@ -28,6 +28,7 @@ class Searcher:
         """
         splittedText = text.split(' ')
         flag = False
+
         for word in splittedText:
             newWord = word.upper()
             if self.words is not None:
@@ -37,4 +38,30 @@ class Searcher:
                         break
                 if flag:
                     break
+
+        return flag
+
+    def searchCustom(self, text, guildId):
+        """
+        This method searches into the custom words
+        Args:
+            self
+            text
+            guildId
+        Returns
+            True if that word exist in the list, False if not
+        """
+        customList = self.custom[str(guildId)]
+        splittedText = text.split(' ')
+        flag = False
+
+        for word in splittedText:
+            newWord = word.upper()
+            for swering in customList:
+                if newWord == swering:
+                    flag = True
+                    break
+            if flag:
+                break
+
         return flag

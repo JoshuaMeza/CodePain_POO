@@ -88,7 +88,7 @@ The API has the property of being modified **only** by the _requests system_, wh
 
 ## Use cases diagram
 
-<img src="../Resources/UseCasesDiagram.png" alt="Use cases diagram">
+<img src="../Resources/UseCasesDiagram.png" alt="Use cases diagram" width="100%" height="60%">
 
 > Icons designed by [Flat Icons](https://www.flaticon.es/autores/flat-icons) from [Flaticon](https://www.flaticon.es/), and background picture by [Gerrit Tisdale](https://www.pexels.com/es-es/foto/luces-de-neon-rosadas-y-amarillas-en-una-habitacion-oscura-3864610/) from [Pexels](https://www.pexels.com/es-es/).
 

@@ -27,7 +27,7 @@ client.remove_command('help')
 # ------------------------------- Declarations -----------------------------------------------------
 connector = Connector()
 memory = Saver(connector)
-search = Searcher(connector, memory)
+search = Searcher(memory)
 punisher = Punisher(connector)
 
 # ------------------------------- Adding Extensions -------------------------------------------------
@@ -94,89 +94,88 @@ async def on_message(message):
     if message.author != client.user and not isinstance(message.channel, discord.channel.DMChannel):
         if message.content.startswith(prefix) and message.channel.name == 'rude-admin':
             await client.process_commands(message)
-        else:
-            if search.searchWord(message.content):
-                await message.delete()
+        elif search.searchWord(message.content) or search.searchCustom(message.content, message.guild.id):
+            await message.delete()
 
-                if (memory.getSettings(message.guild.id) == 1):
-                    banFlag: False
+            if (memory.getSettings(message.guild.id) == 1):
+                banFlag: False
 
+                embed = discord.Embed(
+                    title='Calm down my friend!',
+                    description='You recently sent a message in **{}** that contains rudeness, and it is not allowed to use that type of vocabulary there.'.format(
+                        message.guild.name),
+                    colour=discord.Colour.from_rgb(225, 73, 150)
+                )
+                embed.add_field(
+                    name='Message content',
+                    value='"{}"'.format(message.content),
+                    inline=False
+                )
+
+                warnings = punisher.punish(
+                    message.author.id, message.guild.id)
+
+                if warnings == 1:
+                    banFlag = False
+                    embed.add_field(
+                        name='This is your fist warning!',
+                        value='You have to know that if you reach an amount of 5 warnings, you will be automatically banned from the server.',
+                        inline=False
+                    )
+                elif warnings < 5:
+                    banFlag = False
+                    embed.add_field(
+                        name='You have {} warnings by now'.format(
+                            warnings),
+                        value='You have to know that if you reach an amount of 5 warnings, you will be automatically banned from the server.',
+                        inline=False
+                    )
+                else:
+                    banFlag = True
+                    embed.add_field(
+                        name='You have reached the maximum number of warnings',
+                        value='I\'m sorry, but you were banned from the server.',
+                        inline=False
+                    )
+
+                embed.add_field(
+                    name='Did I do a mistake?',
+                    value='Try to contact someone with **Rudebot Manager** role to verify your situation.',
+                    inline=False
+                )
+
+                await message.author.send(embed=embed)
+
+                if (not banFlag):
                     embed = discord.Embed(
-                        title='Calm down my friend!',
-                        description='You recently sent a message in **{}** that contains rudeness, and it is not allowed to use that type of vocabulary there.'.format(
-                            message.guild.name),
+                        title='{} has been warned in {}.'.format(
+                            message.author.name, message.guild.name),
+                        description='Message: {}'.format(message.content),
                         colour=discord.Colour.from_rgb(225, 73, 150)
                     )
-                    embed.add_field(
-                        name='Message content',
-                        value='"{}"'.format(message.content),
-                        inline=False
+                else:
+                    await message.guild.ban(message.author, reason='You are too rude!', delete_message_days=7)
+                    embed = discord.Embed(
+                        title='{} has been banned in {}.'.format(
+                            message.author.name, message.guild.name),
+                        description='Message content: "{}"'.format(
+                            message.content),
+                        colour=discord.Colour.from_rgb(225, 73, 150)
                     )
 
-                    warnings = punisher.punish(
-                        message.author.id, message.guild.id)
+                embed.add_field(name='Faults amount',
+                                value='{} has {} faults in {}.'.format(
+                                    message.author.name, warnings, message.guild.name),
+                                inline=False
+                                )
 
-                    if warnings == 1:
-                        banFlag = False
-                        embed.add_field(
-                            name='This is your fist warning!',
-                            value='You have to know that if you reach an amount of 5 warnings, you will be automatically banned from the server.',
-                            inline=False
-                        )
-                    elif warnings < 5:
-                        banFlag = False
-                        embed.add_field(
-                            name='You have {} warnings by now'.format(
-                                warnings),
-                            value='You have to know that if you reach an amount of 5 warnings, you will be automatically banned from the server.',
-                            inline=False
-                        )
-                    else:
-                        banFlag = True
-                        embed.add_field(
-                            name='You have reached the maximum number of warnings',
-                            value='I\'m sorry, but you were banned from the server.',
-                            inline=False
-                        )
-
-                    embed.add_field(
-                        name='Did I do a mistake?',
-                        value='Try to contact someone with **Rudebot Manager** role to verify your situation.',
-                        inline=False
-                    )
-
-                    await message.author.send(embed=embed)
-
-                    if (not banFlag):
-                        embed = discord.Embed(
-                            title='{} has been warned in {}.'.format(
-                                message.author.name, message.guild.name),
-                            description='Message: {}'.format(message.content),
-                            colour=discord.Colour.from_rgb(225, 73, 150)
-                        )
-                    else:
-                        await message.guild.ban(message.author, reason='You are too rude!', delete_message_days=7)
-                        embed = discord.Embed(
-                            title='{} has been banned in {}.'.format(
-                                message.author.name, message.guild.name),
-                            description='Message content: "{}"'.format(
-                                message.content),
-                            colour=discord.Colour.from_rgb(225, 73, 150)
-                        )
-
-                    embed.add_field(name='Faults amount',
-                                    value='{} has {} faults in {}.'.format(
-                                        message.author.name, warnings, message.guild.name),
-                                    inline=False
-                                    )
-
-                    for role in message.guild.roles:
-                        if role.name == 'Rudebot Manager':
-                            for member in role.members:
-                                if member.id == client.user.id:
-                                    continue
-                                await member.send(embed=embed)
-                            break
+                for role in message.guild.roles:
+                    if role.name == 'Rudebot Manager':
+                        for member in role.members:
+                            if member.id == client.user.id:
+                                continue
+                            await member.send(embed=embed)
+                        break
 
 
 @client.event
