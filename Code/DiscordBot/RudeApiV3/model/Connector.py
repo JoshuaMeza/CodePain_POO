@@ -696,6 +696,40 @@ class Connector:
 
         return output
 
+    def resetGlobalStory(self, guildId):
+        """
+        This method resets the stories of every member of a guild
+        Args:
+            self (object): The object itself
+            guildId (str): Guild's id
+        Returns:
+            True if success, False if not
+        """
+        output = False
+
+        try:
+            load_dotenv()
+            mydb = mysql.connector.connect(
+                host=os.getenv('HOST'),
+                user=os.getenv('DBUSER'),
+                password=os.getenv('PASSW'),
+                database=os.getenv('DBNAME')
+            )
+
+            sql = "UPDATE `{}`.`Stories` SET warnings=0 WHERE guildIdSty={};".format(
+                os.getenv('DBNAME'), guildId)
+
+            mycursor = mydb.cursor()
+            mycursor.execute(sql)
+
+            mydb.commit()
+            mydb.close()
+            output = True
+        except Exception as e:
+            print('Error: {}'.format(e))
+
+        return output
+
     def addUserToWhitelist(self, userId, guildId):
         """
         This method adds a new user to the whitelist of a guild

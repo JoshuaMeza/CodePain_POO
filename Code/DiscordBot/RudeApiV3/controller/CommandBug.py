@@ -9,6 +9,7 @@ from discord.ext import commands
 from discord.ext.commands import cooldown, BucketType
 from Main import connector
 
+
 class Bug(commands.Cog):
     def __init__(self, client, connector):
         """
@@ -17,8 +18,8 @@ class Bug(commands.Cog):
         self.client = client
         self.con = connector
 
-
     # Events
+
     @commands.Cog.listener()
     async def on_ready(self):
         """
@@ -29,8 +30,8 @@ class Bug(commands.Cog):
     # Commands
     @commands.command(alisases=['BUG', 'bugs', 'BUGS'])
     @commands.has_role('Rudebot Manager')
-    @cooldown(1,86400,BucketType.user)
-    async def bug(self, ctx, *, msg=""):
+    @cooldown(1, 86400, BucketType.user)
+    async def bug(self, ctx, *, msg=''):
         """
         When a user send a request, verifies if he can still doing it and then send it to the database
         Args:
@@ -41,17 +42,15 @@ class Bug(commands.Cog):
             Nothing
         """
         if msg != '':
-            self.con.sendBugReport(msg,ctx.guild.id)
+            self.con.sendBugReport(msg, ctx.guild.id)
             await ctx.send('Bug report was successfully sent!')
         else:
             embed = discord.Embed(
-                title='Error!',
-                description='You need to write the report, type "!help bug" for more information.',
+                title='Argument Error',
+                description='You need to write the report, type "!help bugs" for more information.',
                 colour=discord.Colour.from_rgb(225, 73, 150)
             )
             await ctx.send(embed=embed, delete_after=10.0)
-
-
 
 
 def setup(client):

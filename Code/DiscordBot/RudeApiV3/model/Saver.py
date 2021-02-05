@@ -1,7 +1,7 @@
 """
 Author CodePain Team
 Date 14/01/2021
-Version 1.0.0
+Version 1.0.1
 Saver tool
 """
 
@@ -14,7 +14,7 @@ class Saver:
         self.con = connector
         self.requestLog = []
         self.serverSettings = {}
-        self.updateInfo()
+        self.retrieveGuildsInfo()
 
     def verify(self, userId):
         """
@@ -85,7 +85,19 @@ class Saver:
             self.increaseTimes(userId)
         return flag
 
-    def updateInfo(self):
+    def retrieveGuildsInfo(self):
+        """
+        This method gets the guilds and their modes
+        Args:
+            self
+            serverInfo
+            con
+            server
+            serverData
+            serverSettings
+        Returns:
+            Nothing
+        """
         serverInfo = self.con.getGuildsInfo()
 
         for server in serverInfo:
@@ -93,4 +105,33 @@ class Saver:
             self.serverSettings[serverData[0]] = serverData[1]
 
     def getSettings(self, guildId):
+        """
+        This method returns the settings of a server
+        Args:
+            self
+            guildId
+            serverSettings
+        Returns:
+            Penalize mode (1 or 0)
+        """
         return int(self.serverSettings[str(guildId)])
+
+    def setSettings(self, guildId, penMode):
+        """
+        This method sets a new status into the penalize mode
+        Args:
+            self
+            guildId
+            penMode
+            flag
+            con
+            serverSettings
+        Returns:
+            True if success, False if not
+        """
+        flag = self.con.setPenalizeMode(guildId, penMode)
+
+        if flag:
+            self.serverSettings[str(guildId)] = str(penMode)
+
+        return flag

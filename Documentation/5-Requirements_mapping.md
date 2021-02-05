@@ -14,24 +14,27 @@
   - [x] Get Discord messages.
   - [ ] Ban automatically.
   - [x] Get information from the API.
-  - [ ] Send error or bug messages found by the community.
+  - [x] Send error or bug messages found by the community.
+  - [x] Send word requests.
   - [x] The bot has space for memory.
+  - Manage commands:
+    - [x] Provide penalties management.
+    - [x] Provide user stories management.
   - Being customized:
     - [x] Grant usage permissions.
-    - [ ] _Penalize_ or _No penalize_ mode.
+    - [x] _Penalize_ or _No penalize_ mode.
     - [ ] Add and delete self-selected offensive words to censor them.
     - [ ] Ignore self-selected words.
+    - [ ] Manage a whitelist
   - Send default Discord messages for:
     - “In-server” configuration which:
       - Can send user history as:
-        - [ ] Individual user story.
-        - [ ] List of all warned/banned people in the guild.
+        - [x] Individual user story.
       - Help command which:
         - [x] Show commands.
         - [x] Can give you the documentation page.
     - [x] Warning messages.
-    - [ ] Ban messages.
-    - [ ] Weekly resume for RudeBot Managers.
+    - [x] Ban messages.
     - [ ] Warning alerts for RudeBot Managers.
     - [ ] Ban alerts for RudeBot Managers.
   - Can clean user history of:
@@ -44,20 +47,20 @@
 
   - [x] Always is active.
   - [x] Store requests.
-  - [ ] Store custom server settings.
+  - [x] Store custom server settings.
 
 ## Non functional requirements
 
-- [ ] The maximum amount of warnings until someone can get banned is five.
+- [x] The maximum amount of warnings until someone can get banned is five.
 - [x] The maximum number of requests per user every month is five.
 - [x] The request period is one month.
-- [x] The review period is three days. Once is finished everyone can request again.
+- [x] The review period is three days. Once it is finished, everyone can request again.
 - [ ] Existing words cannot be suggested.
 - [ ] The bot can only unban and clean history if a RudeBot Manager asks for it.
 - [ ] A guild can have up to 15 custom words.
 - [ ] A guild can have up to 15 ignored words.
 - [ ] A guild can have up to 10 users in their whitelist.
-- [ ] A user can send a bug report every 24 hours.
+- [x] A user can send a bug report every 24 hours.
 
 ## Advancements summary
 

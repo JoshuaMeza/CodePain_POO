@@ -18,8 +18,10 @@ from dotenv import load_dotenv
 
 
 # ------------------------------- Declarations -----------------------------------------------------
+intents = discord.Intents.default()
+intents.members = True
 prefix = '!'
-client = commands.Bot(command_prefix=prefix)
+client = commands.Bot(command_prefix=prefix, intents=intents)
 client.remove_command('help')
 
 # ------------------------------- Declarations -----------------------------------------------------
@@ -130,7 +132,7 @@ async def on_message(message):
                             value='I\'m sorry, but you were banned from the server.',
                             inline=False
                         )
-                        # BAN
+                        await message.guild.ban(message.author, reason='You are too rude!', delete_message_days=7)
 
                     embed.add_field(
                         name='Did I do a mistake?',
@@ -155,23 +157,30 @@ async def on_command_error(ctx, error):
 
     if isinstance(error, commands.CommandNotFound):
         embed = discord.Embed(
-            title='Error!',
+            title='Command Error',
             description='I don\'t recognize your command, try using {}help.'.format(
                 prefix),
             colour=discord.Colour.from_rgb(225, 73, 150)
         )
     elif isinstance(error, commands.CommandOnCooldown):
         embed = discord.Embed(
-            title='Error!',
-            description='This command is on cooldown, try later.\nCheck the documentation for more information.',
+            title='Cooldown Error',
+            description='This command is on cooldown, try again later.\nCheck the documentation for more information.',
+            colour=discord.Colour.from_rgb(225, 73, 150)
+        )
+    elif isinstance(error, discord.PrivilegedIntentsRequired):
+        embed = discord.Embed(
+            title='Privileges Error',
+            description='I don\'t have enough privileges to do that.',
             colour=discord.Colour.from_rgb(225, 73, 150)
         )
     else:
         embed = discord.Embed(
-            title='Error!',
+            title='Undefined Error',
             description='Something unexpected happend...',
             colour=discord.Colour.from_rgb(225, 73, 150)
         )
+        print(error)
 
     await ctx.send(embed=embed, delete_after=10.0)
 

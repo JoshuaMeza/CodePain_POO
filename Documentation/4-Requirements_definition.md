@@ -27,23 +27,26 @@ The API has the property of being modified **only** by the _requests system_, wh
   - Ban automatically.
   - Get information from the API.
   - Send error or bug messages found by the community.
+  - Send word requests.
   - The bot has space for memory.
+  - Manage commands:
+    - Provide penalties management.
+    - Provide user stories management.
   - Being customized:
     - Grant usage permissions.
     - _Penalize_ or _No penalize_ mode.
     - Add and delete self-selected offensive words to censor them.
     - Ignore self-selected words.
+    - Manage a whitelist
   - Send default Discord messages for:
     - “In-server” configuration which:
       - Can send user history as:
         - Individual user story.
-        - List of all warned/banned people in the guild.
       - Help command which:
         - Show commands.
         - Can give you the documentation page.
     - Warning messages.
     - Ban messages.
-    - Weekly resume for RudeBot Managers.
     - Warning alerts for RudeBot Managers.
     - Ban alerts for RudeBot Managers.
   - Can clean user history of:
@@ -79,6 +82,9 @@ The API has the property of being modified **only** by the _requests system_, wh
 - "Always is active" requirement was added.
 - "API search system" was modified to "Have a method to retrieve information from the database" requirement.
 - The request maximum amount was changed to 5.
+- Added a cooldown requirement to the bug reports.
+- Added requirements that were planned in Trello but not defined in the documentation, mostly in bot's description (whitelist, requests, and commands).
+- Deleted requirement for weekely resumes.
 
 ## Use cases diagram
 
@@ -97,6 +103,10 @@ The Bot System works using the Discord API and following their own code. It repr
 ## Database diagram
 
 <img src="../Resources/Database.png" alt="Database diagram">
+
+The API can only access to the Languages and Words tables, the rest of the database is for the bot's functionality.
+
+[Click here to go and see the code.](../Code/DataBase)
 
 ## Discord bot classes diagram
 

@@ -4,7 +4,7 @@
 
 ## Adding it into your server
 
-Its really simple, just [click here](https://discord.com/api/oauth2/authorize?client_id=784153361058103306&permissions=2081418487&scope=bot) and select a server.
+It's really simple, just [click here](https://discord.com/api/oauth2/authorize?client_id=784153361058103306&permissions=2081418487&scope=bot) and select the server which you want to protect.
 
 ## Actions once joined
 
