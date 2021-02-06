@@ -94,7 +94,7 @@ async def on_message(message):
     if message.author != client.user and not isinstance(message.channel, discord.channel.DMChannel):
         if message.content.startswith(prefix) and message.channel.name == 'rude-admin':
             await client.process_commands(message)
-        elif search.searchWord(message.content) or search.searchCustom(message.content, message.guild.id):
+        elif search.searchWord(message.content, message.guild.id):
             await message.delete()
 
             if (memory.getSettings(message.guild.id) == 1):

@@ -14,32 +14,45 @@ class Saver:
         self.con = connector
         self.words = self.con.getWordsAPI()
         self.custom = {}
+        self.ignored = {}
         self.requestLog = []
         self.serverSettings = {}
         self.retrieveGuildsInfo()
         self.retrieveCustomWords()
+        self.retrieveIgnoredWords()
 
     def getWordsList(self):
         """
-        This method returns teh list of banned words
+        This method returns the list of banned words
         Args:
             self
             words
         Returns:
-            The list of banned words
+            The banned words list
         """
         return self.words
 
     def getCustomDict(self):
         """
-        This method returns teh list of custom words
+        This method returns the list of custom words
         Args:
             self
-            words
+            custom
         Returns:
-            The list of custom words
+            The custom words list
         """
         return self.custom
+
+    def getIgnoredDict(self):
+        """
+        This method returns the list of ignored words
+        Args:
+            self
+            ignored
+        Returns:
+            The ignored words list
+        """
+        return self.ignored
 
     def verify(self, userId):
         """
@@ -239,3 +252,27 @@ class Saver:
             self.custom[str(guildId)].remove(word)
 
         return flag
+
+    def retrieveIgnoredWords(self):
+        """
+        This method gets from the database the ignored words
+        Args:
+            self
+            custom
+            con
+            guilds
+            item
+            word
+            data
+        Returns:
+            Nothing
+        """
+        ignored = self.con.getIgnoredWords()
+        guilds = self.con.getGuildsInfo()
+
+        for item in guilds:
+            self.ignored[item.split(',')[0]] = []
+
+        for word in ignored:
+            data = word.split(',')
+            self.ignored[data[0]].append(data[1])

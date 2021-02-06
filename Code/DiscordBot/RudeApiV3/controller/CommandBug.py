@@ -28,7 +28,7 @@ class Bug(commands.Cog):
         print('Bug report module loaded successfully!')
 
     # Commands
-    @commands.command(alisases=['BUG', 'bugs', 'BUGS'])
+    @commands.command(aliases=['BUG', 'bugs', 'BUGS'])
     @commands.has_role('Rudebot Manager')
     @cooldown(1, 86400, BucketType.user)
     async def bug(self, ctx, *, msg=''):

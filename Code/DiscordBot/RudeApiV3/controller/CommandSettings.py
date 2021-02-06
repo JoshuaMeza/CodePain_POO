@@ -26,7 +26,7 @@ class Settings(commands.Cog):
         print('Settings module loaded successfully!')
 
     # Commands
-    @commands.command(alisases=['modepenalty', 'MODEPENALTY'])
+    @commands.command(aliases=['modepenalty', 'MODEPENALTY'])
     @commands.has_role('Rudebot Manager')
     async def modePenalty(self, ctx, *, msg=''):
         """

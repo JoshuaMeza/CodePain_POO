@@ -13,8 +13,9 @@ class Searcher:
         """
         self.words = memory.getWordsList()
         self.custom = memory.getCustomDict()
+        self.ignore = memory.getIgnoredDict()
 
-    def searchWord(self, text):
+    def searchWord(self, text, guildId):
         """
         This method verifies if a word in the text is already in the list
         Args:
@@ -33,8 +34,9 @@ class Searcher:
             newWord = word.upper()
             if self.words is not None:
                 for swering in self.words:
-                    # if swering == ignored word -> continue
-                    if newWord == swering:
+                    if self.searchIgnore(newWord, guildId):
+                        continue
+                    elif self.searchAlgorithm(newWord, swering) or self.searchCustom(newWord, guildId):
                         flag = True
                         break
                 if flag:
@@ -42,27 +44,56 @@ class Searcher:
 
         return flag
 
-    def searchCustom(self, text, guildId):
+    def searchCustom(self, word, guildId):
         """
-        This method searches into the custom words
+        This method searches for custom words
         Args:
             self
-            text
+            word
             guildId
-        Returns
+            flag
+            custom
+        Returns:
             True if that word exist in the list, False if not
         """
-        customList = self.custom[str(guildId)]
-        splittedText = text.split(' ')
         flag = False
 
-        for word in splittedText:
-            newWord = word.upper()
-            for swering in customList:
-                if newWord == swering:
-                    flag = True
-                    break
-            if flag:
+        for item in self.custom[str(guildId)]:
+            if self.searchAlgorithm(word, item):
+                flag = True
                 break
 
         return flag
+
+    def searchIgnore(self, word, guildId):
+        """
+        This method searches for ignored words
+        Args:
+            self
+            word
+            guildId
+            flag
+            ignore
+        Returns:
+            True if that word exist in the list, False if not
+        """
+        flag = False
+
+        for item in self.ignore[str(guildId)]:
+            if self.searchAlgorithm(word, item):
+                flag = True
+                break
+
+        return flag
+
+    def searchAlgorithm(self, compareOne, compareTwo):
+        """
+        This method does the search
+        Args:
+            self
+            compareOne
+            compareTwo
+        Returns:
+            True if equal or similar, False if not
+        """
+        return compareOne == compareTwo

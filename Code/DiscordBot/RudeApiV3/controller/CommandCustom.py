@@ -26,7 +26,7 @@ class Customs(commands.Cog):
         print('Custom Words module loaded successfully!')
 
     # Commands
-    @commands.command(alisases=['addcustom', 'ADDCUSTOM'])
+    @commands.command(aliases=['addcustom', 'ADDCUSTOM'])
     @commands.has_role('Rudebot Manager')
     async def addCustom(self, ctx, *, msg=''):
         """
@@ -54,7 +54,7 @@ class Customs(commands.Cog):
             )
             await ctx.send(embed=embed, delete_after=10.0)
 
-    @commands.command(alisases=['delcustom', 'DELCUSTOM'])
+    @commands.command(aliases=['delcustom', 'DELCUSTOM'])
     @commands.has_role('Rudebot Manager')
     async def delCustom(self, ctx, *, msg=''):
         """
@@ -82,7 +82,7 @@ class Customs(commands.Cog):
             )
             await ctx.send(embed=embed, delete_after=10.0)
 
-    @commands.command(alisases=['getcustom', 'GETCUSTOM'])
+    @commands.command(aliases=['getcustom', 'GETCUSTOM'])
     @commands.has_role('Rudebot Manager')
     async def getCustom(self, ctx):
         """
@@ -112,21 +112,21 @@ class Customs(commands.Cog):
 
         await ctx.send(embed=embed)
 
-    @commands.command(alisases=['addignore', 'ADDIGNORE'])
+    @commands.command(aliases=['addignore', 'ADDIGNORE'])
     @commands.has_role('Rudebot Manager')
     async def addIgnore(self, ctx):
         """
         """
         print()
 
-    @commands.command(alisases=['delignore', 'DELIGNORE'])
+    @commands.command(aliases=['delignore', 'DELIGNORE'])
     @commands.has_role('Rudebot Manager')
     async def delIgnore(self, ctx):
         """
         """
         print()
 
-    @commands.command(alisases=['getignore', 'GETIGNORE'])
+    @commands.command(aliases=['getignore', 'GETIGNORE'])
     @commands.has_role('Rudebot Manager')
     async def getIgnore(self, ctx):
         """

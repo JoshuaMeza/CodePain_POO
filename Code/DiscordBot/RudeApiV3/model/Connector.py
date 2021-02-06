@@ -462,7 +462,7 @@ class Connector:
 
             if temp is not None:
                 for line in temp:
-                    output.append('{},{}'.format(line[0], line[1]))
+                    output.append('{},{}'.format(line[1], line[0]))
 
             mydb.close()
         except Exception as e:

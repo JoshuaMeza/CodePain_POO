@@ -26,21 +26,21 @@ class Whitelist(commands.Cog):
         print('Whitelist module loaded successfully!')
 
     # Commands
-    @commands.command(alisases=['WHITELIST'])
+    @commands.command(aliases=['WHITELIST'])
     @commands.has_role('Rudebot Manager')
     async def whitelist(self, ctx):
         """
         """
         print()
 
-    @commands.command(alisases=['WHITELIST'])
+    @commands.command(aliases=['wladd', 'WLADD'])
     @commands.has_role('Rudebot Manager')
     async def wlAdd(self, ctx):
         """
         """
         print()
 
-    @commands.command(alisases=['WHITELIST'])
+    @commands.command(aliases=['wldel', 'WLDEL'])
     @commands.has_role('Rudebot Manager')
     async def wlDel(self, ctx):
         """
