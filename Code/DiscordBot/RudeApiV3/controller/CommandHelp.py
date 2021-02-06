@@ -65,10 +65,12 @@ class Help(commands.Cog):
                             '**!wlDel [user_id]**\t Delete a user from the whitelist.',
                             inline=False)
             embed.add_field(name='Custom Words commands',
-                            value='**!addCustom**\tAdd a custom word.\n'
-                            '**!rmvCustom**\tRemove a custom word.\n'
-                            '**!addIgnore**\tAdd an ignored word.\n'
-                            '**!rmvIgnore**\tRemove an ignored word.',
+                            value='**!addCustom [word]**\tAdd a custom word.\n'
+                            '**!delCustom [word]**\tDelete a custom word.\n'
+                            '**!getCustom**\tSee your guild\'s custom words.\n'
+                            '**!addIgnore [word]**\tAdd an ignored word.\n'
+                            '**!delIgnore [word]**\tDelete an ignored word.\n'
+                            '**!getIgnore**\tSee your guild\'s ignored words.',
                             inline=False
                             )
             embed.add_field(name='Request command',
@@ -118,12 +120,12 @@ class Help(commands.Cog):
                             inline=False)
         elif arg.upper() == 'CUSTOMS':
             embed.add_field(name='Custom Words commands',
-                            value='**!addCustom**\tAdd a custom word.\n'
-                            '**!rmvCustom**\tRemove a custom word.\n'
-                            '**!getCustom**\tSee your guild\'s custom words'
-                            '**!addIgnore**\tAdd an ignored word.\n'
-                            '**!rmvIgnore**\tRemove an ignored word.\n'
-                            '**!getIgnore**\tSee your guild\'s ignored words',
+                            value='**!addCustom [word]**\tAdd a custom word.\n'
+                            '**!delCustom [word]**\tDelete a custom word.\n'
+                            '**!getCustom**\tSee your guild\'s custom words.\n'
+                            '**!addIgnore [word]**\tAdd an ignored word.\n'
+                            '**!delIgnore [word]**\tDelete an ignored word.\n'
+                            '**!getIgnore**\tSee your guild\'s ignored words.',
                             inline=False
                             )
             embed.add_field(name='Explanation',

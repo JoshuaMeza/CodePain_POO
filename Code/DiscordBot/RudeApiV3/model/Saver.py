@@ -166,6 +166,17 @@ class Saver:
 
     def retrieveCustomWords(self):
         """
+        This method gets from the database the custom words
+        Args:
+            self
+            custom
+            con
+            guilds
+            item
+            word
+            data
+        Returns:
+            Nothing
         """
         custom = self.con.getCustomWords()
         guilds = self.con.getGuildsInfo()
@@ -176,3 +187,55 @@ class Saver:
         for word in custom:
             data = word.split(',')
             self.custom[data[0]].append(data[1])
+
+    def customAmount(self, guildId):
+        """
+        This method returns the number of custom words that a server has
+        Args:
+            self
+            guildId
+            custom
+        Returns:
+            The amount of custom words
+        """
+        return len(self.custom[str(guildId)])
+
+    def addCustom(self, word, guildId):
+        """
+        This method adds a new custom word
+        Args:
+            self
+            word
+            guildId
+            flag
+            con
+            custom
+        Returns:
+            True if success, False if not
+        """
+        flag = self.con.addCustomWord(word, guildId)
+
+        if flag:
+            self.custom[str(guildId)].append(word)
+
+        return flag
+
+    def delCustom(self, word, guildId):
+        """
+        This method removes a custom word
+        Args:
+            self
+            word
+            guildId
+            flag
+            con
+            custom
+        Returns:
+            True if success, False if not
+        """
+        flag = self.con.removeCustomWord(word, guildId)
+
+        if flag:
+            self.custom[str(guildId)].remove(word)
+
+        return flag

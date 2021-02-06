@@ -33,6 +33,7 @@ class Searcher:
             newWord = word.upper()
             if self.words is not None:
                 for swering in self.words:
+                    # if swering == ignored word -> continue
                     if newWord == swering:
                         flag = True
                         break

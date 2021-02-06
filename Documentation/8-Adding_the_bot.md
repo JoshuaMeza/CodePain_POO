@@ -57,10 +57,12 @@ The most useful command you can enjoy is `!help` and its variants, with them you
 
 #### Custom Words commands
 
-- `!addCustom` Add a custom word.
-- `!rmvCustom` Remove a custom word.
-- `!addIgnore` Add an ignored word.
-- `!rmvIgnore` Remove an ignored word.
+- `!addCustom [word]` Add a custom word.
+- `!delCustom [word]` Delete a custom word.
+- `!getCustom` See your guild's custom words.
+- `!addIgnore [word]` Add an ignored word.
+- `!delIgnore [word]` Delete an ignored word.
+- `!getCustom` See your guild's ignored words.
 
 #### Request command
 
