@@ -1,7 +1,7 @@
 """
 Author CodePain Team
 Date 14/01/2021
-Version 1.0.2
+Version 1.0.3
 Connector tool
 """
 import requests
@@ -24,6 +24,7 @@ class Connector:
         Args:
             self (object): The object itself
             words (list): The list of banned words
+            url (str): API url
         Returns:
             The list of words
         """
@@ -39,6 +40,15 @@ class Connector:
             words = None
 
         return words
+
+    def returnUrl(self):
+        """
+        This method returns the API url
+        Args:
+            self (object): The object itself
+            url (str): API url
+        """
+        return self.url
 
     def sendRequest(self, word, languageId):
         """
@@ -241,7 +251,7 @@ class Connector:
                 database=os.getenv('DBNAME')
             )
 
-            sql = "DELETE FROM `{}`.`CustomWords` WHERE word='{}' and guildIdCW={};".format(
+            sql = "DELETE FROM `{}`.`CustomWords` WHERE word='{}' and guildIdCW={} LIMIT 1;".format(
                 os.getenv('DBNAME'), word, guildId)
 
             mycursor = mydb.cursor()
@@ -529,7 +539,7 @@ class Connector:
                 database=os.getenv('DBNAME')
             )
 
-            sql = "DELETE FROM `{}`.`Ignore` WHERE word='{}' and guildIdIg={};".format(
+            sql = "DELETE FROM `{}`.`Ignore` WHERE word='{}' and guildIdIg={} LIMIT 1;".format(
                 os.getenv('DBNAME'), word, guildId)
 
             mycursor = mydb.cursor()
@@ -777,7 +787,7 @@ class Connector:
                 database=os.getenv('DBNAME')
             )
 
-            sql = "SELECT * FROM `{}`.`Whitelist`;".format(
+            sql = "SELECT idUser,idGuild FROM `{}`.`Whitelist`;".format(
                 os.getenv('DBNAME'))
 
             mycursor = mydb.cursor()
@@ -785,8 +795,9 @@ class Connector:
 
             temp = mycursor.fetchall()
 
-            for line in temp:
-                output.append(str(line)[1:][:-1])
+            if temp is not None:
+                for line in temp:
+                    output.append('{},{}'.format(line[1], line[0]))
 
             mydb.close()
         except Exception as e:
@@ -853,7 +864,7 @@ class Connector:
                 database=os.getenv('DBNAME')
             )
 
-            sql = "DELETE FROM `{}`.`Whitelist` WHERE idUser={} and idGuild={};".format(
+            sql = "DELETE FROM `{}`.`Whitelist` WHERE idUser={} and idGuild={} LIMIT 1;".format(
                 os.getenv('DBNAME'), userId, guildId)
 
             mycursor = mydb.cursor()

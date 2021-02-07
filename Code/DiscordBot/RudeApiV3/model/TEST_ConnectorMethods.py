@@ -5,6 +5,7 @@ Temporary file for testing the Connector and helping the team with the commands.
 """
 from Connector import *
 
+
 def main():
     con = Connector()
     temp = []
@@ -41,7 +42,7 @@ def main():
 
     for x in temp:
         print(x)
-    
+
 
 if __name__ == '__main__':
     main()

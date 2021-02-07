@@ -1,7 +1,7 @@
 """
 Author CodePain Team
 Date 14/01/2021
-Version 1.0.0
+Version 1.0.1
 Searcher tool
 """
 
@@ -14,6 +14,7 @@ class Searcher:
         self.words = memory.getWordsList()
         self.custom = memory.getCustomDict()
         self.ignore = memory.getIgnoredDict()
+        self.whitelist = memory.getWhiteList()
 
     def searchWord(self, text, guildId):
         """
@@ -97,3 +98,23 @@ class Searcher:
             True if equal or similar, False if not
         """
         return compareOne == compareTwo
+
+    def verifyUser(self,  userId, guildId):
+        """
+        This method verifies if a user is on the whitelist
+        Args:
+            self
+            userId
+            user
+            whitelist
+        Returns:
+            True if they is on it, False if not
+        """
+        flag = False
+
+        for user in self.whitelist[str(guildId)]:
+            if str(userId) == user:
+                flag = True
+                break
+
+        return flag

@@ -31,11 +31,12 @@ class Customs(commands.Cog):
     async def addCustom(self, ctx, *, msg=''):
         """
         This method adds a new custom word
+        Args:
+        Returns:
         """
         if msg != '':
             if self.memory.customAmount(ctx.guild.id) != 15:
-                temp = msg.upper()
-                if self.memory.addCustom(temp, ctx.guild.id):
+                if self.memory.addCustom(msg.upper(), ctx.guild.id):
                     await ctx.send(f'Successfully added "{msg}".')
                 else:
                     await ctx.send('The addition failed.')
@@ -59,18 +60,19 @@ class Customs(commands.Cog):
     async def delCustom(self, ctx, *, msg=''):
         """
         This method deletes a custom word
+        Args:
+        Returns:
         """
         if msg != '':
             if self.memory.customAmount(ctx.guild.id) > 0:
-                temp = msg.upper()
-                if self.memory.delCustom(temp, ctx.guild.id):
+                if self.memory.delCustom(msg.upper(), ctx.guild.id):
                     await ctx.send(f'Successfully deleted "{msg}".')
                 else:
                     await ctx.send('The deletion failed.')
             else:
                 embed = discord.Embed(
                     title='Validation Error',
-                    description='You can\'t have less than 0 words, type "!help customs" for more information.',
+                    description='Your guild can\'t have less than 0 custom words, type "!help customs" for more information.',
                     colour=discord.Colour.from_rgb(225, 73, 150)
                 )
                 await ctx.send(embed=embed, delete_after=10.0)
@@ -87,6 +89,8 @@ class Customs(commands.Cog):
     async def getCustom(self, ctx):
         """
         This method shows all custom words
+        Args:
+        Returns:
         """
         guilds = self.memory.getCustomDict()
         words = guilds[str(ctx.guild.id)]
@@ -114,24 +118,93 @@ class Customs(commands.Cog):
 
     @commands.command(aliases=['addignore', 'ADDIGNORE'])
     @commands.has_role('Rudebot Manager')
-    async def addIgnore(self, ctx):
+    async def addIgnore(self, ctx, *, msg=''):
         """
+        This method adds a new ignored word
+        Args:
+        Returns:
         """
-        print()
+        if msg != '':
+            if self.memory.ignoredAmount(ctx.guild.id) != 15:
+                if self.memory.addIgnored(msg.upper(), ctx.guild.id):
+                    await ctx.send(f'Successfully added "{msg}".')
+                else:
+                    await ctx.send('The addition failed.')
+            else:
+                embed = discord.Embed(
+                    title='Validation Error',
+                    description='Your guild can only have a maximum amount of 15 ignored words, type "!help customs" for more information.',
+                    colour=discord.Colour.from_rgb(225, 73, 150)
+                )
+                await ctx.send(embed=embed, delete_after=10.0)
+        else:
+            embed = discord.Embed(
+                title='Argument Error',
+                description='You need to write the needed parameters, type "!help customs" for more information.',
+                colour=discord.Colour.from_rgb(225, 73, 150)
+            )
+            await ctx.send(embed=embed, delete_after=10.0)
 
     @commands.command(aliases=['delignore', 'DELIGNORE'])
     @commands.has_role('Rudebot Manager')
-    async def delIgnore(self, ctx):
+    async def delIgnore(self, ctx, *, msg=''):
         """
+        This method deletes a custom word
+        Args:
+        Returns:
         """
-        print()
+        if msg != '':
+            if self.memory.ignoredAmount(ctx.guild.id) > 0:
+                if self.memory.delIgnored(msg.upper(), ctx.guild.id):
+                    await ctx.send(f'Successfully deleted "{msg}".')
+                else:
+                    await ctx.send('The deletion failed.')
+            else:
+                embed = discord.Embed(
+                    title='Validation Error',
+                    description='Your guild can\'t have less than 0 ignored words, type "!help customs" for more information.',
+                    colour=discord.Colour.from_rgb(225, 73, 150)
+                )
+                await ctx.send(embed=embed, delete_after=10.0)
+        else:
+            embed = discord.Embed(
+                title='Argument Error',
+                description='You need to write the needed parameters, type "!help customs" for more information.',
+                colour=discord.Colour.from_rgb(225, 73, 150)
+            )
+            await ctx.send(embed=embed, delete_after=10.0)
 
     @commands.command(aliases=['getignore', 'GETIGNORE'])
     @commands.has_role('Rudebot Manager')
     async def getIgnore(self, ctx):
         """
+        This method shows all ignored words
+        Args:
+        Returns:
         """
-        print()
+        guilds = self.memory.getIgnoredDict()
+        words = guilds[str(ctx.guild.id)]
+        output = ''
+
+        for word in words:
+            output += f'{word},'
+
+        embed = None
+
+        if output == '':
+            embed = discord.Embed(
+                title='Ignored words',
+                description='Your guild does not have ignored words yet.',
+                colour=discord.Colour.from_rgb(225, 73, 150)
+            )
+        else:
+            embed = discord.Embed(
+                title='Ignored words',
+                description='{}'.format(output[:-1]),
+                colour=discord.Colour.from_rgb(225, 73, 150)
+            )
+
+        await ctx.send(embed=embed)
 
 
 def setup(client):

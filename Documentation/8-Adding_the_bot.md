@@ -29,8 +29,9 @@ The most useful command you can enjoy is `!help` and its variants, with them you
 - `!help stories` Displays stories related commands.
 - `!help lists` Displays lists related commands.
 - `!help customs` Displays custom words related commands.
-- `!help requests` Displays requesting command.
-- `!help bugs` Displays bug reporting command.
+- `!help requests` Displays the requesting command.
+- `!help bugs` Displays the bug reporting command.
+- `!help API` Displays the API command.
 
 #### Setting command
 
@@ -71,6 +72,10 @@ The most useful command you can enjoy is `!help` and its variants, with them you
 #### Bug command
 
 - `!bug [text]` Send a bug report.
+
+#### API command
+
+- `!API` Sends the API link.
 
 ## Developer Mode
 

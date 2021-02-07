@@ -84,6 +84,10 @@ class Help(commands.Cog):
                             value='**!bug [text]**\tSend a bug report.',
                             inline=False
                             )
+            embed.add_field(name='API',
+                            value='**!API**\tGet API link.',
+                            inline=False
+                            )
         elif arg.upper() == 'SETTINGS':
             embed.add_field(name='Setting command',
                             value='**!modePenalty [on/off]**\tThis command changes the state of the Penalize Mode. By default it is active.',
@@ -185,6 +189,11 @@ class Help(commands.Cog):
                             value='It is only possible to send one request per day.\n',
                             inline=False
                             )
+        elif arg.upper() == 'API':
+            embed.add_field(name='API',
+                            value='**!API**\tGet API link.',
+                            inline=False
+                            )
         else:
             embed.add_field(name='Arguments',
                             value='**!help**\tDisplays the list of options.\n'
@@ -194,8 +203,9 @@ class Help(commands.Cog):
                             '**!help stories**\tDisplays stories related commands.\n'
                             '**!help lists**\tDisplays lists related commands.\n'
                             '**!help customs**\tDisplays custom words related commands.\n'
-                            '**!help requests**\tDisplays requesting command.\n'
-                            '**!help bugs**\tDisplays bug reporting command.',
+                            '**!help requests**\tDisplays the requesting command.\n'
+                            '**!help bugs**\tDisplays the bug reporting command.\n'
+                            '**!help API**\tDisplays the API command.',
                             inline=False
                             )
             embed.add_field(name='Tip',
