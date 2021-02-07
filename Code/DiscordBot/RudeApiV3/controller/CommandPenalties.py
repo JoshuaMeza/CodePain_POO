@@ -33,15 +33,15 @@ class Penalties(commands.Cog):
         """
         This method sets a new amount of fauls
         Args:
-            self
-            ctx
-            msg
-            info
-            punisher
-            embed
-            flagResult
-            userId
-            num
+            self (object): The object itself
+            ctx (object): Context
+            msg (str): Custom word
+            info (list): Id and warnings
+            punisher (object): Punisher object
+            embed (object): A Discord message type
+            flagResult (bool): Used for error response
+            userId: (int): User ID
+            num (int): Warnings
         Returns:
             Nothing
         """
@@ -82,14 +82,14 @@ class Penalties(commands.Cog):
         """
         This method sends the amount of warnings until getting banned
         Args:
-            self
-            ctx
-            userId
-            flagResult
-            punisher
-            warnings
-            final
-            embed
+            self (object): The object itself
+            ctx (object): Context
+            flagResult (bool): Used for error response
+            userId: (int): User ID
+            punisher (object): Punisher object
+            warnings (str): Warnings amount 
+            final (int): Warnings until get banned
+            embed (object): A Discord message type
         Returns:
             Nothing
         """
@@ -125,12 +125,12 @@ class Penalties(commands.Cog):
         """
         This method adds a fault to a user
         Args:
-            self
-            ctx
-            userId
-            flagResult
-            punisher
-            embed
+            self (object): The object itself
+            ctx (object): Context
+            flagResult (bool): Used for error response
+            userId: (int): User ID
+            punisher (object): Punisher object
+            embed (object): A Discord message type
         """
         flagResult = False
 

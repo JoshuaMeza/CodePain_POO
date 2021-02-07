@@ -85,10 +85,10 @@ async def on_message(message):
     Args:
         message (object): Represents the message
         search (object): Searcher object
-        memory
-        banFlag
-        embed
-        warnings
+        memory (object): Saver object
+        banFlag (bool): Used to know if the user needs to be banned
+        embed (object): A Discord message type
+        warnings (int): Warnings amount
     Returns:
         Nothing
     """
@@ -188,6 +188,7 @@ async def on_command_error(ctx, error):
     Args:
         ctx (object): Context
         error (object): Error found
+        embed (object): A Discord message type
     Returns:
         Nothing
     """
@@ -224,6 +225,6 @@ async def on_command_error(ctx, error):
 
 
 # -------------------------------------- Initialization --------------------------------------------
-# keep_alive()
+keep_alive()
 load_dotenv()
 client.run(os.getenv('TOKEN'))

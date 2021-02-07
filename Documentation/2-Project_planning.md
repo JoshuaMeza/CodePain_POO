@@ -11,7 +11,7 @@
 
 | Activities              | Date            | Responsible(s) | Resulting artifacts               |
 | ----------------------- | --------------- | -------------- | --------------------------------- |
-| Meetings                | Sep 20 / Now    | All the team   | Product versions and work updates |
+| Meetings                | Sep 20 / Nov    | All the team   | Product versions and work updates |
 | Project Definition      | Sep 20 / Oct 20 | All the team   | Project definition                |
 | Repository Creation     | Oct 28 / Nov 2  | All the team   | Documentation                     |
 | Defining Team Roles     | Nov 2 / Nov 9   | All the team   | Organization                      |
@@ -24,7 +24,8 @@
 | Bot development         | Dec 2 / Jan 13  | All the team   | Bot                               |
 | Repository Update       | Jan 13          | All the team   | Documentation                     |
 | Bot Beta version        | Jan 13          | All team       | Bot                               |
-| Repository Update       | To define       | To define      | Documentation                     |
+| Bot v1.0                | Feb 7           | All team       | Bot                               |
+| Repository Update       | Feb 7           | Joshua         | Documentation                     |
 
 ## Repository
 

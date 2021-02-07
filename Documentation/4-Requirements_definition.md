@@ -2,10 +2,10 @@
 
 ## System actors
 
-- User
-- Rude API
-- Discord bot
-- Discord API
+- Discord users
+- Developers
+- API system
+- Bot system
 
 ## User requirements
 
@@ -26,18 +26,19 @@ The API has the property of being modified **only** by the _requests system_, wh
   - Get Discord messages.
   - Ban automatically.
   - Get information from the API.
-  - Send error or bug messages found by the community.
-  - Send word requests.
   - The bot has space for memory.
   - Manage commands:
+    - Send word requests.
     - Provide penalties management.
     - Provide user stories management.
+    - Provide API information.
+    - Send error or bug messages found by the community.
   - Being customized:
     - Grant usage permissions.
     - _Penalize_ or _No penalize_ mode.
     - Add and delete self-selected offensive words to censor them.
     - Ignore self-selected words.
-    - Manage a whitelist
+    - Manage a whitelist.
   - Send default Discord messages for:
     - “In-server” configuration which:
       - Can send user history as:
@@ -52,10 +53,9 @@ The API has the property of being modified **only** by the _requests system_, wh
   - Can clean user history of:
     - Individual user.
     - All users.
-  - Can unban people by:
-    - Individual user.
 - **Database** capable of:
   - Always is active.
+  - Store API information.
   - Store requests.
   - Store custom server settings.
 
@@ -76,15 +76,18 @@ The API has the property of being modified **only** by the _requests system_, wh
 
 - Management page canceled.
 - Poorly defined requirements were removed, as "API search system".
-- Impossible requirements were removed, as "Censoring specific words" (no one can edit someone else's messages).
-- Unnecessary requirements were removed, as "Message when someone joins the server" (the bot objective is protect a chat, not maintain it), "On/Off mode" (its more logical kick the bot), and "Saving top 10 words" (it can be calculated easily and its not work of the bot).
+- Impossible requirements were removed, as "Censoring specific words in messages" (no one can edit someone else's messages).
+- Unnecessary requirements were removed, as "Message when someone joins the server" (the bot mains objective is to protect a chat, not maintain a community), "On/Off mode", and "Saving top 10 words".
 - Database requirements were added.
 - "Always is active" requirement was added.
 - "API search system" was modified to "Have a method to retrieve information from the database" requirement.
 - The request maximum amount was changed to 5.
 - Added a cooldown requirement to the bug reports.
-- Added requirements that were planned in Trello but not defined in the documentation, mostly in bot's description (whitelist, requests, and commands).
+- Added requirements that were planned in Trello but not defined in the documentation, mostly in bot's description (whitelist, requests, bugs, and some commands).
 - Deleted requirement for weekely resumes.
+- Banning system is implemented but in occassions it could get buggy, so we decided to remove the unban requirement.
+- Added a command for getting information of the API.
+- Because of bad organization and lack of time, the development of the algorithm for searching offensive words was temporally removed.
 
 ## Use cases diagram
 
@@ -104,7 +107,7 @@ The Bot System works using the Discord API and following their own code. It repr
 
 <img src="../Resources/Database.png" alt="Database diagram">
 
-The API can only access to the Languages and Words tables, the rest of the database is for the bot's functionality.
+The API can only access to the Languages and Words tables, the rest of the database is for the bot's functionability.
 
 [Click here to go and see the code.](../Code/DataBase)
 

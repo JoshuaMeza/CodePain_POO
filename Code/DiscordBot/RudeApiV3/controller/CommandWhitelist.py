@@ -32,6 +32,13 @@ class Whitelist(commands.Cog):
         """
         This method shows the guilds whitelist
         Args:
+            self (object): The object itself
+            ctx (object): Context
+            guilds (dict): Guild dictionary of the whitelist
+            users (list): List of users in the whitelist
+            output (str): List like a string
+            user (str): User ID
+            embed (object): A Discord message type
         Returns:
         """
         guilds = self.memory.getWhiteList()
@@ -64,7 +71,13 @@ class Whitelist(commands.Cog):
         """
         This method adds a new user to the whitelist
         Args:
+            self (object): The object itself
+            ctx (object): Context
+            userID (str): User ID
+            memory (object): Saver object
+            embed (object): A Discord message type
         Returns:
+            Nothing
         """
         if userId != '':
             try:
@@ -109,7 +122,13 @@ class Whitelist(commands.Cog):
         """
         This method adds a new user to the whitelist
         Args:
+            self (object): The object itself
+            ctx (object): Context
+            userID (str): User ID
+            memory (object): Saver object
+            embed (object): A Discord message type
         Returns:
+            Nothing
         """
         if userId != '':
             try:

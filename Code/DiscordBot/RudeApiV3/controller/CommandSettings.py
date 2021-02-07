@@ -32,11 +32,11 @@ class Settings(commands.Cog):
         """
         This command changes the penalize mode
         Args:
-            self
-            ctx
-            msg
-            memory
-            embed
+            self (object): The object itself
+            ctx (object): Context
+            msg (str): Penalty selection
+            memory (object): Saver object
+            embed (object): A Discord message type
         Returns:
             Nothing
         """

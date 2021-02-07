@@ -32,9 +32,9 @@ class API(commands.Cog):
         """
         This method returns the API information.
         Args:
-            self
-            ctx
-            embed
+            self (object): The object itself
+            ctx (object): Context
+            embed (object): A Discord message type
         Returns:
             Nothing
         """

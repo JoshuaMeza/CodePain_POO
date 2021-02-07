@@ -33,13 +33,13 @@ class Stories(commands.Cog):
         """
         This method sends the amount of warnings which a user has
         Args:
-            self
-            ctx
-            userId
-            flagResult
-            punisher
-            warnings
-            embed
+            self (object): The object itself
+            ctx (object): Context
+            flagResult (bool): Used for error response
+            userId: (int): User ID
+            punisher (object): Punisher object
+            warnings (str): Warnings amount 
+            embed (object): A Discord message type
         Returns:
             Nothing
         """
@@ -73,12 +73,12 @@ class Stories(commands.Cog):
         """
         This method removes all the warnings of a user
         Args:
-            self
-            ctx
-            userId
-            flagResult
-            punisher
-            embed
+            self (object): The object itself
+            ctx (object): Context
+            flagResult (bool): Used for error response
+            userId: (int): User ID
+            punisher (object): Punisher object
+            embed (object): A Discord message type
         Returns:
             Nothing
         """
@@ -107,12 +107,12 @@ class Stories(commands.Cog):
         """
         This method removes all the warnings of a user
         Args:
-            self
-            ctx
-            userId
-            flagResult
-            punisher
-            embed
+            self (object): The object itself
+            ctx (object): Context
+            flagResult (bool): Used for error response
+            userId: (int): User ID
+            punisher (object): Punisher object
+            embed (object): A Discord message type
         Returns:
             Nothing
         """

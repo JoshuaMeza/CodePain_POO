@@ -32,7 +32,13 @@ class Customs(commands.Cog):
         """
         This method adds a new custom word
         Args:
+            self (object): The object itself
+            ctx (object): Context
+            msg (str): Custom word
+            memory (object): Saver object
+            embed (object): A Discord message type
         Returns:
+            Nothing
         """
         if msg != '':
             if self.memory.customAmount(ctx.guild.id) != 15:
@@ -61,7 +67,13 @@ class Customs(commands.Cog):
         """
         This method deletes a custom word
         Args:
+            self (object): The object itself
+            ctx (object): Context
+            msg (str): Custom word
+            memory (object): Saver object
+            embed (object): A Discord message type
         Returns:
+            Nothing
         """
         if msg != '':
             if self.memory.customAmount(ctx.guild.id) > 0:
@@ -90,7 +102,16 @@ class Customs(commands.Cog):
         """
         This method shows all custom words
         Args:
+            self (object): The object itself
+            ctx (object): Context
+            guilds (dict): Guild dictionary of Custom Words
+            memory (object): Saver object
+            word (list): List of custom words
+            words (str): A word
+            output (str): List like a string
+            embed (object): A Discord message type
         Returns:
+            Nothing
         """
         guilds = self.memory.getCustomDict()
         words = guilds[str(ctx.guild.id)]
@@ -122,7 +143,13 @@ class Customs(commands.Cog):
         """
         This method adds a new ignored word
         Args:
+            self (object): The object itself
+            ctx (object): Context
+            msg (str): Ignored word
+            memory (object): Saver object
+            embed (object): A Discord message type
         Returns:
+            Nothing
         """
         if msg != '':
             if self.memory.ignoredAmount(ctx.guild.id) != 15:
@@ -149,9 +176,15 @@ class Customs(commands.Cog):
     @commands.has_role('Rudebot Manager')
     async def delIgnore(self, ctx, *, msg=''):
         """
-        This method deletes a custom word
+        This method deletes an ignored word
         Args:
+            self (object): The object itself
+            ctx (object): Context
+            msg (str): Ignored word
+            memory (object): Saver object
+            embed (object): A Discord message type
         Returns:
+            Nothing
         """
         if msg != '':
             if self.memory.ignoredAmount(ctx.guild.id) > 0:
@@ -180,7 +213,16 @@ class Customs(commands.Cog):
         """
         This method shows all ignored words
         Args:
+            self (object): The object itself
+            ctx (object): Context
+            guilds (dict): Guild dictionary of Ignored Words
+            memory (object): Saver object
+            word (list): List of ignored words
+            words (str): A word
+            output (str): List like a string
+            embed (object): A Discord message type
         Returns:
+            Nothing
         """
         guilds = self.memory.getIgnoredDict()
         words = guilds[str(ctx.guild.id)]
