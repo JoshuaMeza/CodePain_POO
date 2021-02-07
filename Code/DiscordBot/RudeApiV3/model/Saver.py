@@ -27,8 +27,8 @@ class Saver:
         """
         This method returns the list of banned words
         Args:
-            self
-            words
+            self (object): The object itself
+            words (dict): Banned words dictionary
         Returns:
             The banned words list
         """
@@ -38,8 +38,8 @@ class Saver:
         """
         This method returns the list of custom words
         Args:
-            self
-            custom
+            self (object): The object itself
+            custom (dict): Custom words dictionary
         Returns:
             The custom words list
         """
@@ -49,8 +49,8 @@ class Saver:
         """
         This method returns the list of ignored words
         Args:
-            self
-            ignored
+            self (object): The object itself
+            ignored (dict): Ignored words dictionary
         Returns:
             The ignored words list
         """
@@ -60,8 +60,8 @@ class Saver:
         """
         This method returns the whitelist
         Args:
-            self
-            whitelist
+            self (object): The object itself
+            whitelist (dict): Whitelist dictionary
         Returns:
             The whitelist
         """
@@ -75,6 +75,7 @@ class Saver:
             userId (str): User id
             amount (int): Amount of requests
             requestLog (list): List of people that has made requests
+            user (list): User who has requested
         Returns:
             Amount of requests
         """
@@ -93,6 +94,7 @@ class Saver:
             self (object): The object itself
             userId (str): User id
             requestLog (list): List of people that has made requests
+            user (list): User who has requested
         Returns:
             Nothing
         """
@@ -106,6 +108,7 @@ class Saver:
             self (object): The object itself
             userId (str): User id
             requestLog (list): List of people which has made requests
+            user (list): User who has requested
         Returns:
             Nothing
         """
@@ -143,12 +146,12 @@ class Saver:
         """
         This method gets the guilds and their modes
         Args:
-            self
-            serverInfo
-            con
-            server
-            serverData
-            serverSettings
+            self (object): The object itself
+            serverInfo (list): Servers list 
+            con (object): Connector object
+            server (str): A server
+            serverData (list): Information of a server
+            serverSettings (dict): Dictionary of servers and their settings
         Returns:
             Nothing
         """
@@ -162,9 +165,9 @@ class Saver:
         """
         This method returns the settings of a server
         Args:
-            self
-            guildId
-            serverSettings
+            self (object): The object itself
+            guildId (int): Guild ID
+            serverSettings (dict): Dictionary of servers and their settings
         Returns:
             Penalize mode (1 or 0)
         """
@@ -174,12 +177,12 @@ class Saver:
         """
         This method sets a new status into the penalize mode
         Args:
-            self
-            guildId
-            penMode
-            flag
-            con
-            serverSettings
+            self (object): The object itself
+            guildId (int): Guild ID
+            penMode (int): 1 for ON and 0 for OFF
+            flag (bool): Result
+            con (object): Connector object
+            serverSettings (dict): Dictionary of servers and their settings
         Returns:
             True if success, False if not
         """
@@ -194,23 +197,24 @@ class Saver:
         """
         This method gets from the database the custom words
         Args:
-            self
-            custom
-            con
-            guilds
-            item
-            word
-            data
+            self (object): The object itself
+            words (list): Custom words
+            con (object): Connector object
+            guilds (list): Servers list 
+            item (str): Server info
+            word (str): String with Guild ID and Word
+            data (list): Word information separated
+            custom (dict): Custom words dictionary
         Returns:
             Nothing
         """
-        custom = self.con.getCustomWords()
+        words = self.con.getCustomWords()
         guilds = self.con.getGuildsInfo()
 
         for item in guilds:
             self.custom[item.split(',')[0]] = []
 
-        for word in custom:
+        for word in words:
             data = word.split(',')
             self.custom[data[0]].append(data[1])
 
@@ -218,9 +222,9 @@ class Saver:
         """
         This method returns the number of custom words that a server has
         Args:
-            self
-            guildId
-            custom
+            self (object): The object itself
+            guildId (int): Guild ID
+            custom (dict): Custom words dictionary
         Returns:
             The amount of custom words
         """
@@ -230,12 +234,12 @@ class Saver:
         """
         This method adds a new custom word
         Args:
-            self
-            word
-            guildId
-            flag
-            con
-            custom
+            self (object): The object itself
+            word (str): A word
+            guildId (int): Guild ID
+            flag (bool): Result
+            con (object): Connector object
+            custom (dict): Custom words dictionary
         Returns:
             True if success, False if not
         """
@@ -250,13 +254,13 @@ class Saver:
         """
         This method removes a custom word
         Args:
-            self
-            word
-            guildId
-            flag
-            item
-            con
-            custom
+            self (object): The object itself
+            word (str): A word
+            guildId (int): Guild ID
+            flag (bool): Result
+            item (str): Guild ID
+            con (object): Connector object
+            custom (dict): Custom words dictionary
         Returns:
             True if success, False if not
         """
@@ -277,23 +281,24 @@ class Saver:
         """
         This method gets from the database the ignored words
         Args:
-            self
-            custom
-            con
-            guilds
-            item
-            word
-            data
+            self (object): The object itself
+            words (list): Ingnored words
+            con (object): Connector object
+            guilds (list): Servers list 
+            item (str): Server info
+            word (str): String with Guild ID and Word
+            data (list): Word information separated
+            ignored (dict): Ignored words dictionary
         Returns:
             Nothing
         """
-        ignored = self.con.getIgnoredWords()
+        words = self.con.getIgnoredWords()
         guilds = self.con.getGuildsInfo()
 
         for item in guilds:
             self.ignored[item.split(',')[0]] = []
 
-        for word in ignored:
+        for word in words:
             data = word.split(',')
             self.ignored[data[0]].append(data[1])
 
@@ -301,9 +306,9 @@ class Saver:
         """
         This method returns the number of ignored words that a server has
         Args:
-            self
-            guildId
-            ignored
+            self (object): The object itself
+            guildId (int): Guild ID
+            ignored (dict): Ignored words dictionary
         Returns:
             The amount of custom words
         """
@@ -313,12 +318,12 @@ class Saver:
         """
         This method adds a new ignored word
         Args:
-            self
-            word
-            guildId
-            flag
-            con
-            ignored
+            self (object): The object itself
+            word (str): A word
+            guildId (int): Guild ID
+            flag (bool): Result
+            con (object): Connector object
+            ignored (dict): Ignored words dictionary
         Returns:
             True if success, False if not
         """
@@ -333,13 +338,13 @@ class Saver:
         """
         This method removes an ignored word
         Args:
-            self
-            word
-            guildId
-            flag
-            item
-            con
-            ignored
+            self (object): The object itself
+            word (str): A word
+            guildId (int): Guild ID
+            flag (bool): Result
+            item (str): Guild ID
+            con (object): Connector object
+            ignored (dict): Ignored words dictionary
         Returns:
             True if success, False if not
         """
@@ -360,13 +365,14 @@ class Saver:
         """
         This method gets from the database the whitelist
         Args:
-            self
-            members
-            con
-            guilds
-            item
-            word
-            data
+            self (object): The object itself
+            members (list): Whitelist
+            con (object): Connector object
+            guilds (list): Servers list 
+            item (str): Server info
+            word (str): String with Guild ID and Word
+            data (list): Word information separated
+            whitelist (dict): Whitelist dictionary
         Returns:
             Nothing
         """
@@ -384,12 +390,12 @@ class Saver:
         """
         This method adds a new member to a whitelist
         Args:
-            self
-            user
-            guildId
-            flag
-            con
-            whitelist
+            self (object): The object itself
+            user (int): User ID
+            guildId (int): Guild ID
+            flag (bool): Result
+            con (object): Connector object
+            whitelist (dict): Whitelist dictionary
         Returns:
             True if success, False if not
         """
@@ -404,13 +410,13 @@ class Saver:
         """
         This method removes a member from a whitelist
         Args:
-            self
-            user
-            guildId
-            flag
-            item
-            con
-            whitelist
+            self (object): The object itself
+            user (int): User ID
+            guildId (int): Guild ID
+            flag (bool): Result
+            item (str): Guild ID
+            con (object): Connector object
+            whitelist (dict): Whitelist dictionary
         Returns:
             True if success, False if not
         """
@@ -431,9 +437,9 @@ class Saver:
         """
         This method returns the number of members in a whitelist
         Args:
-            self
-            guildId
-            whitelist
+            self (object): The object itself
+            guildId (int): Guild ID
+            whitelist (dict): Whitelist dictionary
         Returns:
             The amount of custom words
         """

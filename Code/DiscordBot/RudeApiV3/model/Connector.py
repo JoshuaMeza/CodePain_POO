@@ -25,6 +25,10 @@ class Connector:
             self (object): The object itself
             words (list): The list of banned words
             url (str): API url
+            response (bin): Information from the api
+            temp (list): Response as json
+            category (list): Lists inside the json
+            word (str): Banned words
         Returns:
             The list of words
         """
@@ -56,7 +60,11 @@ class Connector:
         Args:
             self (object): The object itself
             word (str): Requested word
-            languageId (int): Langage's id
+            languageId (int): Langage ID
+            output (bool): Result
+            mydb (object): MySQL connection
+            sql (str): A sql scrypt
+            mycursor (object): Instantiates objects that can execute operations
         Returns:
             True if success, False if not
         """
@@ -91,7 +99,11 @@ class Connector:
         Args:
             self (object): The object itself
             text (str): Text of the report
-            guildId (str): Guild's id
+            guildId (str): Guild ID
+            output (bool): Result
+            mydb (object): MySQL connection
+            sql (str): A sql scrypt
+            mycursor (object): Instantiates objects that can execute operations
         Returns:
             True if success, False if not
         """
@@ -126,7 +138,11 @@ class Connector:
         Args:
             self (object): The object itself
             word (str): A word to penalize
-            guildId (str): Guild's id
+            guildId (str): Guild ID
+            output (bool): Result
+            mydb (object): MySQL connection
+            sql (str): A sql scrypt
+            mycursor (object): Instantiates objects that can execute operations
         Returns:
             True if success, False if not
         """
@@ -160,6 +176,12 @@ class Connector:
         This method gets all the custom words
         Args:
             self (object): The object itself
+            output (list): Result
+            temp (list): Database information
+            line (list): Database information
+            mydb (object): MySQL connection
+            sql (str): A sql scrypt
+            mycursor (object): Instantiates objects that can execute operations
         Returns:
             The list of custom words and their guild id
         """
@@ -198,6 +220,12 @@ class Connector:
         Args:
             self (object): The object itself
             guildId (str): Guild's id
+            output (list): Result
+            temp (list): Database information
+            line (list): Database information
+            mydb (object): MySQL connection
+            sql (str): A sql scrypt
+            mycursor (object): Instantiates objects that can execute operations
         Returns:
             The list of custom words of a guild
         """
@@ -236,7 +264,11 @@ class Connector:
         Args:
             self (object): The object itself
             word (str): Custom word
-            guildId (str): Guild's id
+            guildId (str): Guild ID
+            output (bool): Result
+            mydb (object): MySQL connection
+            sql (str): A sql scrypt
+            mycursor (object): Instantiates objects that can execute operations
         Returns:
             True if success, False if not
         """
@@ -270,7 +302,11 @@ class Connector:
         This method adds new guild to the database
         Args:
             self (object): The object itself
-            guildId (str): Guild's id
+            guildId (str): Guild ID
+            output (bool): Result
+            mydb (object): MySQL connection
+            sql (str): A sql scrypt
+            mycursor (object): Instantiates objects that can execute operations
         Returns:
             True if success, False if not
         """
@@ -304,7 +340,11 @@ class Connector:
         This verifies if a guild exists in the database
         Args:
             self (object): The object itself
-            guildId (str): Guild's id
+            guildId (str): Guild ID
+            output (bool): Result
+            mydb (object): MySQL connection
+            sql (str): A sql scrypt
+            mycursor (object): Instantiates objects that can execute operations
         Returns:
             True if success, False if not
         """
@@ -341,6 +381,12 @@ class Connector:
         This returns a list with every guild in database
         Args:
             self (object): The object itself
+            output (list): Result
+            temp (list): Database information
+            line (list): Database information
+            mydb (object): MySQL connection
+            sql (str): A sql scrypt
+            mycursor (object): Instantiates objects that can execute operations
         Returns:
             A list with every guild and their settings
         """
@@ -378,8 +424,12 @@ class Connector:
         This method changes the penilize mode
         Args:
             self (object): The object itself
-            guildId (str): Guild's id
             decision (int): 1 for True and 0 for False
+            guildId (str): Guild ID
+            output (bool): Result
+            mydb (object): MySQL connection
+            sql (str): A sql scrypt
+            mycursor (object): Instantiates objects that can execute operations
         Returns:
             True if success, False if not
         """
@@ -414,7 +464,11 @@ class Connector:
         Args:
             self (object): The object itself
             word (str): A word to ignore
-            guildId (str): Guild's id
+            guildId (str): Guild ID
+            output (bool): Result
+            mydb (object): MySQL connection
+            sql (str): A sql scrypt
+            mycursor (object): Instantiates objects that can execute operations
         Returns:
             True if success, False if not
         """
@@ -448,6 +502,12 @@ class Connector:
         This returns a list with every ignored word
         Args:
             self (object): The object itself
+            output (list): Result
+            temp (list): Database information
+            line (list): Database information
+            mydb (object): MySQL connection
+            sql (str): A sql scrypt
+            mycursor (object): Instantiates objects that can execute operations
         Returns:
             The list of all ignored words and their guild id
         """
@@ -485,7 +545,12 @@ class Connector:
         This returns a list with every ignored word
         Args:
             self (object): The object itself
+            output (list): Result
             guildId (str): Guild's id
+            temp (list): Database information
+            mydb (object): MySQL connection
+            sql (str): A sql scrypt
+            mycursor (object): Instantiates objects that can execute operations
         Returns:
             The list of ignored words of a guild
         """
@@ -524,7 +589,11 @@ class Connector:
         Args:
             self (object): The object itself
             word (str): Ignored word
-            guildId (str): Guild's id
+            guildId (str): Guild ID
+            output (bool): Result
+            mydb (object): MySQL connection
+            sql (str): A sql scrypt
+            mycursor (object): Instantiates objects that can execute operations
         Returns:
             True if success, False if not
         """
@@ -559,7 +628,11 @@ class Connector:
         Args:
             self (object): The object itself
             userId (str): User's id
-            guildId (str): Guild's id
+            guildId (str): Guild ID
+            output (bool): Result
+            mydb (object): MySQL connection
+            sql (str): A sql scrypt
+            mycursor (object): Instantiates objects that can execute operations
         Returns:
             True if success, False if not
         """
@@ -593,6 +666,13 @@ class Connector:
         This method returns every story in database
         Args:
             self (object): The object itself
+            output (list): Result
+            guildId (str): Guild ID
+            temp (list): Database information
+            line (list): Database information
+            mydb (object): MySQL connection
+            sql (str): A sql scrypt
+            mycursor (object): Instantiates objects that can execute operations
         Returns:
             This list with the complete history
         """
@@ -631,7 +711,11 @@ class Connector:
         Args:
             self (object): The object itself
             userId (str): User's id
-            guildId (str): Guild's id
+            guildId (str): Guild ID
+            output (str): Result
+            mydb (object): MySQL connection
+            sql (str): A sql scrypt
+            mycursor (object): Instantiates objects that can execute operations
         Returns:
             A string with the story of a user
         """
@@ -669,8 +753,12 @@ class Connector:
         Args:
             self (object): The object itself
             userId (str): User's id
-            guildId (str): Guild's id
             amount (int): Amount of warnings
+            guildId (str): Guild ID
+            output (bool): Result
+            mydb (object): MySQL connection
+            sql (str): A sql scrypt
+            mycursor (object): Instantiates objects that can execute operations
         Returns:
             True if success, False if not
         """
@@ -704,7 +792,11 @@ class Connector:
         This method resets the stories of every member of a guild
         Args:
             self (object): The object itself
-            guildId (str): Guild's id
+            guildId (str): Guild ID
+            output (bool): Result
+            mydb (object): MySQL connection
+            sql (str): A sql scrypt
+            mycursor (object): Instantiates objects that can execute operations
         Returns:
             True if success, False if not
         """
@@ -739,7 +831,11 @@ class Connector:
         Args:
             self (object): The object itself
             userId (str): User's id
-            guildId (str): Guild's id
+            guildId (str): Guild ID
+            output (bool): Result
+            mydb (object): MySQL connection
+            sql (str): A sql scrypt
+            mycursor (object): Instantiates objects that can execute operations
         Returns:
             True if success, False if not
         """
@@ -773,6 +869,12 @@ class Connector:
         This method returns the whitelist
         Args:
             self (object): The object itself
+            output (list): Result
+            temp (list): Database information
+            line (list): Database information
+            mydb (object): MySQL connection
+            sql (str): A sql scrypt
+            mycursor (object): Instantiates objects that can execute operations
         Returns:
             A list with the entire whitelist
         """
@@ -810,7 +912,13 @@ class Connector:
         This method returns the whitelist
         Args:
             self (object): The object itself
+            output (list): Result
             userId (str): User's id
+            temp (list): Database information
+            line (list): Database information
+            mydb (object): MySQL connection
+            sql (str): A sql scrypt
+            mycursor (object): Instantiates objects that can execute operations
         Returns:
             The list of the whitelist of a guild
         """
@@ -849,7 +957,11 @@ class Connector:
         Args:
             self (object): The object itself
             userId (str): User's id
-            guildId (str): Guild's id
+            guildId (str): Guild ID
+            output (bool): Result
+            mydb (object): MySQL connection
+            sql (str): A sql scrypt
+            mycursor (object): Instantiates objects that can execute operations
         Returns:
             True if success, False if not
         """
@@ -883,8 +995,12 @@ class Connector:
         This returns the amount of selected elements a guild has
         Args:
             self (object): The object itself
-            guildId (str): Guild's id
             selection (str): Which table you want to count
+            guildId (str): Guild ID
+            output (int): Result
+            mydb (object): MySQL connection
+            sql (str): A sql scrypt
+            mycursor (object): Instantiates objects that can execute operations
         Returns:
             The amount of selected elements a guild has, if the guild does not has items,
             this method will return -1

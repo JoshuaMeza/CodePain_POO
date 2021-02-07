@@ -68,7 +68,7 @@ The metric is based on _Planning pocker_ in where all the team agreed with the a
 | Rep - Project planning           |        1        |
 | Rep - Work process definition    |        2        |
 | Rep - Coding standard definition |        1        |
-| Rep - UML diagram                |        1        |
+| Rep - UML diagram                |        2        |
 | Bot - Reading words              |        2        |
 | Bot - Deleting messages          |        2        |
 | Bot - Giving Warnings            |        2        |

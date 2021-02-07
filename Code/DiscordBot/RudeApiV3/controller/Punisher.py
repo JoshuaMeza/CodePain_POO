@@ -17,19 +17,19 @@ class Punisher:
         """
         This method adds a fault to a user
         Args:
-            self
-            userId
-            guildId
-            story
-            con
-            userWarnings
+            self (object): The object itself
+            userId: (int): User ID
+            guildId (int): Guild ID
+            story (str): Warnings amount from database
+            con (object): Connector object
+            userWarnings (int): Warnings amount
         Returns:
             The amount of warnings
         """
         story = self.con.getUserStory(userId, guildId)
         userWarnings = 0
 
-        if (story is not None):
+        if story is not None:
             userWarnings = int(story) + 1
             self.con.setUserStoryAmount(userId, guildId, userWarnings)
         else:
@@ -42,12 +42,12 @@ class Punisher:
         """
         This method sets a custom amount of punishments
         Args:
-            self
-            userId
-            guildId
-            newFaultsNumber
-            story
-            con
+            self (object): The object itself
+            userId: (int): User ID
+            guildId (int): Guild ID
+            newFaultsNumber (str): New faults amount
+            story (str): Warnings amount from database
+            con (object): Connector object
         Returns:
             True if success, False if not
         """
@@ -62,10 +62,10 @@ class Punisher:
         """
         This method returns the warnings of a user
         Args:
-            self
-            userId
-            guildId
-            con
+            self (object): The object itself
+            userId: (int): User ID
+            guildId (int): Guild ID
+            con (object): Connector object
         Returns:
             The warnings which a user has
         """
@@ -75,9 +75,9 @@ class Punisher:
         """
         This function resets all the stories on a guild
         Args:
-            self
-            guildId
-            con
+            self (object): The object itself
+            guildId (int): Guild ID
+            con (object): Connector object
         Returns:
             True if success, False if not
         """

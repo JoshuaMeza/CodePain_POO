@@ -25,6 +25,9 @@ class Searcher:
             splittedText (list): Words from the text separated by spaces
             words (list): Banned words
             flag (bool): Verifies if the word was found
+            word (str): Word in text
+            newWord (str): Word in upper case
+            swering (str): Word in banned words list
         Returns:
             True if that word exist in the list, False if not
         """
@@ -49,11 +52,12 @@ class Searcher:
         """
         This method searches for custom words
         Args:
-            self
-            word
-            guildId
-            flag
-            custom
+            self (object): The object itself
+            word (str): Word to verify
+            guildId (int): Guild ID
+            flag (bool): Success flag
+            custom (dict): Custom words dictionary
+            item (str): Word in the custom list
         Returns:
             True if that word exist in the list, False if not
         """
@@ -70,11 +74,12 @@ class Searcher:
         """
         This method searches for ignored words
         Args:
-            self
-            word
-            guildId
-            flag
-            ignore
+            self (object): The object itself
+            word (str): Word to verify
+            guildId (int): Guild ID
+            flag (bool): Success flag
+            ignore (dict): Ignore words dictionary
+            item (str): Word in the ignored list
         Returns:
             True if that word exist in the list, False if not
         """
@@ -91,9 +96,9 @@ class Searcher:
         """
         This method does the search
         Args:
-            self
-            compareOne
-            compareTwo
+            self (object): The object itself
+            compareOne (str): Word one
+            compareTwo (str): Word two
         Returns:
             True if equal or similar, False if not
         """
@@ -103,10 +108,10 @@ class Searcher:
         """
         This method verifies if a user is on the whitelist
         Args:
-            self
-            userId
-            user
-            whitelist
+            self (object): The object itself
+            userId: (int): User ID
+            user (str): User ID in whitelist
+            whitelist (dict): Whitelist dictionary
         Returns:
             True if they is on it, False if not
         """
