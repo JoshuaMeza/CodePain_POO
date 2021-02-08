@@ -4,8 +4,8 @@
 
 - Discord users
 - Developers
-- API system
-- Bot system
+- Rude API
+- Discord API
 
 ## User requirements
 
@@ -75,7 +75,7 @@ The API has the property of being modified **only** by the _requests system_, wh
 ## Changes
 
 - Management page canceled.
-- Poorly defined requirements were removed, as "API search system".
+- Poorly defined requirements were removed, as "API - search system".
 - Impossible requirements were removed, as "Censoring specific words in messages" (no one can edit someone else's messages).
 - Unnecessary requirements were removed, as "Message when someone joins the server" (the bot mains objective is to protect a chat, not maintain a community), "On/Off mode", and "Saving top 10 words".
 - Database requirements were added.
@@ -91,23 +91,25 @@ The API has the property of being modified **only** by the _requests system_, wh
 
 ## Use cases diagram
 
-<img src="../Resources/UseCasesDiagram.png" alt="Use cases diagram" width="100%" height="60%">
+<img src="../Resources/UseCasesRudeBot.png" alt="RudeBot use cases diagram">
 
-> Icons designed by [Flat Icons](https://www.flaticon.es/autores/flat-icons) from [Flaticon](https://www.flaticon.es/), and background picture by [Gerrit Tisdale](https://www.pexels.com/es-es/foto/luces-de-neon-rosadas-y-amarillas-en-una-habitacion-oscura-3864610/) from [Pexels](https://www.pexels.com/es-es/).
+Discord users involve every kind of people, so our two target groups make part of this community. As you can see, every person can interact with the bot by sending a message or invoking a command.
 
-The Discord users will only use the bot generally for protecting their servers.
+In the messaging branch, we can appreciate the flow of the bot. At the very begginig the bot checks if the user is on the whitelist, and there is two options, in case they form part of it the bot will ignore the message, else the bot will start the analize. In this case if the text does not have offensive words, the bot will ignore the message, but, if a offensive word appears the bot will check the Penalize Mode to know if it is neccessary to make a punishment (and send a report) or not.
 
-Developers may use the bot for protecting their servers, and will use the Rude API for developing their own projects.
+In the command branch, it is possible to see that it does not have a complex process, it just recieves a command request, analizes it and then executes it, to finnale send an output message. In case something gone wrong while asking the command or executing it, the bot will notify it.
 
-The API System is a representation of the link between the Database and Rude API, it only gets predefined information from the database and returns it.
+Its important to say that the API provides the banned words and the Discord API makes possible to delete messages and send the result of the commands.
 
-The Bot System works using the Discord API and following their own code. It represents the link between the Discord Bot, the Database (for sending information), and the Rude API (getting words).
+<img src="../Resources/UseCasesRudeAPI.png" alt="API use cases diagram">
+
+Here is the section for developers which will love to use the API. Their use is very simple, just make a request and the API will send you the information.
 
 ## Database diagram
 
 <img src="../Resources/Database.png" alt="Database diagram">
 
-The API can only access to the Languages and Words tables, the rest of the database is for the bot's functionability.
+The API can only access to the Languages and Words tables, the rest of the database is for the bot's functionability. All this process is made by the model class "Connector" which works as a link with the API, the database, and the Bot.
 
 [Click here to go and see the code.](../Code/DataBase)
 

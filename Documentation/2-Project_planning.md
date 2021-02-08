@@ -2,10 +2,10 @@
 
 ## Investigation planning
 
-- API development
-- Discord bots development
-- Discord API documentation
-- Data base development
+- [API development](https://www.php.net/)
+- [Discord API documentation](https://discordpy.readthedocs.io/en/latest/index.html#)
+- [Database development](https://www.w3schools.com/sql/default.asp)
+- [Connection to MySQL database using python](https://www.w3schools.com/python/python_mysql_getstarted.asp)
 
 ## Activities calendar
 
