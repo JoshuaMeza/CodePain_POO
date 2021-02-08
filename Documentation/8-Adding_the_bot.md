@@ -1,12 +1,12 @@
 # Guide for installing the bot
 
-<img src="../Resources/RudeApiLogo.png" alt="Logo" width="100%" height="40%">
+<img src="../Resources/RudeApiLogo.png" alt="Logo" width="100%" height="400px">
 
 ## Adding it into your server
 
 It's really simple, just [click here](https://discord.com/api/oauth2/authorize?client_id=807868841035300864&permissions=8&scope=bot) and select the server which you want to protect.
 
-<img src="../resources/bot.png">
+<img src="../Resources/bot.png">
 
 ## Actions once joined
 
