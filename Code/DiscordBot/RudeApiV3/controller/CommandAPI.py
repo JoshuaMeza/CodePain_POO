@@ -26,9 +26,9 @@ class API(commands.Cog):
         print('API module loaded successfully!')
 
     # Commands
-    @commands.command(aliases=['api'])
+    @commands.command(aliases=['API'])
     @commands.has_role('Rudebot Manager')
-    async def API(self, ctx):
+    async def api(self, ctx):
         """
         This method returns the API information.
         Args:

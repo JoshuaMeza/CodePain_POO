@@ -115,7 +115,7 @@ The API can only access to the Languages and Words tables, the rest of the datab
 
 ## Discord bot classes diagram
 
-<img src="../Resources/Classes.jpg" alt="Classes diagram">
+<img src="../Resources/ClassDiagramRudeBot" alt="Classes diagram">
 
 [Click here to read the bot documentation.](../Code/DiscordBot/RudeApiV3/README.md)
 

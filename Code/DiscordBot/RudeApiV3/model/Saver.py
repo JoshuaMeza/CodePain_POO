@@ -28,7 +28,7 @@ class Saver:
         This method returns the list of banned words
         Args:
             self (object): The object itself
-            words (dict): Banned words dictionary
+            words (list): Banned words list
         Returns:
             The banned words list
         """
