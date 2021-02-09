@@ -24,8 +24,8 @@
 | Bot development         | Dec 2 / Jan 13  | All the team   | Bot                               |
 | Repository Update       | Jan 13          | All the team   | Documentation                     |
 | Bot Beta version        | Jan 13          | All team       | Bot                               |
-| Bot v1.0                | Feb 7           | All team       | Bot                               |
-| Repository Update       | Feb 7           | Joshua         | Documentation                     |
+| Bot v1.0                | Jan 15 / Feb 8  | All team       | Bot                               |
+| Repository Update       | Feb 8           | Joshua         | Documentation                     |
 
 ## Repository
 
