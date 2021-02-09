@@ -1,22 +1,22 @@
 # How to access to the API?
 
-If you want to know how the API works, you can check its documented code in the [Code/API](https://github.com/JoshuaMeza/CodePain_POO/tree/master/Code/API) section
+If you want to know how the API works, you can check its documented code in the [Code/API](../Code/API) section
 
 ## If you want to recover all languages
 
-You will need to consume the following link : http://zivotmagazine.net/Pruebas/getAll.php
+You will need to consume the following link : http://zivotmagazine.net/NO-BORRAR/getAll.php
 
 ## If you want to recover the insults in Spanish
 
-You will need to consume the following link : http://zivotmagazine.net/Pruebas/getSpanish.php
+You will need to consume the following link : http://zivotmagazine.net/NO-BORRAR/getSpanish.php
 
 ## If you want to recover the insults in English
 
-You will need to consume the following link : http://zivotmagazine.net/Pruebas/getEnglish.php
+You will need to consume the following link : http://zivotmagazine.net/NO-BORRAR/getEnglish.php
 
 ## If you want to recover the insults in Mayan
 
-You will need to consume the following link : http://zivotmagazine.net/Pruebas/getMayan.php
+You will need to consume the following link : http://zivotmagazine.net/NO-BORRAR/getMayan.php
 
 ## Python to get all words in all languages
 
@@ -28,7 +28,7 @@ YOU CAN CHOOSE A LANGUAGE IN THE ARRAY BY SPECIFYING THIS ONE
 import requests
 import json
 if __name__ == '__main__':
-    url = 'http://zivotmagazine.net/Pruebas/getAll.php'
+    url = 'http://zivotmagazine.net/NO-BORRAR/getAll.php'
     response= requests.get(url)
     words = json.loads(response.content)
     print(words['English'])
@@ -41,7 +41,7 @@ YOU CAN CHOOSE A LANGUAGE IN THE ARRAY BY SPECIFYING BEFORE THE INDEX AND IN ADD
 import requests
 import json
 if __name__ == '__main__':
-    url = 'http://zivotmagazine.net/Pruebas/getAll.php'
+    url = 'http://zivotmagazine.net/NO-BORRAR/getAll.php'
     response= requests.get(url)
     words = json.loads(response.content)
     print(words['English'][3])
@@ -57,7 +57,7 @@ import requests
 import json
 
 if __name__ == '__main__':
-    url = 'http://zivotmagazine.net/Pruebas/getSpanish.php'
+    url = 'http://zivotmagazine.net/NO-BORRAR/getSpanish.php'
     response= requests.get(url)
     words = json.loads(response.content)
     print(words)
@@ -74,11 +74,11 @@ import requests
 import json
 
 if __name__ == '__main__':
-    url = 'http://zivotmagazine.net/Pruebas/getSpanish.php'
+    url = 'http://zivotmagazine.net/NO-BORRAR/getSpanish.php'
     response= requests.get(url)
     words = json.loads(response.content)
     print(words[3])
 
 ```
 
-[<- Return to index](https://github.com/JoshuaMeza/CodePain_POO)
+[<- Return to index](../README.md)

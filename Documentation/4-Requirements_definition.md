@@ -2,9 +2,9 @@
 
 ## System actors
 
-- User
+- Discord users
+- Developers
 - Rude API
-- Discord bot
 - Discord API
 
 ## User requirements
@@ -26,33 +26,36 @@ The API has the property of being modified **only** by the _requests system_, wh
   - Get Discord messages.
   - Ban automatically.
   - Get information from the API.
-  - Send error or bug messages found by the community.
   - The bot has space for memory.
+  - Manage commands:
+    - Send word requests.
+    - Provide penalties management.
+    - Provide user stories management.
+    - Provide API information.
+    - Send error or bug messages found by the community.
   - Being customized:
     - Grant usage permissions.
     - _Penalize_ or _No penalize_ mode.
     - Add and delete self-selected offensive words to censor them.
     - Ignore self-selected words.
+    - Manage a whitelist.
   - Send default Discord messages for:
     - “In-server” configuration which:
       - Can send user history as:
         - Individual user story.
-        - List of all warned/banned people in the guild.
       - Help command which:
         - Show commands.
         - Can give you the documentation page.
     - Warning messages.
     - Ban messages.
-    - Weekly resume for RudeBot Managers.
     - Warning alerts for RudeBot Managers.
     - Ban alerts for RudeBot Managers.
   - Can clean user history of:
     - Individual user.
     - All users.
-  - Can unban people by:
-    - Individual user.
 - **Database** capable of:
   - Always is active.
+  - Store API information.
   - Store requests.
   - Store custom server settings.
 
@@ -64,46 +67,58 @@ The API has the property of being modified **only** by the _requests system_, wh
 - The review period is three days. Once is finished everyone can request again.
 - Existing words cannot be suggested.
 - The bot can only unban and clean history if a RudeBot Manager asks for it.
+- A guild can have up to 15 custom words.
+- A guild can have up to 15 ignored words.
+- A guild can have up to 10 users in their whitelist.
+- A user can send a bug report every 24 hours.
 
 ## Changes
 
 - Management page canceled.
-- Poorly defined requirements were removed, as "API search system".
-- Impossible requirements were removed, as "Censoring specific words" (no one can edit someone else's messages).
-- Unnecessary requirements were removed, as "Message when someone joins the server" (the bot objective is protect a chat, not maintain it), "On/Off mode" (its more logical kick the bot), and "Saving top 10 words" (it can be calculated easily and its not work of the bot).
+- Poorly defined requirements were removed, as "API - search system".
+- Impossible requirements were removed, as "Censoring specific words in messages" (no one can edit someone else's messages).
+- Unnecessary requirements were removed, as "Message when someone joins the server" (the bot mains objective is to protect a chat, not maintain a community), "On/Off mode", and "Saving top 10 words".
 - Database requirements were added.
 - "Always is active" requirement was added.
 - "API search system" was modified to "Have a method to retrieve information from the database" requirement.
 - The request maximum amount was changed to 5.
+- Added a cooldown requirement to the bug reports.
+- Added requirements that were planned in Trello but not defined in the documentation, mostly in bot's description (whitelist, requests, bugs, and some commands).
+- Deleted requirement for weekely resumes.
+- Banning system is implemented but in occassions it could get buggy, so we decided to remove the unban requirement.
+- Added a command for getting information of the API.
+- Because of bad organization and lack of time, the development of the algorithm for searching offensive words was temporally removed.
 
 ## Use cases diagram
 
-<img src="https://github.com/JoshuaMeza/CodePain_POO/blob/master/Resources/UseCasesDiagram.png" alt="Use cases diagram" width="100%">
+<img src="../Resources/UseCasesRudeBot.png" alt="RudeBot use cases diagram">
 
-> Icons designed by [Flat Icons](https://www.flaticon.es/autores/flat-icons) from [Flaticon](https://www.flaticon.es/), and background picture by [Gerrit Tisdale](https://www.pexels.com/es-es/foto/luces-de-neon-rosadas-y-amarillas-en-una-habitacion-oscura-3864610/) from [Pexels](https://www.pexels.com/es-es/).
+Discord users involve every kind of people, so our two target groups make part of this community. As you can see, every person can interact with the bot by sending a message or invoking a command.
 
-The Discord users will only use the bot generally for protecting their servers.
+In the messaging branch, we can appreciate the flow of the bot. At the very begginig the bot checks if the user is on the whitelist, and there is two options, in case they form part of it the bot will ignore the message, else the bot will start the analize. In this case if the text does not have offensive words, the bot will ignore the message, but, if a offensive word appears the bot will check the Penalize Mode to know if it is neccessary to make a punishment (and send a report) or not.
 
-Developers may use the bot for protecting their servers, and will use the Rude API for developing their own projects.
+In the command branch, it is possible to see that it does not have a complex process, it just recieves a command request, analizes it and then executes it, to finnale send an output message. In case something gone wrong while asking the command or executing it, the bot will notify it.
 
-The API System is a representation of the link between the Database and Rude API, it only gets predefined information from the database and returns it.
+Its important to say that the API provides the banned words and the Discord API makes possible to delete messages and send the result of the commands.
 
-The Bot System works using the Discord API and following their own code. It represents the link between the Discord Bot, the Database (for sending information), and the Rude API (getting words).
+<img src="../Resources/UseCasesRudeAPI.png" alt="API use cases diagram">
 
-## Database UML diagram
+Here is the section for developers which will love to use the API. Their use is very simple, just make a request and the API will send you the information.
 
-### For API
+## Database diagram
 
-<img src="https://github.com/JoshuaMeza/CodePain_POO/blob/master/Resources/UMLDatabase.png" alt="Database UML diagram">
+<img src="../Resources/Database.png" alt="Database diagram">
 
-### For custom settings
+The API can only access to the Languages and Words tables, the rest of the database is for the bot's functionability. All this process is made by the model class "Connector" which works as a link with the API, the database, and the Bot.
 
-<img src="https://github.com/JoshuaMeza/CodePain_POO/blob/master/Resources/tempBox.png" width="20px" height="20px">
+[Click here to go and see the code.](../Code/API/)
 
 ## Discord bot classes diagram
 
-<img src="https://github.com/JoshuaMeza/CodePain_POO/blob/master/Resources/uml.jpg" width="100%">
+<img src="../Resources/ClassDiagramRudeBot.png" alt="Classes diagram">
 
-[Click to read the bot documentation.](https://github.com/JoshuaMeza/CodePain_POO/tree/master/Code/DiscordBot/RudeApiV2)
+The Main class is the hearth of the bot, it is the responsible of initializing their components (a coonnector, a saver, a searcher and a punisher) to make their main task, delete offensive messages. Also is related with a class which helps to maintain activated the execution of the bot in a cloud service. Further, it has some commands to help Rudebot Managers into their task of bringing peace in their guild.
 
-[<- Return to index](https://github.com/JoshuaMeza/CodePain_POO)
+[Click here to read the bot documentation.](../Code/DiscordBot/RudeApiV3/README.md)
+
+[<- Return to index](../README.md)

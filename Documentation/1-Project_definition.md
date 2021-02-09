@@ -29,8 +29,12 @@ The most complete experience that we can bring to our users is the usage of the 
 
 This kind of administration is perfect for strict or nonstrict discord communities, for example, streamers communities, school chats, friends groups, work servers, etc.
 
+This might interest you: [Guide for installing the bot](./8-Adding_the_bot.md).
+
 ### Developers
 
 If you are one of that group of people that has knowledge about API's and you want to create a system that needs an extensive database of _offensive words_ that is continuously growing and getting updated to create a magical system, it is your lucky day! Our API is completely open for you, you can access at any time to it by following the documentation.
 
-[<- Return to index](https://github.com/JoshuaMeza/CodePain_POO)
+This might interest you: [How to access to the API?](./9-Accesing_API_documentation.md).
+
+[<- Return to index](../README.md)

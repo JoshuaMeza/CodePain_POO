@@ -56,44 +56,44 @@ The metric is based on _Planning pocker_ in where all the team agreed with the a
 
 ### Individual contribution document
 
-[Click here to check](https://alumnosuady-my.sharepoint.com/:x:/g/personal/a16001575_alumnos_uady_mx/EbO0Fdmjb1RNoLy71pG6ELEBSlKO6_AM9NcZIZn81-4hYQ?e=8GvjyV).
+[Click here to check](https://alumnosuady-my.sharepoint.com/:x:/g/personal/a16001575_alumnos_uady_mx/EbO0Fdmjb1RNoLy71pG6ELEBGV7BEWXcbB6Ik9LG50f6jg?e=q3K8PW).
 
 ### Backlog points table
 
-| Backlog                               | Activity points |
-| ------------------------------------- | :-------------: |
-| Rep - Project definition              |        1        |
-| Rep - Requirements definition         |        5        |
-| Rep - Use cases diagram               |        1        |
-| Rep - Project planning                |        1        |
-| Rep - Work process definition         |        2        |
-| Rep - Coding standard definition      |        1        |
-| Rep - UML diagram                     |        1        |
-| Bot - Reading words                   |        2        |
-| Bot - Deleting messages               |        2        |
-| Bot - Giving Warnings                 |        2        |
-| Bot - Ban system                      |        2        |
-| DB - Database develop                 |        1        |
-| DB - Database Filling                 |        1        |
-| API - Sending information             |        1        |
-| Bot - Using API                       |        2        |
-| API - Offensive words research        |        2        |
-| Bot - History                         |        2        |
-| Bot - Make requests                   |        1        |
-| DB - Requests recorded                |        1        |
-| API - Clean system                    |        1        |
-| Bot - Personal offensive list         |        1        |
-| Bot - Ignore words                    |        1        |
-| Bot - Commands                        |        4        |
-| Bot - Channel Joining                 |        1        |
-| Bot - Automatic alerts to admins      |        1        |
-| Bot - Penalize or not mode            |        1        |
-| Bot - Weekely resume                  |        1        |
-| Bot - Cleanning history and unbanning |        1        |
-| Bot - Whitelist                       |        1        |
-| Rep - Bot documentation               |        1        |
-| Rep - Install bot doc                 |        1        |
-| Rep - Accessing to API doc            |        1        |
+| Backlog                          | Activity points |
+| -------------------------------- | :-------------: |
+| Rep - Project definition         |        1        |
+| Rep - Requirements definition    |        5        |
+| Rep - Use cases diagram          |        1        |
+| Rep - Project planning           |        1        |
+| Rep - Work process definition    |        2        |
+| Rep - Coding standard definition |        1        |
+| Rep - UML diagram                |        2        |
+| Bot - Reading words              |        2        |
+| Bot - Deleting messages          |        2        |
+| Bot - Giving Warnings            |        2        |
+| Bot - Ban system                 |        2        |
+| DB - Database develop            |        1        |
+| DB - Database Filling            |        1        |
+| API - Sending information        |        1        |
+| Bot - Using API                  |        2        |
+| API - Offensive words research   |        2        |
+| Bot - History                    |        2        |
+| Bot - Make requests              |        1        |
+| DB - Requests recorded           |        1        |
+| API - Clean system               |        1        |
+| Bot - Personal offensive list    |        1        |
+| Bot - Ignore words               |        1        |
+| Bot - Commands                   |        4        |
+| Bot - Channel Joining            |        1        |
+| Bot - Automatic alerts to admins |        1        |
+| Bot - Penalize or not mode       |        1        |
+| Bot - Cleanning history          |        1        |
+| Bot - Whitelist                  |        1        |
+| Rep - Bot documentation          |        1        |
+| Rep - Install bot doc            |        1        |
+| Rep - Accessing to API doc       |        1        |
+| Bot - Get API information        |        1        |
 
 ## Individual reports
 
@@ -103,7 +103,7 @@ _First deployment:_ I am very satisfied with how the team is working, the truth 
 
 _Second deployment:_ The truth is that sometimes I felt that I could not do or understand what they asked of me, however it is good to know that my team supports me when I need it, I feel that when we concentrate we can advance in a good and efficient way and dominate things more beyond what is expected.
 
-_Third deployment:_ ...
+_Third deployment:_ Personal problems that affected my performance at the beginning, I managed to give my best performance even with them and in the end we managed to carry the project forward.
 
 - **Leon Ortega Luis Gerardo:**
 
@@ -129,6 +129,6 @@ _First deployment:_ It was a little hard to organize the tasks at the start, but
 
 _Second deployment:_ I feel like we were making a big progress, but sometimes its hard to guide everyone to make the scheduled tasks or joining at time in meetings. At least, my teammates are always trying to give the best result in every task that they start.
 
-_Third deployment:_ ...
+_Third deployment:_ It was really difficult, we had a lot of troubles in this stage, but the important thing is that the product its finished.
 
-[<- Return to index](https://github.com/JoshuaMeza/CodePain_POO)
+[<- Return to index](../README.md)
