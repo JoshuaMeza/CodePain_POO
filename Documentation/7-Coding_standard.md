@@ -62,6 +62,6 @@ Continuation lines should align wrapped elements either vertically using Python'
 
 ## Documentation tools
 
-Pydoc is used to make the documantation of the python files. [Click here to download.](https://github.com/JoshuaMeza/CodePain_POO/tree/master/Resources/Pydoc.zip?raw=true)
+Pydoc is used to make the documantation of the python files. [Click here to download.](https://github.com/JoshuaMeza/CodePain_POO/blob/master/Resources/Pydoc.zip?raw=true)
 
 [<- Return to index](../README.md)
