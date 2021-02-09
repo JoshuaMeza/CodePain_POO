@@ -1,7 +1,7 @@
 """
 Author CodePain Team
 Date 14/01/2021
-Version 1.0.3
+Version 1.0.4
 Connector tool
 """
 import requests
@@ -76,7 +76,9 @@ class Connector:
                 host=os.getenv('HOST'),
                 user=os.getenv('DBUSER'),
                 password=os.getenv('PASSW'),
-                database=os.getenv('DBNAME')
+                database=os.getenv('DBNAME'),
+                use_pure=True,
+                ssl_disabled=True
             )
 
             sql = "INSERT INTO `{}`.`RequestedWords` (`word`,`languageId`) VALUES ('{}',{});".format(
@@ -115,7 +117,9 @@ class Connector:
                 host=os.getenv('HOST'),
                 user=os.getenv('DBUSER'),
                 password=os.getenv('PASSW'),
-                database=os.getenv('DBNAME')
+                database=os.getenv('DBNAME'),
+                use_pure=True,
+                ssl_disabled=True
             )
 
             sql = "INSERT INTO `{}`.`Bugs` (`Comment`,`idGuildBugs`) VALUES ('{}',{});".format(
@@ -154,7 +158,9 @@ class Connector:
                 host=os.getenv('HOST'),
                 user=os.getenv('DBUSER'),
                 password=os.getenv('PASSW'),
-                database=os.getenv('DBNAME')
+                database=os.getenv('DBNAME'),
+                use_pure=True,
+                ssl_disabled=True
             )
 
             sql = "INSERT INTO `{}`.`CustomWords` (`word`,`guildIdCW`) VALUES ('{}',{});".format(
@@ -193,7 +199,9 @@ class Connector:
                 host=os.getenv('HOST'),
                 user=os.getenv('DBUSER'),
                 password=os.getenv('PASSW'),
-                database=os.getenv('DBNAME')
+                database=os.getenv('DBNAME'),
+                use_pure=True,
+                ssl_disabled=True
             )
 
             sql = "SELECT word,guildIdCW FROM `{}`.`CustomWords`;".format(
@@ -237,7 +245,9 @@ class Connector:
                 host=os.getenv('HOST'),
                 user=os.getenv('DBUSER'),
                 password=os.getenv('PASSW'),
-                database=os.getenv('DBNAME')
+                database=os.getenv('DBNAME'),
+                use_pure=True,
+                ssl_disabled=True
             )
 
             sql = "SELECT word FROM `{}`.`CustomWords` WHERE guildIdCW={};".format(os.getenv('DBNAME'),
@@ -280,7 +290,9 @@ class Connector:
                 host=os.getenv('HOST'),
                 user=os.getenv('DBUSER'),
                 password=os.getenv('PASSW'),
-                database=os.getenv('DBNAME')
+                database=os.getenv('DBNAME'),
+                use_pure=True,
+                ssl_disabled=True
             )
 
             sql = "DELETE FROM `{}`.`CustomWords` WHERE word='{}' and guildIdCW={} LIMIT 1;".format(
@@ -318,7 +330,9 @@ class Connector:
                 host=os.getenv('HOST'),
                 user=os.getenv('DBUSER'),
                 password=os.getenv('PASSW'),
-                database=os.getenv('DBNAME')
+                database=os.getenv('DBNAME'),
+                use_pure=True,
+                ssl_disabled=True
             )
 
             sql = "INSERT INTO `{}`.`Guilds` (`idGuilds`,`penalizeMode`) VALUES ({},1);".format(
@@ -356,7 +370,9 @@ class Connector:
                 host=os.getenv('HOST'),
                 user=os.getenv('DBUSER'),
                 password=os.getenv('PASSW'),
-                database=os.getenv('DBNAME')
+                database=os.getenv('DBNAME'),
+                use_pure=True,
+                ssl_disabled=True
             )
 
             sql = "SELECT idGuilds FROM `{}`.`Guilds` WHERE idGuilds={};".format(
@@ -398,7 +414,9 @@ class Connector:
                 host=os.getenv('HOST'),
                 user=os.getenv('DBUSER'),
                 password=os.getenv('PASSW'),
-                database=os.getenv('DBNAME')
+                database=os.getenv('DBNAME'),
+                use_pure=True,
+                ssl_disabled=True
             )
 
             sql = "SELECT * FROM `{}`.`Guilds`;".format(
@@ -441,7 +459,9 @@ class Connector:
                 host=os.getenv('HOST'),
                 user=os.getenv('DBUSER'),
                 password=os.getenv('PASSW'),
-                database=os.getenv('DBNAME')
+                database=os.getenv('DBNAME'),
+                use_pure=True,
+                ssl_disabled=True
             )
 
             sql = "UPDATE `{}`.`Guilds` SET penalizeMode={} WHERE idGuilds={};".format(
@@ -480,7 +500,9 @@ class Connector:
                 host=os.getenv('HOST'),
                 user=os.getenv('DBUSER'),
                 password=os.getenv('PASSW'),
-                database=os.getenv('DBNAME')
+                database=os.getenv('DBNAME'),
+                use_pure=True,
+                ssl_disabled=True
             )
 
             sql = "INSERT INTO `{}`.`Ignore` (`word`,`guildIdIg`) VALUES ('{}',{});".format(
@@ -519,7 +541,9 @@ class Connector:
                 host=os.getenv('HOST'),
                 user=os.getenv('DBUSER'),
                 password=os.getenv('PASSW'),
-                database=os.getenv('DBNAME')
+                database=os.getenv('DBNAME'),
+                use_pure=True,
+                ssl_disabled=True
             )
 
             sql = "SELECT word,guildIdIg FROM `{}`.`Ignore`;".format(
@@ -562,7 +586,9 @@ class Connector:
                 host=os.getenv('HOST'),
                 user=os.getenv('DBUSER'),
                 password=os.getenv('PASSW'),
-                database=os.getenv('DBNAME')
+                database=os.getenv('DBNAME'),
+                use_pure=True,
+                ssl_disabled=True
             )
 
             sql = "SELECT word FROM `{}`.`Ignore` WHERE guildIdIg={};".format(
@@ -605,7 +631,9 @@ class Connector:
                 host=os.getenv('HOST'),
                 user=os.getenv('DBUSER'),
                 password=os.getenv('PASSW'),
-                database=os.getenv('DBNAME')
+                database=os.getenv('DBNAME'),
+                use_pure=True,
+                ssl_disabled=True
             )
 
             sql = "DELETE FROM `{}`.`Ignore` WHERE word='{}' and guildIdIg={} LIMIT 1;".format(
@@ -644,7 +672,9 @@ class Connector:
                 host=os.getenv('HOST'),
                 user=os.getenv('DBUSER'),
                 password=os.getenv('PASSW'),
-                database=os.getenv('DBNAME')
+                database=os.getenv('DBNAME'),
+                use_pure=True,
+                ssl_disabled=True
             )
 
             sql = "INSERT INTO `{}`.`Stories` (`userId`,`warnings`,`guildIdSty`) VALUES ({},1,{});".format(
@@ -684,7 +714,9 @@ class Connector:
                 host=os.getenv('HOST'),
                 user=os.getenv('DBUSER'),
                 password=os.getenv('PASSW'),
-                database=os.getenv('DBNAME')
+                database=os.getenv('DBNAME'),
+                use_pure=True,
+                ssl_disabled=True
             )
 
             sql = "SELECT * FROM `{}`.`Stories` WHERE guildIdSty={};".format(
@@ -727,7 +759,9 @@ class Connector:
                 host=os.getenv('HOST'),
                 user=os.getenv('DBUSER'),
                 password=os.getenv('PASSW'),
-                database=os.getenv('DBNAME')
+                database=os.getenv('DBNAME'),
+                use_pure=True,
+                ssl_disabled=True
             )
 
             sql = "SELECT warnings FROM `{}`.`Stories` WHERE userId={} and guildIdSty={};".format(
@@ -770,7 +804,9 @@ class Connector:
                 host=os.getenv('HOST'),
                 user=os.getenv('DBUSER'),
                 password=os.getenv('PASSW'),
-                database=os.getenv('DBNAME')
+                database=os.getenv('DBNAME'),
+                use_pure=True,
+                ssl_disabled=True
             )
 
             sql = "UPDATE `{}`.`Stories` SET warnings={} WHERE userId={} and guildIdSty={};".format(
@@ -808,7 +844,9 @@ class Connector:
                 host=os.getenv('HOST'),
                 user=os.getenv('DBUSER'),
                 password=os.getenv('PASSW'),
-                database=os.getenv('DBNAME')
+                database=os.getenv('DBNAME'),
+                use_pure=True,
+                ssl_disabled=True
             )
 
             sql = "UPDATE `{}`.`Stories` SET warnings=0 WHERE guildIdSty={};".format(
@@ -847,7 +885,9 @@ class Connector:
                 host=os.getenv('HOST'),
                 user=os.getenv('DBUSER'),
                 password=os.getenv('PASSW'),
-                database=os.getenv('DBNAME')
+                database=os.getenv('DBNAME'),
+                use_pure=True,
+                ssl_disabled=True
             )
 
             sql = "INSERT INTO `{}`.`Whitelist` (`idUser`,`idGuild`) VALUES ({},{});".format(
@@ -886,7 +926,9 @@ class Connector:
                 host=os.getenv('HOST'),
                 user=os.getenv('DBUSER'),
                 password=os.getenv('PASSW'),
-                database=os.getenv('DBNAME')
+                database=os.getenv('DBNAME'),
+                use_pure=True,
+                ssl_disabled=True
             )
 
             sql = "SELECT idUser,idGuild FROM `{}`.`Whitelist`;".format(
@@ -930,7 +972,9 @@ class Connector:
                 host=os.getenv('HOST'),
                 user=os.getenv('DBUSER'),
                 password=os.getenv('PASSW'),
-                database=os.getenv('DBNAME')
+                database=os.getenv('DBNAME'),
+                use_pure=True,
+                ssl_disabled=True
             )
 
             sql = "SELECT idUser FROM `{}`.`Whitelist` WHERE idGuild={};".format(
@@ -973,7 +1017,9 @@ class Connector:
                 host=os.getenv('HOST'),
                 user=os.getenv('DBUSER'),
                 password=os.getenv('PASSW'),
-                database=os.getenv('DBNAME')
+                database=os.getenv('DBNAME'),
+                use_pure=True,
+                ssl_disabled=True
             )
 
             sql = "DELETE FROM `{}`.`Whitelist` WHERE idUser={} and idGuild={} LIMIT 1;".format(
@@ -1013,7 +1059,9 @@ class Connector:
                 host=os.getenv('HOST'),
                 user=os.getenv('DBUSER'),
                 password=os.getenv('PASSW'),
-                database=os.getenv('DBNAME')
+                database=os.getenv('DBNAME'),
+                use_pure=True,
+                ssl_disabled=True
             )
             flag = False
             sql = ""

@@ -111,11 +111,13 @@ Here is the section for developers which will love to use the API. Their use is 
 
 The API can only access to the Languages and Words tables, the rest of the database is for the bot's functionability. All this process is made by the model class "Connector" which works as a link with the API, the database, and the Bot.
 
-[Click here to go and see the code.](../Code/DataBase)
+[Click here to go and see the code.](../Code/API/)
 
 ## Discord bot classes diagram
 
-<img src="../Resources/ClassDiagramRudeBot" alt="Classes diagram">
+<img src="../Resources/ClassDiagramRudeBot.png" alt="Classes diagram">
+
+The Main class is the hearth of the bot, it is the responsible of initializing their components (a coonnector, a saver, a searcher and a punisher) to make their main task, delete offensive messages. Also is related with a class which helps to maintain activated the execution of the bot in a cloud service. Further, it has some commands to help Rudebot Managers into their task of bringing peace in their guild.
 
 [Click here to read the bot documentation.](../Code/DiscordBot/RudeApiV3/README.md)
 
