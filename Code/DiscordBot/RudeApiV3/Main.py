@@ -59,23 +59,29 @@ async def on_guild_join(guild):
             Nothing
     """
     role = get(guild.roles, name='Rudebot Manager')
-    category = get(guild.categories, name='Rudebot Management')
+    category = get(guild.categories, name='RUDEBOT MANAGEMENT')
+    channel = get(guild.text_channels, name='rude-admin')
 
     if role is None:
         role = await guild.create_role(name='Rudebot Manager', colour=discord.Colour.from_rgb(225, 73, 150))
 
     if category is None:
-        category = await guild.create_category_channel('Rudebot Management')
+        category = await guild.create_category_channel('RUDEBOT MANAGEMENT')
         overwrites = {
             guild.default_role: discord.PermissionOverwrite(send_messages=False, read_messages=False),
             guild.me: discord.PermissionOverwrite(send_messages=True, read_messages=True, administrator=True),
             role: discord.PermissionOverwrite(
                 send_messages=True, read_messages=True)
         }
-        await guild.create_text_channel('rude-admin', overwrites=overwrites, category=category)
+        channel = await guild.create_text_channel('rude-admin', overwrites=overwrites, category=category)
 
     if (not connector.searchGuild(guild.id)):
-        connector.recordGuild(guild.id)
+        if memory.addGuild(guild.id):
+            await channel.send(f'Hello {role.mention}, I\'ll do my best to help you all, try typing **!help** to start.')
+        else:
+            await channel.send('I had a problem adding your Guild into my system.')
+    else:
+        await channel.send(f'Hello {role.mention}! I\'m back.')
 
 
 @client.event

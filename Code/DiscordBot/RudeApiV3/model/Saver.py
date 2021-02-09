@@ -13,15 +13,38 @@ class Saver:
         """
         self.con = connector
         self.words = self.con.getWordsAPI()
+        self.serverSettings = {}
         self.custom = {}
         self.ignored = {}
-        self.requestLog = []
-        self.serverSettings = {}
         self.whitelist = {}
+        self.requestLog = []
         self.retrieveGuildsInfo()
         self.retrieveCustomWords()
         self.retrieveIgnoredWords()
         self.retrieveWhitelist()
+
+    def addGuild(self, guildId):
+        """
+        This method adds a new guild during execution
+        Args:
+            self (object): The object itself
+            guildId (int): Guild ID
+            con (object): Connector object
+            serverSettings (dict): Dictionary of servers and their settings
+            flag (bool): Result
+        Returns:
+            True if success, False if not
+        """
+        flag = False
+
+        if self.con.recordGuild(guildId):
+            self.serverSettings[str(guildId)] = '1'
+            self.custom[str(guildId)] = []
+            self.ignored[str(guildId)] = []
+            self.whitelist[str(guildId)] = []
+            flag = True
+
+        return flag
 
     def getWordsList(self):
         """
