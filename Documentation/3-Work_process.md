@@ -103,7 +103,7 @@ _First deployment:_ I am very satisfied with how the team is working, the truth 
 
 _Second deployment:_ The truth is that sometimes I felt that I could not do or understand what they asked of me, however it is good to know that my team supports me when I need it, I feel that when we concentrate we can advance in a good and efficient way and dominate things more beyond what is expected.
 
-_Third deployment:_ ...
+_Third deployment:_ Personal problems that affected my performance at the beginning, I managed to give my best performance even with them and in the end we managed to carry the project forward.
 
 - **Leon Ortega Luis Gerardo:**
 
