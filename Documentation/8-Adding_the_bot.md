@@ -101,6 +101,6 @@ Now you can copy the user's id!
 
 ## Documentation
 
-[Click here to read the bot documentation.](../Code/DiscordBot/RudeApiV3/README.md)
+[Click here to get the bot's documentation.](https://github.com/JoshuaMeza/CodePain_POO/blob/master/Resources/Pydoc.zip?raw=true)
 
 [<- Return to index](../README.md)

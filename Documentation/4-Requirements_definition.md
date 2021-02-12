@@ -97,7 +97,7 @@ Discord users involve every kind of people, so our two target groups make part o
 
 In the messaging branch, we can appreciate the flow of the bot. At the very begginig the bot checks if the user is on the whitelist, and there is two options, in case they form part of it the bot will ignore the message, else the bot will start the analize. In this case if the text does not have offensive words, the bot will ignore the message, but, if a offensive word appears the bot will check the Penalize Mode to know if it is neccessary to make a punishment (and send a report) or not.
 
-In the command branch, it is possible to see that it does not have a complex process, it just recieves a command request, analizes it and then executes it, to finnale send an output message. In case something gone wrong while asking the command or executing it, the bot will notify it.
+In the command branch, it is possible to see that it does not have a complex process, it just recieves a command request, analizes it, executes it, and finnaly sends an output message. In case something gone wrong while asking the command or executing it, the bot will notify it.
 
 Its important to say that the API provides the banned words and the Discord API makes possible to delete messages and send the result of the commands.
 
@@ -117,8 +117,6 @@ The API can only access to the Languages and Words tables, the rest of the datab
 
 <img src="../Resources/ClassDiagramRudeBot.png" alt="Classes diagram">
 
-The Main class is the hearth of the bot, it is the responsible of initializing their components (a coonnector, a saver, a searcher and a punisher) to make their main task, delete offensive messages. Also is related with a class which helps to maintain activated the execution of the bot in a cloud service. Further, it has some commands to help Rudebot Managers into their task of bringing peace in their guild.
-
-[Click here to read the bot documentation.](../Code/DiscordBot/RudeApiV3/README.md)
+The Main class is the hearth of the bot, it is the responsible of initializing their components (a connector, a saver, a searcher and a punisher) to make their main task, delete offensive messages. Also is related with a class which helps to maintain activated the execution of the bot in a cloud service. Further, it has some commands to help Rudebot Managers into their task of bringing peace in their guild.
 
 [<- Return to index](../README.md)
