@@ -2,11 +2,11 @@
 
 ## Methodology
 
-The methodology used by the development team is SCRUM. The Daily SCRUM is done everyday, except Sunday, in a session of fifteen minutes between 5:00 p.m. and 10:00 p.m. (depending on the disponibility of the team). The Sprints last two weeks, and all tasks are divided equally among the entire team.
+The methodology used by the development team is SCRUM. The Daily SCRUM takes place every day, except Sundays, in a fifteen-minute session between 5:00 p.m. and 10:00 p.m. (depending on the availability of the team). Sprints last two weeks and all tasks are divided equally among the entire team.
 
-You can check the team's progress at any time by consulting the [Trello](https://trello.com/b/OymW6aPy).
+You can check the team's progress at any time by checking the [Trello](https://trello.com/b/OymW6aPy).
 
-The Sprint Review and Sprint Retrospective take place on Saturdays or Sundays once the Sprint ends.
+The Sprint Review and Sprint Retrospective take place on Saturdays or Sundays after the Sprint ends.
 
 ## Team roles
 
