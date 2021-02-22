@@ -1,21 +1,22 @@
 """
 Author CodePain Team
 Date 05/02/2021
-Version 1.0.0
+Version 1.0.1
 Custom Words Module
 """
 import discord
 from discord.ext import commands
-from Main import memory
+from Main import memory, formatter
 
 
 class Customs(commands.Cog):
-    def __init__(self, client, memory):
+    def __init__(self, client, memory, formatter):
         """
         This is a constructor
         """
         self.client = client
         self.memory = memory
+        self.formatter = formatter
 
     # Events
     @commands.Cog.listener()
@@ -37,12 +38,13 @@ class Customs(commands.Cog):
             msg (str): Custom word
             memory (object): Saver object
             embed (object): A Discord message type
+            formatter (object): Formatter object
         Returns:
             Nothing
         """
         if msg != '':
             if self.memory.customAmount(ctx.guild.id) != 15:
-                if self.memory.addCustom(msg.upper(), ctx.guild.id):
+                if self.memory.addCustom(self.formatter.formatWord(msg.upper()), ctx.guild.id):
                     await ctx.send(f'Successfully added "{msg}".')
                 else:
                     await ctx.send('The addition failed.')
@@ -148,12 +150,13 @@ class Customs(commands.Cog):
             msg (str): Ignored word
             memory (object): Saver object
             embed (object): A Discord message type
+            formatter (object): Formatter object
         Returns:
             Nothing
         """
         if msg != '':
             if self.memory.ignoredAmount(ctx.guild.id) != 15:
-                if self.memory.addIgnored(msg.upper(), ctx.guild.id):
+                if self.memory.addIgnored(self.formatter.formatWord(msg.upper()), ctx.guild.id):
                     await ctx.send(f'Successfully added "{msg}".')
                 else:
                     await ctx.send('The addition failed.')
@@ -253,4 +256,4 @@ def setup(client):
     """
     Function needed to load the extension
     """
-    client.add_cog(Customs(client, memory))
+    client.add_cog(Customs(client, memory, formatter))

@@ -1,7 +1,7 @@
 """
 Author CodePain Team
 Date 01/01/2021
-Version 1.2.0
+Version 1.2.1
 A channel and chat management bot
 """
 from model.Saver import *
@@ -9,6 +9,7 @@ from model.Connector import *
 from controller.Searcher import *
 from controller.Punisher import *
 from controller.KeepAlive import *
+from controller.Formatter import *
 import discord
 import os
 import sys
@@ -25,9 +26,10 @@ client = commands.Bot(command_prefix=prefix, intents=intents)
 client.remove_command('help')
 
 # ------------------------------- Declarations -----------------------------------------------------
+formatter = Formatter()
 connector = Connector()
 memory = Saver(connector)
-search = Searcher(memory)
+search = Searcher(memory, formatter)
 punisher = Punisher(connector)
 
 # ------------------------------- Adding Extensions -------------------------------------------------

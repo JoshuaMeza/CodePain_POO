@@ -1,13 +1,13 @@
 """
 Author CodePain Team
 Date 14/01/2021
-Version 1.0.1
+Version 1.0.2
 Searcher tool
 """
 
 
 class Searcher:
-    def __init__(self, memory):
+    def __init__(self, memory, formatter):
         """
         This is a constructor
         """
@@ -15,6 +15,35 @@ class Searcher:
         self.custom = memory.getCustomDict()
         self.ignore = memory.getIgnoredDict()
         self.whitelist = memory.getWhiteList()
+        self.formatter = formatter
+        self.variants = {
+            'A': ('4', '@'),
+            'B': ('8'),
+            'C': ('[', '{', 'K', 'Q'),
+            'D': (),
+            'E': ('3'),
+            'F': ('7'),
+            'G': ('6', '9'),
+            'H': (),
+            'I': ('1', '|', 'L', '!', '¡'),
+            'J': (),
+            'K': ('C', 'Q'),
+            'L': ('1', '|', 'I', '!', '¡'),
+            'M': (),
+            'N': (),
+            'O': ('0', '*', '°', '@'),
+            'P': (),
+            'Q': ('K'),
+            'R': (),
+            'S': ('5'),
+            'T': ('7', '+'),
+            'U': ('V'),
+            'V': ('U'),
+            'W': (),
+            'X': (),
+            'Y': (),
+            'Z': ('7')
+        }
 
     def searchWord(self, text, guildId):
         """
@@ -92,18 +121,6 @@ class Searcher:
 
         return flag
 
-    def searchAlgorithm(self, compareOne, compareTwo):
-        """
-        This method does the search
-        Args:
-            self (object): The object itself
-            compareOne (str): Word one
-            compareTwo (str): Word two
-        Returns:
-            True if equal or similar, False if not
-        """
-        return compareOne == compareTwo
-
     def verifyUser(self,  userId, guildId):
         """
         This method verifies if a user is on the whitelist
@@ -123,3 +140,156 @@ class Searcher:
                 break
 
         return flag
+
+    def searchAlgorithm(self, wordOne, wordTwo):
+        """
+        This method does the search
+        Args:
+            self (object): The object itself
+            wordOne (str): Word one
+            wordTwo (str): Word two
+            result (bool): The result
+            stack (list): A stack for removing repeated words
+            check (list): The word to examine
+            length (int): The length of the word
+            sameChars (int): The amount of equal chars
+            lengthFlag (bool): Flag for preventing out of index exception
+            i (int): Iterator
+            previousLetter (str): Previous letter
+            letter (str): Actual letter
+            key (str): Dictionary key value
+            j (int): Iterator
+            percentage (float): Equality percentage
+        Returns:
+            True if equal or similar, False if not
+        """
+        result = False
+        stack = []
+        check = self.cut(self.formatter.formatWord(wordOne))
+        length = len(check)
+        sameChars = 0
+        lengthFlag = True
+        i = 0
+
+        # Analize
+        if length > 0:
+            previousLetter = None
+            for letter in wordTwo:
+                if lengthFlag:
+                    # Contractions
+                    if previousLetter is not None:
+                        if previousLetter == 'C' and letter == 'K' and (check[i] != letter and not any(var == check[i] for var in self.variants[letter])):
+                            previousLetter = None
+                            stack = ['K']
+                            sameChars += 1
+                            continue
+
+                    # Start or end with symbols
+                    if i == 0:
+                        if letter != 'I' and letter != 'L' and (check[i] == '¡' or check == '¿'):
+                            i += 1
+                            length -= 1
+
+                            if i >= length:
+                                lengthFlag = False
+                    elif i == length - 1:
+                        if letter != 'I' and letter != 'L' and (check[i] == '!' or check == '?'):
+                            i += 1
+                            length -= 1
+                            lengthFlag = False
+
+                    # Repeated words
+                    if len(stack) != 0 and lengthFlag:
+                        if letter != stack[0] and letter != check[i]:
+                            while lengthFlag and (check[i] == stack[0] or any(var == check[i] for var in self.variants[stack[0]])):
+                                i += 1
+                                sameChars += 1
+
+                                if i >= length:
+                                    lengthFlag = False
+
+                    # Stack saving
+                    if len(stack) > 0:
+                        stack.pop(0)
+
+                    if lengthFlag:
+                        for key in self.variants:
+                            if check[i] == key or any(var == check[i] for var in self.variants[key]):
+                                # What do I expect to find? (groups with things in common)
+                                if key == 'I' or key == 'L':
+                                    if letter == 'I' or letter == 'L':
+                                        stack.append(letter)
+                                        check[i] = letter
+                                elif key == 'U' or key == 'V':
+                                    if letter == 'U' or letter == 'V':
+                                        stack.append(letter)
+                                        check[i] = letter
+                                elif key == 'C' or key == 'K' or key == 'Q':
+                                    if letter == 'C' or letter == 'K' or letter == 'Q':
+                                        stack.append(letter)
+                                        check[i] = letter
+                                # Not a special case
+                                else:
+                                    stack.append(key)
+                                    check[i] = key
+                                break
+
+                    # Compare
+                    if lengthFlag and letter == check[i]:
+                        sameChars += 1
+
+                    # Exit
+                    i += 1
+                    if i >= length:
+                        lengthFlag = False
+                    previousLetter = letter
+
+            # Clean again with updated stack and special cases
+            if len(stack) != 0 and lengthFlag:
+                while lengthFlag and (check[i] == stack[0] or any(var == letter for var in self.variants[stack[0]])):
+                    i += 1
+                    sameChars += 1
+
+                    if i >= length:
+                        lengthFlag = False
+
+            if lengthFlag:
+                j = length - 1
+
+                while j >= i:
+                    if check[j] == '!' or check[j] == '?':
+                        length -= 1
+                        j -= 1
+                    else:
+                        break
+
+                if check[i] == 'S':
+                    sameChars += 1
+
+            # Equality percentage
+            if len(wordTwo) > length:
+                percentage = float(sameChars)/len(wordTwo)
+                if len(wordTwo) < 5 and percentage >= 0.75:
+                    result = True
+                elif percentage >= 0.8:
+                    result = True
+            else:
+                percentage = float(sameChars)/length
+                if length < 5 and percentage >= 0.75:
+                    result = True
+                elif percentage >= 0.8:
+                    result = True
+
+        return result
+
+    def cut(self, word):
+        """
+        Transforms a string into a list of characters
+        Args:
+            self (object): The object itself
+            word (str): A string
+            char (str): Every char in the string
+        Returns:
+            A list of chars
+        """
+        return [char for char in word]
