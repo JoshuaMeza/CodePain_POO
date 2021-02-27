@@ -87,7 +87,6 @@ The API has the property of being modified **only** by the _requests system_, wh
 - Deleted requirement for weekely resumes.
 - Banning system is implemented but in occassions it could get buggy, so we decided to remove the unban requirement.
 - Added a command for getting information of the API.
-- Because of bad organization and lack of time, the development of the algorithm for searching offensive words was temporally removed.
 
 ## Use cases diagram
 

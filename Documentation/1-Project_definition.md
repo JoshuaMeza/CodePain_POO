@@ -2,7 +2,7 @@
 
 ## Summary
 
-[Click to view a short presentation](https://docs.google.com/presentation/d/1aPSuhjsSURNMX2iPGbojI9Pdv6J8picLfpoK9Mx5KI8/edit?usp=sharing).
+[Click to view a short presentation](https://drive.google.com/file/d/1RHzV-F16XAn8XLnV24kL8ShqLM42UMMw/view?usp=sharing).
 
 ## Description
 Rude API is a community tool built for the community and managed by the community where everyone can help improve it. It has a bot on Discord that is actually linked to the API. You as a user can add the specialized bot to a discord channel and manage a personal catalog of forbidden words, including global ones, to have a clean chat. You can help improve and maintain the API by making requests (existing Discord bot command) to include new words in the _offensive word_ list.

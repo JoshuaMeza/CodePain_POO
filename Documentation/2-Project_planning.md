@@ -26,6 +26,7 @@
 | Bot Beta version        | Jan 13          | All team       | Bot                               |
 | Bot v1.0                | Jan 15 / Feb 8  | All team       | Bot                               |
 | Repository Update       | Feb 8           | Joshua         | Documentation                     |
+| Search algorithm        | Feb 22          | Joshua         | Bot                               |
 
 ## Repository
 

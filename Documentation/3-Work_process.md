@@ -110,18 +110,12 @@ _Third deployment:_ Personal problems that affected my performance at the beginn
 _First deployment:_
 This first week I could not contribute in many aspects because I felt bad health, but I was researching things like authentications and the tools that are required to listen and broadcast in discord. we do not have much, but we have advanced a lot, more in aspects of project definition.
 
-_Second deployment:_ ...
-
-_Third deployment:_ ...
-
 - **Luna Castillo Fabrizio:**
 
 _First deployment:_ The first weeks I started a research about discord, close to this week I realize that the project need a new point of view, so I started to make changes and add new ideas about requirements and how we are going to manage the project documentation. I feel like we're making good progress, although sometimes I feel like I'm too demanding and my team can get mad at me for it.
 
 _Second deployment:_ I mainly worked for the bot stuff, focusing in create the bot, and develop it as planned in the UML, but, in the last 2 weeks things changed last second,
 all the bot structure changed, I managed to make the first steps on it, creating the initial commit for the rude API V2, but, was kinda hard, Joshua and Leon were very helpful on it.
-
-_Third deployment:_ ...
 
 - **Meza Magaña Joshua Immanuel:**
 
