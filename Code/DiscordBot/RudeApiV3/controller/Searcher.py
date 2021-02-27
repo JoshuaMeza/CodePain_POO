@@ -1,7 +1,7 @@
 """
 Author CodePain Team
 Date 14/01/2021
-Version 1.0.2
+Version 1.0.3
 Searcher tool
 """
 
@@ -93,7 +93,7 @@ class Searcher:
         flag = False
 
         for item in self.custom[str(guildId)]:
-            if self.searchAlgorithm(word, item):
+            if word == item or self.searchAlgorithm(word, item):
                 flag = True
                 break
 
@@ -115,7 +115,7 @@ class Searcher:
         flag = False
 
         for item in self.ignore[str(guildId)]:
-            if self.searchAlgorithm(word, item):
+            if word == item or self.searchAlgorithm(word, item):
                 flag = True
                 break
 
@@ -164,6 +164,7 @@ class Searcher:
             True if equal or similar, False if not
         """
         result = False
+        wordTwo = self.formatter.formatWord(wordTwo)
         stack = []
         check = self.cut(self.formatter.formatWord(wordOne))
         length = len(check)
